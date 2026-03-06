@@ -1,0 +1,17 @@
+@use "../mixins/mixins.scss";
+
+.md-typography--display-large{@include mixins.md-typography-display-large;}
+.md-typography--display-medium{@include mixins.md-typography-display-medium;}
+.md-typography--display-small{@include mixins.md-typography-display-small;}
+.md-typography--headline-large{@include mixins.md-typography-headline-large;}
+.md-typography--headline-medium{@include mixins.md-typography-headline-medium;}
+.md-typography--headline-small{@include mixins.md-typography-headline-small;}
+.md-typography--title-large{@include mixins.md-typography-title-large;}
+.md-typography--title-medium{@include mixins.md-typography-title-medium;}
+.md-typography--title-small{@include mixins.md-typography-title-small;}
+.md-typography--body-large{@include mixins.md-typography-body-large;}
+.md-typography--body-medium{@include mixins.md-typography-body-medium;}
+.md-typography--body-small{@include mixins.md-typography-body-small;}
+.md-typography--label-large{@include mixins.md-typography-label-large;}
+.md-typography--label-medium{@include mixins.md-typography-label-medium;}
+.md-typography--label-small{@include mixins.md-typography-label-small;}
