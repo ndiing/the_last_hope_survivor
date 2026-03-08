@@ -1,27 +1,34 @@
 import { LitElement } from "lit";
+import { updateWhenLocaleChanges } from "@lit/localize";
 
-class MDComponent extends LitElement{
-    createRenderRoot(){
-        return this
+class MDComponent extends LitElement {
+    constructor() {
+        super();
+
+        updateWhenLocaleChanges(this);
     }
 
-    on(type,listener){
-        this.addEventListener(type,listener)
+    createRenderRoot() {
+        return this;
     }
 
-    off(type,listener){
-        this.removeEventListener(type,listener)
+    on(type, listener) {
+        this.addEventListener(type, listener);
     }
 
-    emit(type,detail){
-        const event = new CustomEvent(type,{
-            bubbles:true,
-            composed:true,
-            cancelable:true,
-            detail
-        })
-        this.dispatchEvent(event)
+    off(type, listener) {
+        this.removeEventListener(type, listener);
+    }
+
+    emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            composed: true,
+            cancelable: true,
+            detail,
+        });
+        this.dispatchEvent(event);
     }
 }
 
-export {MDComponent}
+export { MDComponent };
