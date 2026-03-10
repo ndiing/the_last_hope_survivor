@@ -1,6 +1,6 @@
 @use "../mixins/mixins.scss";
 
-*{
+* {
     margin: 0;
     border: 0;
     padding: 0;
@@ -8,14 +8,21 @@
 
     &,
     &::before,
-    &::after{
+    &::after {
         box-sizing: border-box;
     }
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
-body{
-    @include mixins.md-typography-body-large;
+body {
+    overflow: auto;
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
+    @include mixins.typescale-body-large();
 }

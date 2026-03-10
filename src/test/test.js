@@ -1,28 +1,30 @@
-import { Router } from "../material/router/router.js";
-
-import testMainComponent from "./main/main.js"
-// import testUsersComponent from "./users/users.js"
-// import testUserComponent from "./user/user.js"
-import testBlogsComponent from "./blogs/blogs.js"
-import testBlogComponent from "./blog/blog.js"
-import testNotFoundComponent from "./not_found/not_found.js"
+import { Router } from "../material/router/router.js"
+import testMain from "./main/main.js"
+import testUsers from "./users/users.js"
+import testUser from "./user/user.js"
+// import testBlogs from "./blogs/blogs.js"
+// import testBlog from "./blog/blog.js"
+import testNotFound from "./not_found/not_found.js"
 
 const beforeLoad = (next) => {
     next()
 }
 
 /* prettier-ignore */
-const router=new Router([
-    {path:'/',component:testMainComponent,children:[
-        {path:'/users',beforeLoad,load:() => import('./users/users.js').then(value=>value.default),children:[
-            {path:'/:id',load:() => import('./user/user.js').then(value=>value.default),outlet:'outlet',children:[]},
+const routes = [
+    {path:'/',component:testMain,children:[
+        {path:'/users',beforeLoad,component:testUsers,children:[
+            {path:'/:id',component:testUser,outlet:'user',children:[
+                {path:'/survivor',load:()=>import('./the_last_hope_survivor/the_last_hope_survivor.js').then(module=>module.default)},
+            ]},
         ]},
-        {path:'/blogs',component:testBlogsComponent,children:[
-            {path:'/:id',component:testBlogComponent,children:[]},
+        {path:'blogs',load:()=>import('./blogs/blogs.js').then(module=>module.default),children:[
+            {path:'/:id',load:()=>import('./blog/blog.js').then(module=>module.default),children:[
+                {path:'/survivor',load:()=>import('./the_last_hope_survivor/the_last_hope_survivor.js').then(module=>module.default)},
+            ]},
         ]},
     ]},
-    {path:'*',component:testNotFoundComponent,children:[]},
-],{
-    historyApiFallback:true
-})
+    {path:'*',component:testNotFound},
+]
+const router = new Router(routes,{historyApiFallback:true})
 router.listen()

@@ -1,5 +1,6 @@
-import "./material/material.js"
-import "./material/material.scss"
+import "./material/material.scss";
+import "./material/material.js";
 
-import "./test/test.js"
-// import "./test/test.scss"
+import "./test/test.scss";
+import "./test/test.js";
+

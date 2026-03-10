@@ -1,13 +1,6 @@
 import { LitElement } from "lit";
-import { updateWhenLocaleChanges } from "@lit/localize";
 
 class MDComponent extends LitElement {
-    constructor() {
-        super();
-
-        updateWhenLocaleChanges(this);
-    }
-
     createRenderRoot() {
         return this;
     }
@@ -23,10 +16,11 @@ class MDComponent extends LitElement {
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
-            composed: true,
             cancelable: true,
+            // composed:true,
             detail,
         });
+
         this.dispatchEvent(event);
     }
 }

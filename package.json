@@ -6,17 +6,15 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "serve": "webpack serve",
-    "localize:extract": "lit-localize extract",
-    "localize:build ": "lit-localize build",
     "watch": "webpack --watch",
-    "commit": "node ./scripts/commit.js"
+    "prettier": "npx prettier --write .",
+    "commit": "node scripts/commit.js"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.0",
-    "@lit/localize-tools": "^0.8.1",
     "autoprefixer": "^10.4.27",
-    "babel-loader": "^10.1.0",
+    "babel-loader": "^10.1.1",
     "css-loader": "^7.1.4",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.6",
@@ -32,8 +30,6 @@
     "workbox-webpack-plugin": "^7.4.0"
   },
   "dependencies": {
-    "@lit/localize": "^0.12.2",
-    "@material/material-color-utilities": "^0.4.0",
     "lit": "^3.3.2"
   }
 }

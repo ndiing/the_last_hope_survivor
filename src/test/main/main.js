@@ -3,23 +3,30 @@ import { MDComponent } from "../../material/component/component.js";
 
 class TestMain extends MDComponent{
     render(){
+        /* prettier-ignore */
         return html`
             <div>
-                <div routerLink="">/</div>
-                <div routerLink="users/">/users/</div>
-                <div routerLink="users?age=35&age=36">/users?age=35&age=36</div>
-                <div routerLink="users/1">/users/1</div>
-                <div routerLink="blogs">/blogs</div>
-                <div routerLink="blogs/1">/blogs/1</div>
-                <div routerLink="not-found">/not-found</div>
+                <div routerLink="/">/</div>
+                <div routerLink="/users">/users</div>
+                <div routerLink="/users?param=1&param=2">/users?param=1&param=2</div>
+                <div routerLink="/users/1">/users/1</div>
+                <div routerLink="/users/1/survivor">/users/1/survivor</div>
+                <div routerLink="/users/321/survivor">/users/321/survivor</div>
+                <div routerLink="/blogs/">/blogs/</div>
+                <div routerLink="/blogs/?param=1&param=2">/blogs/?param=1&param=2</div>
+                <div routerLink="/blogs/1">/blogs/1</div>
+                <div routerLink="/blogs/1/survivor">/blogs/1/survivor</div>
+                <div routerLink="/blogs/321/survivor">/blogs/321/survivor</div>
+                <div routerLink="/error">/error</div>
             </div>
+
             <h1>Main</h1>
-            <md-outlet name="outlet"></md-outlet>
+            <md-outlet name="user"></md-outlet>
             <md-outlet></md-outlet>
         `
     }
 }
 
-customElements.define('test-main', TestMain)
+customElements.define('test-main',TestMain)
 
 export default document.createElement('test-main')
