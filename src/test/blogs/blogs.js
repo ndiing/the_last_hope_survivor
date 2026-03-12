@@ -1,8 +1,8 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class TestBlogs extends MDComponent{
-    render(){
+class TestBlogs extends MDComponent {
+    render() {
         /* prettier-ignore */
         return html`
             <h1>Blogs</h1>
@@ -11,6 +11,6 @@ class TestBlogs extends MDComponent{
     }
 }
 
-customElements.define('test-blogs',TestBlogs)
+customElements.define("test-blogs", TestBlogs);
 
-export default document.createElement('test-blogs')
+export default document.createElement("test-blogs");

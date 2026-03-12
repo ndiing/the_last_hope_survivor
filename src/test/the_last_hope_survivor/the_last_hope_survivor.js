@@ -1,8 +1,8 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class TestTheLastHopeSurvivor extends MDComponent{
-    render(){
+class TestTheLastHopeSurvivor extends MDComponent {
+    render() {
         /* prettier-ignore */
         return html`
             <h1>TheLastHopeSurvivor</h1>
@@ -11,6 +11,6 @@ class TestTheLastHopeSurvivor extends MDComponent{
     }
 }
 
-customElements.define('test-the-last-hope-survivor',TestTheLastHopeSurvivor)
+customElements.define("test-the-last-hope-survivor", TestTheLastHopeSurvivor);
 
-export default document.createElement('test-the-last-hope-survivor')
+export default document.createElement("test-the-last-hope-survivor");

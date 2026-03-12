@@ -1,0 +1,58 @@
+import { html } from "lit";
+import { MDComponent } from "../../material/component/component.js";
+
+class TestLayoutBorderModal extends MDComponent {
+    render() {
+        /* prettier-ignore */
+        return html`
+
+            <md-layout-border>
+                <md-layout-border-item id="north" region="north" modal split>north</md-layout-border-item>
+                <md-layout-border-item id="west" region="west" modal split>west</md-layout-border-item>
+                <md-layout-border-item region="center">
+                    
+                    <button @click="${this.handleNorthToggle}">north toggle</button><br>
+                    <button @click="${this.handleWestToggle}">west toggle</button><br>
+                    <button @click="${this.handleEastToggle}">east toggle</button><br>
+                    <button @click="${this.handleSouthToggle}">south toggle</button><br>
+                    
+
+                </md-layout-border-item>
+                <md-layout-border-item id="east" region="east" modal split>east</md-layout-border-item>
+                <md-layout-border-item id="south" region="south" modal split>south</md-layout-border-item>
+            </md-layout-border>
+
+            <md-scrim></md-scrim>
+        `
+    }
+
+    get north() {
+        return this.querySelector("#north");
+    }
+    get west() {
+        return this.querySelector("#west");
+    }
+    get east() {
+        return this.querySelector("#east");
+    }
+    get south() {
+        return this.querySelector("#south");
+    }
+
+    handleNorthToggle() {
+        this.north.toggle();
+    }
+    handleWestToggle() {
+        this.west.toggle();
+    }
+    handleEastToggle() {
+        this.east.toggle();
+    }
+    handleSouthToggle() {
+        this.south.toggle();
+    }
+}
+
+customElements.define("test-layout-border-modal", TestLayoutBorderModal);
+
+export default document.createElement("test-layout-border-modal");

@@ -22,7 +22,7 @@ class Router {
         this.controller = null;
 
         /** @type {string} */
-        this.path = "";
+        this.path = "/";
 
         /** @type {Object.<string, string|Array<string>>} */
         this.query = {};
@@ -248,6 +248,7 @@ class Router {
         }
 
         if (!route.component.isConnected) {
+            route.component.isComponent=true
             outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
         }
     }
@@ -264,7 +265,10 @@ class Router {
             let element = outlet.nextElementSibling;
 
             while (element) {
-                if (!outlets.find((outlet) => outlet === element) && !routes.find((route) => route.component === element)) {
+                if (
+                    !outlets.find((outlet) => outlet === element)&& //
+                    !routes.find((route) => route.component === element)&&element.isComponent
+                ) {
                     element.remove();
                 }
 
