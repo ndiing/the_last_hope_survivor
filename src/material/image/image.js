@@ -20,10 +20,13 @@ class MDImage extends MDComponent {
         if (this.shape === "round") {
             if (this.ratio) {
                 const [x, y] = this.ratio.split("/");
+                
                 const xNumber = Number(x.trim());
                 const yNumber = Number(y.trim());
-                const verticalRadius = (50 / xNumber) * yNumber;
-                style["border-radius"] = `${verticalRadius}% / 50%`;
+                
+                const verticalRadius = (xNumber / yNumber) * 50;
+                
+                style["border-radius"] = `50% / ${verticalRadius}%`;
             } else {
                 style["border-radius"] = "50%";
             }
