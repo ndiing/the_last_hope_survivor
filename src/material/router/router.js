@@ -248,7 +248,7 @@ class Router {
         }
 
         if (!route.component.isConnected) {
-            route.component.isComponent=true
+            route.component.isComponent = true;
             outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
         }
     }
@@ -266,8 +266,9 @@ class Router {
 
             while (element) {
                 if (
-                    !outlets.find((outlet) => outlet === element)&& //
-                    !routes.find((route) => route.component === element)&&element.isComponent
+                    !outlets.find((outlet) => outlet === element) && //
+                    !routes.find((route) => route.component === element) &&
+                    element.isComponent
                 ) {
                     element.remove();
                 }

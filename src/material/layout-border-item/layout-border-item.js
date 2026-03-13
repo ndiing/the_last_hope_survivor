@@ -3,23 +3,26 @@ import { MDComponent } from "../component/component.js";
 class MDLayoutBorderItem extends MDComponent {
     static properties = {
         region: { type: String },
-        split: { type: Boolean },
-        modal: { type: Boolean },
         open: { type: Boolean },
+        modal: { type: Boolean },
     };
 
     regions = ["north", "west", "center", "east", "south"];
+
+    _handleScrimClose() {
+        this.close();
+    }
 
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-layout-border__item");
 
-        this.scrimElement = document.createElement('md-scrim')
-        document.body.append(this.scrimElement)
-        this.handleScrimClose=
-        this.handleScrimClose.bind(this)
-        this.scrimElement.on('scrimClose',this.handleScrimClose)
+        this.scrimElement = document.createElement("md-scrim");
+        document.body.append(this.scrimElement);
+
+        this._handleScrimClose = this._handleScrimClose.bind(this);
+        this.scrimElement.addEventListener("scrimClose", this._handleScrimClose);
     }
 
     disconnectedCallback() {
@@ -27,63 +30,70 @@ class MDLayoutBorderItem extends MDComponent {
 
         this.classList.remove("md-layout-border__item");
 
-        this.scrimElement.off('scrimClose',this.handleScrimClose)
-        this.scrimElement.remove()
+        this.scrimElement.removeEventListener("scrimClose", this._handleScrimClose);
+        this.scrimElement.remove();
+
+        this.scrimElement = null;
+    }
+
+    _applyModalClass() {
+        if (this.modal) {
+            this.classList.add(`md-layout-border__item--modal`);
+        } else {
+            this.classList.remove(`md-layout-border__item--modal`);
+        }
+    }
+
+    _applyOpenClass() {
+        if (this.open) {
+            this.classList.add(`md-layout-border__item--open`);
+
+            if (this.modal) {
+                this.scrimElement.show();
+            }
+
+            this.emit("layoutBorderItemShow");
+        } else {
+            this.classList.remove(`md-layout-border__item--open`);
+
+            this.scrimElement.close();
+
+            this.emit("layoutBorderItemClose");
+        }
+    }
+
+    _applyRegionClass() {
+        this.regions.forEach((region) => {
+            if (this.region === region) {
+                this.classList.add(`md-layout-border__item--${region}`);
+            } else {
+                this.classList.remove(`md-layout-border__item--${region}`);
+            }
+        });
     }
 
     updated(_changedProperties) {
         if (_changedProperties.has("region")) {
-            this.regions.forEach((region) => {
-                if (this.region === region) {
-                    this.classList.add(`md-layout-border__item--${region}`);
-                } else {
-                    this.classList.remove(`md-layout-border__item--${region}`);
-                }
-            });
-        }
-        if (_changedProperties.has("split")) {
-            if (this.split) {
-                this.classList.add(`md-layout-border__item--split`);
-            } else {
-                this.classList.remove(`md-layout-border__item--split`);
-            }
-        }
-        if (_changedProperties.has("modal")) {
-            if (this.modal) {
-                this.classList.add(`md-layout-border__item--modal`);
-            } else {
-                this.classList.remove(`md-layout-border__item--modal`);
-            }
+            this._applyRegionClass();
         }
         if (_changedProperties.has("open")) {
-            if (this.open) {
-                if(this.modal){
-                    this.scrimElement.show()
-                }
-                this.emit('layoutBorderItemShow')
-                this.classList.add(`md-layout-border__item--open`);
-            } else {
-                this.scrimElement.close()
-                this.emit('layoutBorderItemClose')
-                this.classList.remove(`md-layout-border__item--open`);
-            }
+            this._applyOpenClass();
         }
-        
-        
+        if (_changedProperties.has("modal")) {
+            this._applyModalClass();
+        }
     }
 
-    handleScrimClose(){
-        this.close()
+    show() {
+        this.open = true;
     }
 
-    show(){
-        this.open=true
+    close() {
+        this.open = false;
     }
-    close(){
-        this.open=false
-    }
-    toggle(){
-        this.open=!this.open
+
+    toggle() {
+        this.open = !this.open;
     }
 }
 

@@ -25,7 +25,6 @@ class TestMain extends MDComponent {
             <h1>Main</h1>
             <md-outlet name="user"></md-outlet> -->
             
-
             <md-layout-border>
                 <md-layout-border-item region="west" open>
                     <div>

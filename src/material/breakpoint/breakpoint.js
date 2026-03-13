@@ -1,4 +1,4 @@
-const BREAKPOINT_LIST = [
+const DEFAULT_BREAKPOINT_OBSERVER_LIST = [
     { name: "expanded", query: "(min-width: 840px)" },
     { name: "medium", query: "(min-width: 600px) and (max-width: 839px)" },
     { name: "compact", query: "(max-width: 599px)" },
@@ -11,7 +11,7 @@ class BreakpointObserver {
     }
 
     _handleChange() {
-        this.unobserve()
+        this.unobserve();
         this.observe();
     }
 
@@ -21,19 +21,21 @@ class BreakpointObserver {
         }
     }
 
-    observe(list = BREAKPOINT_LIST) {
+    observe(list = DEFAULT_BREAKPOINT_OBSERVER_LIST) {
         this._buildList(list);
+
         this.item = this.list.find((item) => item.mql.matches);
+
         this.callback(this.item);
+
         this.item.mql.addEventListener("change", this._handleChange);
     }
 
-    unobserve(){
-        if(this.item){
+    unobserve() {
+        if (this.item) {
             this.item.mql.removeEventListener("change", this._handleChange);
         }
     }
 }
 
 export { BreakpointObserver };
-

@@ -1,17 +1,5 @@
 @use "../mixins/mixins.scss";
 
-:root {
-    --md-comp-layout-border-item-north-height: 64px;
-    --md-comp-layout-border-item-west-width: 256px;
-    --md-comp-layout-border-item-east-width: 256px;
-    --md-comp-layout-border-item-south-height: 64px;
-
-    --md-comp-layout-border-item-north-split: 24px;
-    --md-comp-layout-border-item-west-split: 24px;
-    --md-comp-layout-border-item-east-split: 24px;
-    --md-comp-layout-border-item-south-split: 24px;
-}
-
 .md-layout {
     display: block;
     width: 100%;
@@ -66,6 +54,18 @@
     }
 }
 
+:root {
+    --md-comp-layout-border-item-north-height: 64px;
+    --md-comp-layout-border-item-west-width: 256px;
+    --md-comp-layout-border-item-east-width: 256px;
+    --md-comp-layout-border-item-south-height: 64px;
+
+    --md-comp-layout-border-item-north-margin: 24px;
+    --md-comp-layout-border-item-west-margin: 24px;
+    --md-comp-layout-border-item-east-margin: 24px;
+    --md-comp-layout-border-item-south-margin: 24px;
+}
+
 .md-layout-border {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -83,27 +83,24 @@
 }
 .md-layout-border__item {
     overflow: auto;
+    transition: margin var(--md-sys-motion-duration-short2) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
-    transition: margin var(--md-sys-motion-duration-short2) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    &.md-layout-border__item--open {
-        transition: margin var(--md-sys-motion-duration-short3) cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-    }
     &.md-layout-border__item--modal {
         position: absolute;
         z-index: 20;
         background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface);
     }
+    &.md-layout-border__item--open {
+        transition: margin var(--md-sys-motion-duration-short3) cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    }
 }
-
 .md-layout-border__item--north {
     grid-area: north;
     height: var(--md-comp-layout-border-item-north-height);
-    margin-top: calc(0px - var(--md-comp-layout-border-item-north-height) - var(--md-comp-layout-border-item-north-split));
-    &.md-layout-border__item--split {
-        margin-bottom: var(--md-comp-layout-border-item-north-split);
-    }
+    margin-bottom: var(--md-comp-layout-border-item-north-margin);
+    margin-top: calc(0px - var(--md-comp-layout-border-item-north-height) - var(--md-comp-layout-border-item-north-margin));
     &.md-layout-border__item--modal {
         left: 0;
         top: 0;
@@ -116,10 +113,8 @@
 .md-layout-border__item--west {
     grid-area: west;
     width: var(--md-comp-layout-border-item-west-width);
-    margin-left: calc(0px - var(--md-comp-layout-border-item-west-width) - var(--md-comp-layout-border-item-west-split));
-    &.md-layout-border__item--split {
-        margin-right: var(--md-comp-layout-border-item-west-split);
-    }
+    margin-right: var(--md-comp-layout-border-item-west-margin);
+    margin-left: calc(0px - var(--md-comp-layout-border-item-west-width) - var(--md-comp-layout-border-item-west-margin));
     &.md-layout-border__item--modal {
         left: 0;
         top: 0;
@@ -135,10 +130,8 @@
 .md-layout-border__item--east {
     grid-area: east;
     width: var(--md-comp-layout-border-item-east-width);
-    margin-right: calc(0px - var(--md-comp-layout-border-item-east-width) - var(--md-comp-layout-border-item-east-split));
-    &.md-layout-border__item--split {
-        margin-left: var(--md-comp-layout-border-item-east-split);
-    }
+    margin-left: var(--md-comp-layout-border-item-east-margin);
+    margin-right: calc(0px - var(--md-comp-layout-border-item-east-width) - var(--md-comp-layout-border-item-east-margin));
     &.md-layout-border__item--modal {
         top: 0;
         right: 0;
@@ -151,10 +144,8 @@
 .md-layout-border__item--south {
     grid-area: south;
     height: var(--md-comp-layout-border-item-south-height);
-    margin-bottom: calc(0px - var(--md-comp-layout-border-item-south-height) - var(--md-comp-layout-border-item-south-split));
-    &.md-layout-border__item--split {
-        margin-top: var(--md-comp-layout-border-item-south-split);
-    }
+    margin-top: var(--md-comp-layout-border-item-south-margin);
+    margin-bottom: calc(0px - var(--md-comp-layout-border-item-south-height) - var(--md-comp-layout-border-item-south-margin));
     &.md-layout-border__item--modal {
         left: 0;
         right: 0;
