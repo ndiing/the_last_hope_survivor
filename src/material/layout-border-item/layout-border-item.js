@@ -62,13 +62,13 @@ class MDLayoutBorderItem extends MDComponent {
                 this.scrimElement.show();
             }
 
-            this.emit("layoutBorderItemShow");
+            this.emit("layoutBorderItemShow", { element: this });
         } else {
             this.classList.remove(`md-layout-border__item--open`);
 
             this.scrimElement.close();
 
-            this.emit("layoutBorderItemClose");
+            this.emit("layoutBorderItemClose", { element: this });
         }
     }
 

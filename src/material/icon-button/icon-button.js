@@ -10,6 +10,7 @@ class MDIconButton extends MDComponent {
         shape: { type: String },
         color: { type: String },
         width: { type: String },
+        selected: { type: Boolean },
     };
 
     variants = ["default", "toggle"];
@@ -37,10 +38,28 @@ class MDIconButton extends MDComponent {
         `
     }
 
+    handleClick(event) {
+        if (this.variant === "toggle") {
+            this.selected = !this.selected;
+        }
+        this.emit("iconButtonClick", { event });
+    }
+
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-icon-button");
+
+        this.handleClick = this.handleClick.bind(this);
+        this.addEventListener("click", this.handleClick);
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-icon-button");
+
+        this.removeEventListener("click", this.handleClick);
     }
 
     _applyVariantClass() {
@@ -52,6 +71,7 @@ class MDIconButton extends MDComponent {
             }
         });
     }
+
     _applySizeClass() {
         this.sizes.forEach((size) => {
             if (this.size === size) {
@@ -61,6 +81,7 @@ class MDIconButton extends MDComponent {
             }
         });
     }
+
     _applyShapeClass() {
         this.shapes.forEach((shape) => {
             if (this.shape === shape) {
@@ -70,6 +91,7 @@ class MDIconButton extends MDComponent {
             }
         });
     }
+
     _applyColorClass() {
         this.colors.forEach((color) => {
             if (this.color === color) {
@@ -79,6 +101,7 @@ class MDIconButton extends MDComponent {
             }
         });
     }
+
     _applyWidthClass() {
         this.widths.forEach((width) => {
             if (this.width === width) {
@@ -87,6 +110,14 @@ class MDIconButton extends MDComponent {
                 this.classList.remove(`md-icon-button--${width}`);
             }
         });
+    }
+
+    _applySelectedClass() {
+        if (this.selected) {
+            this.classList.add(`md-icon-button--selected`);
+        } else {
+            this.classList.remove(`md-icon-button--selected`);
+        }
     }
 
     updated(_changedProperties) {
@@ -104,6 +135,9 @@ class MDIconButton extends MDComponent {
         }
         if (_changedProperties.has("width")) {
             this._applyWidthClass();
+        }
+        if (_changedProperties.has("selected")) {
+            this._applySelectedClass();
         }
     }
 }

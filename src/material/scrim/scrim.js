@@ -28,10 +28,10 @@ class MDScrim extends MDComponent {
     _applyOpenClass() {
         if (this.open) {
             this.classList.add(`md-scrim--open`);
-            this.emit("scrimShow");
+            this.emit("scrimShow", { element: this });
         } else {
             this.classList.remove(`md-scrim--open`);
-            this.emit("scrimClose");
+            this.emit("scrimClose", { element: this });
         }
     }
 
