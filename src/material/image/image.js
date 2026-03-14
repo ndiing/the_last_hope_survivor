@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { styleMap } from "lit/directives/style-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 class MDImage extends MDComponent {
     static properties = {
@@ -20,12 +21,12 @@ class MDImage extends MDComponent {
         if (this.shape === "round") {
             if (this.ratio) {
                 const [x, y] = this.ratio.split("/");
-                
+
                 const xNumber = Number(x.trim());
                 const yNumber = Number(y.trim());
-                
+
                 const verticalRadius = (xNumber / yNumber) * 50;
-                
+
                 style["border-radius"] = `50% / ${verticalRadius}%`;
             } else {
                 style["border-radius"] = "50%";
@@ -40,8 +41,8 @@ class MDImage extends MDComponent {
             <img 
                 class="md-image__native" 
                 style="${styleMap(this._imageNativeStyle)}" 
-                .src="${this.src}" 
-                .alt="${this.alt}">
+                .src="${ifDefined(this.src)}" 
+                .alt="${ifDefined(this.alt)}">
         `
     }
 
@@ -50,7 +51,6 @@ class MDImage extends MDComponent {
 
         this.classList.add("md-image");
     }
-
 }
 
 customElements.define("md-image", MDImage);

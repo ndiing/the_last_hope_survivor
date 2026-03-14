@@ -1,7 +1,9 @@
 import "./breakpoint/breakpoint.js";
 import "./router/router.js";
 import "./component/component.js";
+import "./ripple/ripple.js";
 import "./icon/icon.js";
+import "./icon-button/icon-button.js";
 import "./image/image.js";
 import "./scrim/scrim.js";
 import "./layout-column/layout-column.js";

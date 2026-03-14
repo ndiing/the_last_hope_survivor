@@ -5,15 +5,12 @@ class TestScrim extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <!-- <div class="md-layout"> -->
-                <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded12">
-                        <button @click="${this.handleScrimToggle}">scrim toggle</button>
-                        <md-scrim id="scrim"></md-scrim>
-                    </div>
-                </div>
-
-            <!-- </div> -->
+            <md-layout-column>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    <button @click="${this.handleScrimToggle}">scrim toggle</button>
+                    <md-scrim id="scrim"></md-scrim>
+                </md-layout-column-item>
+            </md-layout-column>
         `
     }
 

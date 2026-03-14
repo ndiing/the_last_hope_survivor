@@ -5,6 +5,7 @@ class MDLayoutBorderItem extends MDComponent {
         region: { type: String },
         open: { type: Boolean },
         modal: { type: Boolean },
+        margin: { type: Boolean },
     };
 
     regions = ["north", "west", "center", "east", "south"];
@@ -19,6 +20,7 @@ class MDLayoutBorderItem extends MDComponent {
         this.classList.add("md-layout-border__item");
 
         this.scrimElement = document.createElement("md-scrim");
+        // this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
         document.body.append(this.scrimElement);
 
         this._handleScrimClose = this._handleScrimClose.bind(this);
@@ -41,6 +43,14 @@ class MDLayoutBorderItem extends MDComponent {
             this.classList.add(`md-layout-border__item--modal`);
         } else {
             this.classList.remove(`md-layout-border__item--modal`);
+        }
+    }
+
+    _applyMarginClass() {
+        if (this.margin) {
+            this.classList.add(`md-layout-border__item--margin`);
+        } else {
+            this.classList.remove(`md-layout-border__item--margin`);
         }
     }
 
@@ -81,6 +91,9 @@ class MDLayoutBorderItem extends MDComponent {
         }
         if (_changedProperties.has("modal")) {
             this._applyModalClass();
+        }
+        if (_changedProperties.has("margin")) {
+            this._applyMarginClass();
         }
     }
 

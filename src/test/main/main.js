@@ -26,7 +26,7 @@ class TestMain extends MDComponent {
             <md-outlet name="user"></md-outlet> -->
             
             <md-layout-border>
-                <md-layout-border-item region="west" open>
+                <md-layout-border-item region="west" open margin>
                     <div>
                         ${routes[0].children.map(route => html`
                             <div routerLink="${route.path}">${route.path}</div>

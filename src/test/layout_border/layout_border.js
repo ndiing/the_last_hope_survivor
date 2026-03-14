@@ -5,21 +5,18 @@ class TestLayoutBorder extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <!-- <div class="md-layout"> -->
-                <md-layout-border>
-                    <md-layout-border-item id="north" region="north">north</md-layout-border-item>
-                    <md-layout-border-item id="west" region="west">west</md-layout-border-item>
-                    <md-layout-border-item region="center">
-                        <button @click="${this.handleNorthToggle}">north toggle</button><br>
-                        <button @click="${this.handleWestToggle}">west toggle</button><br>
-                        <button @click="${this.handleEastToggle}">east toggle</button><br>
-                        <button @click="${this.handleSouthToggle}">south toggle</button><br>
-                    </md-layout-border-item>
-                    <md-layout-border-item id="east" region="east">east</md-layout-border-item>
-                    <md-layout-border-item id="south" region="south">south</md-layout-border-item>
-                </md-layout-border>
-                
-            <!-- </div> -->
+            <md-layout-border>
+                <md-layout-border-item id="north" region="north">north</md-layout-border-item>
+                <md-layout-border-item id="west" region="west">west</md-layout-border-item>
+                <md-layout-border-item region="center">
+                    <button @click="${this.handleNorthToggle}">north toggle</button><br>
+                    <button @click="${this.handleWestToggle}">west toggle</button><br>
+                    <button @click="${this.handleEastToggle}">east toggle</button><br>
+                    <button @click="${this.handleSouthToggle}">south toggle</button><br>
+                </md-layout-border-item>
+                <md-layout-border-item id="east" region="east">east</md-layout-border-item>
+                <md-layout-border-item id="south" region="south">south</md-layout-border-item>
+            </md-layout-border>
         `
     }
 

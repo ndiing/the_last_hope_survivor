@@ -4,27 +4,24 @@ import { BreakpointObserver } from "../../material/breakpoint/breakpoint.js";
 
 class TestBreakpoint extends MDComponent {
     static properties = {
-        log: { type: Object },
+        item: { type: Object },
     };
 
     render() {
         /* prettier-ignore */
         return html`
-            <!-- <div class="md-layout"> -->
-                <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded12">
-                        <pre>${JSON.stringify(this.log,null,4)}</pre>
-                    </div>
-                </div>
-                
-            <!-- </div> -->
+            <md-layout-column>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    <pre>${JSON.stringify(this.item,null,4)}</pre>
+                </md-layout-column-item>
+            </md-layout-column>
         `
     }
 
     connectedCallback() {
         super.connectedCallback();
         this.breakpointObserver = new BreakpointObserver((item) => {
-            this.log = item;
+            this.item = item;
         });
         this.breakpointObserver.observe();
     }

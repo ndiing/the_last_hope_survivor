@@ -1,30 +1,14 @@
 import testMain from "./main/main.js";
-import testUsers from "./users/users.js";
-import testUser from "./user/user.js";
-// import testBlogs from "./blogs/blogs.js"
-// import testBlog from "./blog/blog.js"
 import testNotFound from "./not_found/not_found.js";
-
-const beforeLoad = (next) => {
-    next();
-};
 
 /* prettier-ignore */
 const routes = [
     {path:'/',component:testMain,children:[
-        // {path:'/users',beforeLoad,component:testUsers,children:[
-        //     {path:'/:id',component:testUser,outlet:'user',children:[
-        //         {path:'/survivor',load:()=>import('./the_last_hope_survivor/the_last_hope_survivor.js').then(module=>module.default)},
-        //     ]},
-        // ]},
-        // {path:'blogs',load:()=>import('./blogs/blogs.js').then(module=>module.default),children:[
-        //     {path:'/:id',load:()=>import('./blog/blog.js').then(module=>module.default),children:[
-        //         {path:'/survivor',load:()=>import('./the_last_hope_survivor/the_last_hope_survivor.js').then(module=>module.default)},
-        //     ]},
-        // ]},
-        
+        {path:'/dev',load:()=>import('./dev/dev.js').then(module=>module.default)},
         {path:'/breakpoint',load:()=>import('./breakpoint/breakpoint.js').then(module=>module.default)},
+        // {path:'/ripple',load:()=>import('./ripple/ripple.js').then(module=>module.default)},
         {path:'/icon',load:()=>import('./icon/icon.js').then(module=>module.default)},
+        {path:'/icon-button',load:()=>import('./icon-button/icon-button.js').then(module=>module.default)},
         {path:'/image',load:()=>import('./image/image.js').then(module=>module.default)},
         {path:'/scrim',load:()=>import('./scrim/scrim.js').then(module=>module.default)},
         {path:'/layout-column',load:()=>import('./layout_column/layout_column.js').then(module=>module.default)},
