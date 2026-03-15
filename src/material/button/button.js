@@ -1,25 +1,27 @@
-import { html } from "lit";
+import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { RippleController } from "../ripple/ripple.js";
 
-class MDIconButton extends MDComponent {
+class MDButton extends MDComponent {
     static properties = {
+        label: { type: String },
         icon: { type: String },
         variant: { type: String },
         size: { type: String },
         shape: { type: String },
         color: { type: String },
-        width: { type: String },
         selected: { type: Boolean },
+        type: { type: String },
     };
 
     variants = ["default", "toggle"];
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
     shapes = ["round", "square"];
-    colors = ["filled", "tonal", "outlined", "standard"];
-    widths = ["default", "narrow", "wide"];
+    colors = ["elevated", "filled", "tonal", "outlined", "standard"];
 
-    ripple = new RippleController(this);
+    ripple = new RippleController(this, {
+        trigger: ".md-button__native",
+    });
 
     constructor() {
         super();
@@ -28,13 +30,15 @@ class MDIconButton extends MDComponent {
         this.size = "small";
         this.shape = "round";
         this.color = "filled";
-        this.width = "default";
+        this.type = "button";
     }
 
     render() {
         /* prettier-ignore */
         return html`
-            <md-icon class="md-icon-button__native">${this.icon}</md-icon>
+            <button .type="${this.type}" class="md-button__native"></button>
+            ${this.icon?html`<md-icon class="md-button__icon">${this.icon}</md-icon>`:nothing}
+            ${this.label?html`<div class="md-button__label">${this.label}</div>`:nothing}
         `
     }
 
@@ -42,13 +46,13 @@ class MDIconButton extends MDComponent {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
         }
-        this.emit("iconButtonClick", { event });
+        this.emit("buttonClick", { event });
     }
 
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-icon-button");
+        this.classList.add("md-button");
 
         this._handleClick = this._handleClick.bind(this);
         this.addEventListener("click", this._handleClick);
@@ -57,7 +61,7 @@ class MDIconButton extends MDComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.classList.remove("md-icon-button");
+        this.classList.add("md-button");
 
         this.removeEventListener("click", this._handleClick);
     }
@@ -65,63 +69,50 @@ class MDIconButton extends MDComponent {
     _applyVariantClass() {
         this.variants.forEach((variant) => {
             if (this.variant === variant) {
-                this.classList.add(`md-icon-button--${variant}`);
+                this.classList.add(`md-button--${variant}`);
             } else {
-                this.classList.remove(`md-icon-button--${variant}`);
+                this.classList.remove(`md-button--${variant}`);
             }
         });
     }
-
     _applySizeClass() {
         this.sizes.forEach((size) => {
             if (this.size === size) {
-                this.classList.add(`md-icon-button--${size}`);
+                this.classList.add(`md-button--${size}`);
             } else {
-                this.classList.remove(`md-icon-button--${size}`);
+                this.classList.remove(`md-button--${size}`);
             }
         });
     }
-
     _applyShapeClass() {
         this.shapes.forEach((shape) => {
             if (this.shape === shape) {
-                this.classList.add(`md-icon-button--${shape}`);
+                this.classList.add(`md-button--${shape}`);
             } else {
-                this.classList.remove(`md-icon-button--${shape}`);
+                this.classList.remove(`md-button--${shape}`);
             }
         });
     }
-
     _applyColorClass() {
         this.colors.forEach((color) => {
             if (this.color === color) {
-                this.classList.add(`md-icon-button--${color}`);
+                this.classList.add(`md-button--${color}`);
             } else {
-                this.classList.remove(`md-icon-button--${color}`);
+                this.classList.remove(`md-button--${color}`);
             }
         });
     }
-
-    _applyWidthClass() {
-        this.widths.forEach((width) => {
-            if (this.width === width) {
-                this.classList.add(`md-icon-button--${width}`);
-            } else {
-                this.classList.remove(`md-icon-button--${width}`);
-            }
-        });
-    }
-
     _applySelectedClass() {
         if (this.selected) {
-            this.classList.add(`md-icon-button--selected`);
+            this.classList.add(`md-button--selected`);
         } else {
-            this.classList.remove(`md-icon-button--selected`);
+            this.classList.remove(`md-button--selected`);
         }
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
+
         if (_changedProperties.has("variant")) {
             this._applyVariantClass();
         }
@@ -134,15 +125,12 @@ class MDIconButton extends MDComponent {
         if (_changedProperties.has("color")) {
             this._applyColorClass();
         }
-        if (_changedProperties.has("width")) {
-            this._applyWidthClass();
-        }
         if (_changedProperties.has("selected")) {
             this._applySelectedClass();
         }
     }
 }
 
-customElements.define("md-icon-button", MDIconButton);
+customElements.define("md-button", MDButton);
 
-export { MDIconButton };
+export { MDButton };

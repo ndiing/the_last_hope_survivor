@@ -83,6 +83,7 @@ class MDLayoutBorderItem extends MDComponent {
     }
 
     updated(_changedProperties) {
+        super.updated(_changedProperties);
         if (_changedProperties.has("region")) {
             this._applyRegionClass();
         }

@@ -14,6 +14,7 @@ class MDLayoutColumnItem extends MDComponent {
     }
 
     updated(_changedProperties) {
+        super.updated(_changedProperties);
         if (_changedProperties.has("expanded")) {
             this._applySizeClass(12, "expanded");
         }

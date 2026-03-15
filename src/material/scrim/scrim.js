@@ -36,6 +36,7 @@ class MDScrim extends MDComponent {
     }
 
     updated(_changedProperties) {
+        super.updated(_changedProperties);
         if (_changedProperties.has("open")) {
             this._applyOpenClass();
         }
