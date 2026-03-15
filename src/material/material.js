@@ -5,6 +5,7 @@ import "./ripple/ripple.js";
 import "./icon/icon.js";
 import "./icon-button/icon-button.js";
 import "./image/image.js";
+import "./form/form.js";
 import "./scrim/scrim.js";
 import "./layout-column/layout-column.js";
 import "./layout-column-item/layout-column-item.js";

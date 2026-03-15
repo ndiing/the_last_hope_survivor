@@ -10,6 +10,7 @@ const routes = [
         {path:'/icon',load:()=>import('./icon/icon.js').then(module=>module.default)},
         {path:'/icon-button',load:()=>import('./icon-button/icon-button.js').then(module=>module.default)},
         {path:'/image',load:()=>import('./image/image.js').then(module=>module.default)},
+        {path:'/form',load:()=>import('./form/form.js').then(module=>module.default)},
         {path:'/scrim',load:()=>import('./scrim/scrim.js').then(module=>module.default)},
         {path:'/layout-column',load:()=>import('./layout_column/layout_column.js').then(module=>module.default)},
         {path:'/layout-column-expanded',load:()=>import('./layout_column_expanded/layout_column_expanded.js').then(module=>module.default)},

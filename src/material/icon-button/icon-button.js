@@ -38,7 +38,7 @@ class MDIconButton extends MDComponent {
         `
     }
 
-    handleClick(event) {
+    _handleClick(event) {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
         }
@@ -50,8 +50,8 @@ class MDIconButton extends MDComponent {
 
         this.classList.add("md-icon-button");
 
-        this.handleClick = this.handleClick.bind(this);
-        this.addEventListener("click", this.handleClick);
+        this._handleClick = this._handleClick.bind(this);
+        this.addEventListener("click", this._handleClick);
     }
 
     disconnectedCallback() {
@@ -59,7 +59,7 @@ class MDIconButton extends MDComponent {
 
         this.classList.remove("md-icon-button");
 
-        this.removeEventListener("click", this.handleClick);
+        this.removeEventListener("click", this._handleClick);
     }
 
     _applyVariantClass() {

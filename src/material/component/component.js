@@ -13,7 +13,7 @@ class MDComponent extends LitElement {
         this.removeEventListener(type, listener);
     }
 
-    emit(type, detail) {
+    emit(type, detail, target = this) {
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,
@@ -21,7 +21,7 @@ class MDComponent extends LitElement {
             detail,
         });
 
-        this.dispatchEvent(event);
+        target.dispatchEvent(event);
     }
 }
 

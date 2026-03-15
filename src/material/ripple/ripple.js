@@ -11,17 +11,17 @@ class RippleController {
         };
     }
 
-    handlePointerenter(event) {
+    _handlePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
-    handlePointerleave(event) {
+    _handlePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
-    handlePointerdown(event) {
-        window.addEventListener("pointerup", this.handlePointerup, { passive: true });
-        window.addEventListener("touchend", this.handlePointerup, { passive: true });
+    _handlePointerdown(event) {
+        window.addEventListener("pointerup", this._handlePointerup, { passive: true });
+        window.addEventListener("touchend", this._handlePointerup, { passive: true });
 
         this.container.classList.add("md-ripple--press");
 
@@ -41,18 +41,18 @@ class RippleController {
         }
     }
 
-    handlePointerup(event) {
+    _handlePointerup(event) {
         this.container.classList.remove("md-ripple--press");
 
-        window.removeEventListener("pointerup", this.handlePointerup);
-        window.removeEventListener("touchend", this.handlePointerup);
+        window.removeEventListener("pointerup", this._handlePointerup);
+        window.removeEventListener("touchend", this._handlePointerup);
     }
 
-    handleFocus(event) {
+    _handleFocus(event) {
         this.container.classList.add("md-ripple--focus");
     }
 
-    handleBlur(event) {
+    _handleBlur(event) {
         this.container.classList.remove("md-ripple--focus");
     }
 
@@ -73,18 +73,18 @@ class RippleController {
         this.trigger = this.options.trigger || this.host;
         this.trigger.classList.add("md-ripple--trigger");
 
-        this.handlePointerenter = this.handlePointerenter.bind(this);
-        this.handlePointerleave = this.handlePointerleave.bind(this);
-        this.handlePointerdown = this.handlePointerdown.bind(this);
-        this.handlePointerup = this.handlePointerup.bind(this);
-        this.handleFocus = this.handleFocus.bind(this);
-        this.handleBlur = this.handleBlur.bind(this);
+        this._handlePointerenter = this._handlePointerenter.bind(this);
+        this._handlePointerleave = this._handlePointerleave.bind(this);
+        this._handlePointerdown = this._handlePointerdown.bind(this);
+        this._handlePointerup = this._handlePointerup.bind(this);
+        this._handleFocus = this._handleFocus.bind(this);
+        this._handleBlur = this._handleBlur.bind(this);
 
-        this.trigger.addEventListener("pointerenter", this.handlePointerenter);
-        this.trigger.addEventListener("pointerleave", this.handlePointerleave);
-        this.trigger.addEventListener("pointerdown", this.handlePointerdown);
-        this.trigger.addEventListener("focus", this.handleFocus);
-        this.trigger.addEventListener("blur", this.handleBlur);
+        this.trigger.addEventListener("pointerenter", this._handlePointerenter);
+        this.trigger.addEventListener("pointerleave", this._handlePointerleave);
+        this.trigger.addEventListener("pointerdown", this._handlePointerdown);
+        this.trigger.addEventListener("focus", this._handleFocus);
+        this.trigger.addEventListener("blur", this._handleBlur);
     }
 
     hostDisconnected() {
@@ -96,11 +96,11 @@ class RippleController {
 
         this.trigger.classList.remove("md-ripple--trigger");
 
-        this.trigger.removeEventListener("pointerenter", this.handlePointerenter);
-        this.trigger.removeEventListener("pointerleave", this.handlePointerleave);
-        this.trigger.removeEventListener("pointerdown", this.handlePointerdown);
-        this.trigger.removeEventListener("focus", this.handleFocus);
-        this.trigger.removeEventListener("blur", this.handleBlur);
+        this.trigger.removeEventListener("pointerenter", this._handlePointerenter);
+        this.trigger.removeEventListener("pointerleave", this._handlePointerleave);
+        this.trigger.removeEventListener("pointerdown", this._handlePointerdown);
+        this.trigger.removeEventListener("focus", this._handleFocus);
+        this.trigger.removeEventListener("blur", this._handleBlur);
     }
 }
 
