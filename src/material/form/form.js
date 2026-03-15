@@ -31,33 +31,30 @@ class MDForm extends MDComponent {
         this.noValidate = true;
         // this.target=''
 
-        this._children = Array(this.children);
+        this._childNodes = Array.from(this.childNodes);
+        this.innerHTML = "";
     }
 
     get formNative() {
         return this.querySelector(".md-form__native");
     }
 
-    _handleFormdata(event) {
-        console.debug(Object.fromEntries(event.formData.entries()));
+    _handleFormNativedata(event) {
+        console.debug(JSON.stringify([...event.formData.entries()], null, 2));
 
-        this.emit("formData", { event });
+        this.emit("formNativeData", { event });
     }
 
-    _handleReset(event) {
-        for (const element of this.formNative.elements) {
-            this.emit("reset", { event, element }, element);
-        }
-
-        this.emit("formReset", { event });
+    _handleNativeReset(event) {
+        this.emit("formNativeReset", { event });
     }
 
-    _handleSubmit(event) {
+    _handleNativeSubmit(event) {
         event.preventDefault();
 
         new FormData(this.formNative);
 
-        this.emit("formSubmit", { event });
+        this.emit("formNativeSubmit", { event });
     }
 
     render() {
@@ -73,10 +70,10 @@ class MDForm extends MDComponent {
                 .name="${ifDefined(this.name)}"
                 .noValidate="${ifDefined(this.noValidate)}"
                 .target="${ifDefined(this.target)}"
-                @formdata="${this._handleFormdata}"
-                @reset="${this._handleReset}"
-                @submit="${this._handleSubmit}"
-            >${this._children}</form>
+                @formdata="${this._handleFormNativedata}"
+                @reset="${this._handleNativeReset}"
+                @submit="${this._handleNativeSubmit}"
+            >${this._childNodes}</form>
         `
     }
 

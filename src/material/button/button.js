@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { RippleController } from "../ripple/ripple.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 class MDButton extends MDComponent {
     static properties = {
@@ -36,7 +37,7 @@ class MDButton extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <button .type="${this.type}" class="md-button__native"></button>
+            <button type="${ifDefined(this.type)}" class="md-button__native"></button>
             ${this.icon?html`<md-icon class="md-button__icon">${this.icon}</md-icon>`:nothing}
             ${this.label?html`<div class="md-button__label">${this.label}</div>`:nothing}
         `

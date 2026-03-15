@@ -1,0 +1,102 @@
+.md-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 52px;
+    height: 32px;
+    position: relative;
+}
+.md-switch__native {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    appearance: none;
+    z-index: 10;
+
+    &:checked {
+        + .md-switch__track {
+            background-color: var(--md-sys-color-primary);
+            border-color: var(--md-sys-color-primary);
+            .md-switch__thumb {
+                width: 24px;
+                height: 24px;
+                border-radius: 12px;
+                background-color: var(--md-sys-color-on-primary);
+                left: 22px;
+                .md-switch__icon {
+                    color: var(--md-sys-color-on-primary-container);
+                }
+            }
+        }
+    }
+
+    &:active {
+        + .md-switch__track {
+            .md-switch__thumb {
+                width: 28px;
+                height: 28px;
+                border-radius: 14px;
+                left: 0;
+            }
+        }
+        &:checked {
+            + .md-switch__track {
+                .md-switch__thumb {
+                    left: 20px;
+                }
+            }
+        }
+    }
+}
+.md-switch__track {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 52px;
+    height: 32px;
+    border-radius: 16px;
+    border: 2px solid var(--md-sys-color-outline);
+    background-color: var(--md-sys-color-surface-container-highest);
+    position: relative;
+}
+.md-switch__thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: var(--md-sys-color-outline);
+    position: absolute;
+    left: 2px;
+    &.md-ripple {
+        &::after {
+            width: 40px;
+        }
+    }
+    &:empty {
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        left: 6px;
+    }
+}
+.md-switch__icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+.md-switch__track,
+.md-switch__thumb,
+.md-switch__icon {
+    will-change: background-color, color, border, left, width, height, border-radius;
+    transition-property: background-color, color, border, left, width, height, border-radius;
+    transition-duration: var(--md-sys-motion-duration-short3);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}

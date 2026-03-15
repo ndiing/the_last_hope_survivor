@@ -104,8 +104,9 @@ class TestForm extends MDComponent {
                     <!-- checkbox -->
                     <md-layout-column-item expanded="4" medium="8" compact="4">
                         checkbox<br>
-                        <label for="checkbox0"><input id="checkbox0" type="checkbox" name="checkbox" value="checkbox0" checked /> Option 1</label><br>
-                        <label for="checkbox1"><input id="checkbox1" type="checkbox" name="checkbox" value="checkbox1" checked /> Option 2</label>
+                        <label for="checkbox0"><input id="checkbox0" type="checkbox" name="checkbox" value="checkbox0"  /> Option 1</label><br>
+                        <label for="checkbox1"><input id="checkbox1" type="checkbox" name="checkbox" value="checkbox1"  /> Option 2</label><br>
+                        <label for="checkbox2"><input id="checkbox2" type="checkbox" name="checkbox" value="checkbox2" checked /> Option 3</label>
                     </md-layout-column-item>
                     
                     <!-- radio -->

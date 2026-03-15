@@ -89,7 +89,9 @@ class RippleController {
         this.trigger.addEventListener("blur", this._handleBlur);
     }
 
-    hostDisconnected() {
+    async hostDisconnected() {
+        await this.host.updateComplete;
+
         this.container.classList.remove("md-ripple");
         this.container.classList.remove("md-ripple--bounded");
         this.container.removeAttribute("tabIndex");

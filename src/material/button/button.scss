@@ -9,6 +9,7 @@
 
     &,
     .md-button__icon {
+        will-change: border-radius, background-color, color, border, box-shadow;
         transition-property: border-radius, background-color, color, border, box-shadow;
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -23,6 +24,7 @@
     bottom: 0;
     background-color: transparent;
     color: transparent;
+    z-index: 10;
 }
 
 .md-button--toggle {

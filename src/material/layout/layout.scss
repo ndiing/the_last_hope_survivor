@@ -83,6 +83,7 @@
 }
 .md-layout-border__item {
     overflow: auto;
+    will-change: margin;
     transition: margin var(--md-sys-motion-duration-short2) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
