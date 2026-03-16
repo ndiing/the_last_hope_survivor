@@ -10,7 +10,7 @@ class TestRadioButton extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-form>
-                <md-layout-column style="margin:24px;">
+                <md-layout-column >
 
                     <md-layout-column-item expanded="4" medium="8" compact="4">
                         <md-radio-button name="radio-button" value="radio-button0"></md-radio-button><br><br>

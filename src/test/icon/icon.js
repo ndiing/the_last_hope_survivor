@@ -5,7 +5,7 @@ class TestIcon extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column >
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-icon>image</md-icon>
                 </md-layout-column-item>

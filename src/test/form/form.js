@@ -9,7 +9,7 @@ class TestForm extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-form>
+            <md-form >
                 <md-layout-column>
                     <!-- email -->
                     <md-layout-column-item expanded="4" medium="8" compact="4">

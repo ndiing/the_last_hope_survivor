@@ -41,20 +41,20 @@ class MDSwitch extends MDComponent {
         this.icons = [];
     }
 
-    get radioButtonNative() {
+    get switchNative() {
         return this.querySelector(".md-switch__native");
     }
 
     formResetCallback() {
-        this.radioButtonNative.checked = this._snapshot.checked;
+        this.switchNative.checked = this._snapshot.checked;
 
         this.checked = this._snapshot.checked;
     }
 
     _handleCheckboxNativeInput(event) {
-        this.checked = this.radioButtonNative.checked;
+        this.checked = this.switchNative.checked;
 
-        this.emit("radioButtonNativeInput", { event });
+        this.emit("switchNativeInput", { event });
     }
 
     render() {

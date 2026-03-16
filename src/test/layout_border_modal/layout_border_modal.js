@@ -9,10 +9,10 @@ class TestLayoutBorderModal extends MDComponent {
                 <md-layout-border-item id="north" region="north" modal>north</md-layout-border-item>
                 <md-layout-border-item id="west" region="west" modal>west</md-layout-border-item>
                 <md-layout-border-item region="center">
-                    <button @click="${this.handleNorthToggle}">north toggle</button><br>
-                    <button @click="${this.handleWestToggle}">west toggle</button><br>
-                    <button @click="${this.handleEastToggle}">east toggle</button><br>
-                    <button @click="${this.handleSouthToggle}">south toggle</button><br>
+                    <button @click="${this.handleNorthToggle}">north toggle</button><br><br>
+                    <button @click="${this.handleWestToggle}">west toggle</button><br><br>
+                    <button @click="${this.handleEastToggle}">east toggle</button><br><br>
+                    <button @click="${this.handleSouthToggle}">south toggle</button>
                 </md-layout-border-item>
                 <md-layout-border-item id="east" region="east" modal>east</md-layout-border-item>
                 <md-layout-border-item id="south" region="south" modal>south</md-layout-border-item>

@@ -76,6 +76,7 @@ class MDButton extends MDComponent {
             }
         });
     }
+
     _applySizeClass() {
         this.sizes.forEach((size) => {
             if (this.size === size) {
@@ -85,6 +86,7 @@ class MDButton extends MDComponent {
             }
         });
     }
+
     _applyShapeClass() {
         this.shapes.forEach((shape) => {
             if (this.shape === shape) {
@@ -94,6 +96,7 @@ class MDButton extends MDComponent {
             }
         });
     }
+
     _applyColorClass() {
         this.colors.forEach((color) => {
             if (this.color === color) {
@@ -103,6 +106,7 @@ class MDButton extends MDComponent {
             }
         });
     }
+
     _applySelectedClass() {
         if (this.selected) {
             this.classList.add(`md-button--selected`);

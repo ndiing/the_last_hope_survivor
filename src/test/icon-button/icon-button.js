@@ -5,7 +5,7 @@ class TestIconButton extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="margin:24px;">
+            <md-layout-column >
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-icon-button icon="edit" variant="default"></md-icon-button>

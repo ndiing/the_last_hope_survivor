@@ -1,0 +1,27 @@
+.md-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-avatar--extra-small {
+    width: 32px;
+    height: 32px;
+}
+.md-avatar--small {
+    width: 40px;
+    height: 40px;
+}
+.md-avatar--medium {
+    width: 56px;
+    height: 56px;
+}
+.md-avatar--large {
+    width: 96px;
+    height: 96px;
+}
+.md-avatar--extra-large {
+    width: 136px;
+    height: 136px;
+}

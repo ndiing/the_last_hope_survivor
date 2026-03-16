@@ -5,7 +5,7 @@ class TestImage extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column >
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-image style="width:64px;" src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=Leo"></md-image>
                 </md-layout-column-item>

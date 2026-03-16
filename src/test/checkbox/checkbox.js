@@ -10,7 +10,7 @@ class TestCheckbox extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-form>
-                <md-layout-column style="margin:24px;">
+                <md-layout-column >
 
                     <md-layout-column-item expanded="4" medium="8" compact="4">
                         <md-checkbox name="checkbox" value="checkbox0"></md-checkbox><br><br>

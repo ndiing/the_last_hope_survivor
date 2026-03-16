@@ -9,6 +9,8 @@ import "./button/button.js";
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
+import "./avatar/avatar.js";
+import "./text-field/text-field.js";
 import "./form/form.js";
 import "./scrim/scrim.js";
 import "./layout-column/layout-column.js";

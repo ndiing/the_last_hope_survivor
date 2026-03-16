@@ -1,0 +1,457 @@
+// src\material\text-field\text-field.js
+import { html, nothing } from "lit";
+import { MDComponent } from "../component/component.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+
+class MDTextField extends MDComponent {
+    static formAssociated = true;
+
+    static properties = {
+        label: { type: String },
+        leadingIcons: { type: Array },
+        prefix: { type: String },
+
+        placeholder: { type: String },
+        name: { type: String },
+        value: { type: String },
+        required: { type: Boolean },
+        validationMessage: { type: String },
+
+        suffix: { type: String },
+        trailingIcons: { type: Array },
+        supportingText: { type: String },
+        characterCounter: { type: String },
+
+        variant: { type: String },
+        adjacentLabel: { type: Boolean },
+    };
+
+    variants = ["standard", "filled", "outlined"];
+
+    constructor(){
+        super()
+        this.value=''
+    }
+
+    get textFieldNative() {
+        return this.querySelector(".md-text-field__native");
+    }
+
+    
+    formResetCallback() {
+        this.textFieldNative.value = this._snapshot.value;
+
+        this.value = this._snapshot.value;
+        this.validationMessage = '';
+    }
+
+    _handleTextFieldNativeFocus(event) {
+        this.classList.add("md-text-field--focus");
+
+        this.emit("textFieldNativeFocus", { event });
+    }
+
+    _handleTextFieldNativeBlur(event) {
+        this.classList.remove("md-text-field--focus");
+
+        this.emit("textFieldNativeBlur", { event });
+    }
+
+    _handleTextFieldNativeInput(event) {
+        this.value = this.textFieldNative.value;
+        this.validationMessage = this.textFieldNative.validationMessage;
+
+        this.emit("textFieldNativeInput", { event });
+    }
+
+    _handleTextFieldNativeInvalid(event) {
+        event.preventDefault()
+
+        this.validationMessage = this.textFieldNative.validationMessage;
+
+        this.emit("textFieldNativeInvalid", { event });
+    }
+
+    render() {
+        /* prettier-ignore */
+        return html`
+            ${this.label?html`<div class="md-text-field__label">${this.label}</div>`:nothing}
+            <div class="md-text-field__container">
+                ${this.leadingIcons?html`<div class="md-text-field__leading-icons">${this.leadingIcons.map(icon=>html`<md-icon class="md-text-field__icon">${icon}</md-icon>`)}</div>`:nothing}
+                ${this.prefix?html`<div class="md-text-field__prefix">${this.prefix}</div>`:nothing}
+                <input 
+                    class="md-text-field__native"
+                    type="text" 
+                    placeholder="${ifDefined(this.placeholder)}" 
+                    name="${ifDefined(this.name)}" 
+                    value="${ifDefined(this.value)}" 
+                    ?required="${ifDefined(this.required)}" 
+                    @focus="${this._handleTextFieldNativeFocus}"
+                    @blur="${this._handleTextFieldNativeBlur}"
+                    @input="${this._handleTextFieldNativeInput}"
+                    @invalid="${this._handleTextFieldNativeInvalid}"
+                >
+                ${this.suffix?html`<div class="md-text-field__suffix">${this.suffix}</div>`:nothing}
+                ${this.trailingIcons?html`<div class="md-text-field__trailing-icons">${this.trailingIcons.map(icon=>html`<md-icon class="md-text-field__icon">${icon}</md-icon>`)}</div>`:nothing}
+            </div>
+            <div class="md-text-field__information">
+                ${this.supportingText||this.validationMessage?html`<div class="md-text-field__supporting-text">${this.supportingText||this.validationMessage}</div>`:nothing}
+                ${this.characterCounter?html`<div class="md-text-field__character-counter">${this.characterCounter}</div>`:nothing}
+            </div>
+        `
+    }
+
+    async connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-text-field");
+
+        
+        this._snapshot = {
+            value: this.value,
+        };
+
+        await this.updateComplete;
+
+        const offsetLeft = this.querySelector(".md-text-field__prefix, .md-text-field__native").offsetLeft;
+        this.style.setProperty("--md-comp-text-field-native-offset-left", offsetLeft + "px");
+    }
+
+    _applyVariantClass() {
+        this.variants.forEach((variant) => {
+            if (this.variant === variant) {
+                this.classList.add(`md-text-field--${variant}`);
+            } else {
+                this.classList.remove(`md-text-field--${variant}`);
+            }
+        });
+    }
+
+    _applyAdjacentLabelClass() {
+        if (this.adjacentLabel) {
+            this.classList.add(`md-text-field--adjacent-label`);
+        } else {
+            this.classList.remove(`md-text-field--adjacent-label`);
+        }
+    }
+
+    _applyLabelClass() {
+        if (this.label) {
+            this.classList.add(`md-text-field--label`);
+        } else {
+            this.classList.remove(`md-text-field--label`);
+        }
+    }
+
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has("variant")) {
+            this._applyVariantClass();
+        }
+
+        if (_changedProperties.has("adjacentLabel")) {
+            this._applyAdjacentLabelClass();
+        }
+
+        if (_changedProperties.has("label")) {
+            this._applyLabelClass();
+        }
+
+        if (_changedProperties.has("value")) {
+            this.classList.toggle("md-text-field--populated", !!this.value);
+        }
+        if (_changedProperties.has("validationMessage")) {
+            this.classList.toggle("md-text-field--error", !!this.validationMessage);
+        }
+    }
+}
+
+customElements.define("md-text-field", MDTextField);
+
+export { MDTextField };
+
+// src\material\text-field\text-field.scss
+@use "../mixins/mixins.scss";
+
+.md-text-field {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px 0;
+    width: 100%;
+    position: relative;
+}
+.md-text-field__label {
+    padding: 0 16px;
+    @include mixins.typescale-body-small();
+}
+.md-text-field__container {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background-color: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface-variant);
+
+    will-change: border-radius, background-color, color, box-shadow;
+    transition-property: border-radius, background-color, color, box-shadow;
+    transition-duration: var(--md-sys-motion-duration-short1);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+.md-text-field__leading-icons {
+    display: inline-flex;
+    gap: 0 16px;
+    margin-left: -4px;
+}
+.md-text-field__prefix {
+    margin-right: -16px;
+    @include mixins.typescale-body-large();
+}
+.md-text-field__native {
+    appearance: none;
+    background-color: transparent;
+    color: inherit;
+    width: 100%;
+    padding: calc((56px - 24px) / 2) 0;
+    @include mixins.typescale-body-large();
+    &::placeholder {
+        color: inherit;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.md-text-field__suffix {
+    margin-left: -16px;
+    @include mixins.typescale-body-large();
+}
+
+.md-text-field__prefix,
+.md-text-field__suffix,
+.md-text-field__native {
+    will-change: padding;
+    transition-property: padding;
+    transition-duration: var(--md-sys-motion-duration-short1);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+
+.md-text-field__trailing-icons {
+    display: inline-flex;
+    gap: 0 16px;
+    margin-right: -4px;
+}
+.md-text-field__information {
+    display: flex;
+    gap: 0 16px;
+    padding: 0 16px;
+}
+.md-text-field__supporting-text {
+    width: 100%;
+    @include mixins.typescale-body-small();
+}
+.md-text-field__character-counter {
+    margin-left: auto;
+    @include mixins.typescale-body-small();
+}
+
+.md-text-field__label,
+.md-text-field__supporting-text,
+.md-text-field__character-counter,
+.md-text-field__leading-icons .md-text-field__icon {
+    will-change: color;
+    transition-property: color;
+    transition-duration: var(--md-sys-motion-duration-short1);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+
+.md-text-field--populated {
+}
+.md-text-field--focus {
+    .md-text-field__label,
+    .md-text-field__supporting-text,
+    .md-text-field__character-counter,
+    .md-text-field__leading-icons .md-text-field__icon {
+        color: var(--md-sys-color-primary);
+    }
+}
+.md-text-field--error {
+    .md-text-field__label,
+    .md-text-field__supporting-text,
+    .md-text-field__character-counter,
+    .md-text-field__leading-icons .md-text-field__icon {
+        color: var(--md-sys-color-error);
+    }
+}
+
+.md-text-field--standard {
+    .md-text-field__container {
+        border-radius: 4px;
+        background-color: var(--md-sys-color-surface-container-highest);
+        color: var(--md-sys-color-on-surface-variant);
+    }
+    // &.md-text-field--focus {
+    //     .md-text-field__container{}
+    // }
+}
+.md-text-field--filled {
+    .md-text-field__container {
+        border-radius: 4px 4px 0 0;
+        background-color: var(--md-sys-color-surface-container-highest);
+        color: var(--md-sys-color-on-surface-variant);
+        box-shadow: inset 0 -1px 0 0 var(--md-sys-color-outline);
+    }
+
+    &:not(.md-text-field--adjacent-label).md-text-field--label {
+        .md-text-field__label {
+            position: absolute;
+            padding-top: calc((56px - 24px) / 2);
+            padding-left: var(--md-comp-text-field-native-offset-left);
+            @include mixins.typescale-body-large();
+            pointer-events: none;
+
+            will-change: font, padding;
+            transition-property: font, padding;
+            transition-duration: var(--md-sys-motion-duration-short1);
+            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        }
+
+        .md-text-field__prefix,
+        .md-text-field__suffix {
+            visibility: hidden;
+        }
+        .md-text-field__native {
+            &::placeholder {
+                visibility: hidden;
+            }
+        }
+    }
+
+    &.md-text-field--populated,
+    &.md-text-field--focus {
+        &:not(.md-text-field--adjacent-label).md-text-field--label {
+            .md-text-field__label {
+                padding-top: calc(((56px - 16px) / 2) - 12px);
+                padding-bottom: calc(((56px - 16px) / 2) + 12px);
+                @include mixins.typescale-body-small();
+            }
+
+            .md-text-field__prefix,
+            .md-text-field__suffix,
+            .md-text-field__native {
+                padding-top: calc(((56px - 24px) / 2) + 8px);
+                padding-bottom: calc(((56px - 24px) / 2) - 8px);
+            }
+            .md-text-field__prefix,
+            .md-text-field__suffix {
+                visibility: visible;
+            }
+            .md-text-field__native {
+                &::placeholder {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    &.md-text-field--focus {
+        .md-text-field__container {
+            box-shadow: inset 0 -2px 0 0 var(--md-sys-color-primary);
+        }
+    }
+    &.md-text-field--error {
+        .md-text-field__container {
+            box-shadow: inset 0 -2px 0 0 var(--md-sys-color-error);
+        }
+    }
+}
+.md-text-field--outlined {
+    .md-text-field__container {
+        border-radius: 4px;
+        background-color: transparent;
+        color: var(--md-sys-color-on-surface-variant);
+        box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
+    }
+
+    &:not(.md-text-field--adjacent-label).md-text-field--label {
+        .md-text-field__label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            position: absolute;
+            z-index: 1;
+            padding-top: calc((56px - 24px) / 2);
+            padding-left: 4px;
+            padding-right: 4px;
+            margin-left: calc(var(--md-comp-text-field-native-offset-left) - 4px);
+            @include mixins.typescale-body-large();
+            pointer-events: none;
+
+            will-change: font, padding, top, margin;
+            transition-property: font, padding, top, margin;
+            transition-duration: var(--md-sys-motion-duration-short1);
+            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                width: 0%;
+                height: 100%;
+                background-color: var(--md-sys-color-background);
+
+                will-change: width;
+                transition-property: width;
+                transition-duration: var(--md-sys-motion-duration-short1);
+                transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+            }
+        }
+
+        .md-text-field__prefix,
+        .md-text-field__suffix {
+            visibility: hidden;
+        }
+        .md-text-field__native {
+            &::placeholder {
+                visibility: hidden;
+            }
+        }
+    }
+
+    &.md-text-field--populated,
+    &.md-text-field--focus {
+        &:not(.md-text-field--adjacent-label).md-text-field--label {
+            .md-text-field__label {
+                padding-top: 0;
+                top: -8px;
+                margin-left: calc(16px - 4px);
+                @include mixins.typescale-body-small();
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            .md-text-field__prefix,
+            .md-text-field__suffix {
+                visibility: visible;
+            }
+            .md-text-field__native {
+                &::placeholder {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    &.md-text-field--focus {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 2px var(--md-sys-color-primary);
+        }
+    }
+    &.md-text-field--error {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 2px var(--md-sys-color-error);
+        }
+    }
+}

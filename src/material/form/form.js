@@ -28,7 +28,7 @@ class MDForm extends MDComponent {
         this.enctype = "application/json";
         this.method = "post";
         // this.name=''
-        this.noValidate = true;
+        this.noValidate = false;
         // this.target=''
 
         this._childNodes = Array.from(this.childNodes);

@@ -14,6 +14,8 @@ const routes = [
         {path:'/checkbox',load:()=>import('./checkbox/checkbox.js').then(module=>module.default)},
         {path:'/radio-button',load:()=>import('./radio-button/radio-button.js').then(module=>module.default)},
         {path:'/switch',load:()=>import('./switch/switch.js').then(module=>module.default)},
+        {path:'/avatar',load:()=>import('./avatar/avatar.js').then(module=>module.default)},
+        {path:'/text-field',load:()=>import('./text-field/text-field.js').then(module=>module.default)},
         {path:'/form',load:()=>import('./form/form.js').then(module=>module.default)},
         {path:'/scrim',load:()=>import('./scrim/scrim.js').then(module=>module.default)},
         {path:'/layout-column',load:()=>import('./layout_column/layout_column.js').then(module=>module.default)},
