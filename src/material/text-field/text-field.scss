@@ -44,9 +44,6 @@
     &::placeholder {
         color: inherit;
     }
-    &:focus {
-        outline: none;
-    }
 }
 .md-text-field__suffix {
     margin-left: -16px;
@@ -91,8 +88,8 @@
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
-.md-text-field--populated {
-}
+// .md-text-field--populated {
+// }
 .md-text-field--focus {
     .md-text-field__label,
     .md-text-field__supporting-text,
@@ -279,5 +276,12 @@
         .md-text-field__container {
             box-shadow: inset 0 0 0 2px var(--md-sys-color-error);
         }
+    }
+}
+
+// .md-text-field--square{}
+.md-text-field--round {
+    .md-text-field__container {
+        border-radius: 28px;
     }
 }

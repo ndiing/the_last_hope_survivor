@@ -17,7 +17,7 @@ class MDTextField extends MDComponent {
         min: { type: Number },
         max: { type: Number },
         step: { type: Number },
-        type: { type: Number },
+        type: { type: String },
         pattern: { type: String },
         name: { type: String },
         value: { type: String },
@@ -30,9 +30,12 @@ class MDTextField extends MDComponent {
         variant: { type: String },
         adjacentLabel: { type: Boolean },
         validationMessage: { type: String },
+        shape: { type: String },
     };
 
     variants = ["standard", "filled", "outlined"];
+
+    shapes = ["round", "square"];
 
     get textFieldNative() {
         return this.querySelector(".md-text-field__native");
@@ -139,6 +142,16 @@ class MDTextField extends MDComponent {
         });
     }
 
+    _applyShapeClass() {
+        this.shapes.forEach((shape) => {
+            if (this.shape === shape) {
+                this.classList.add(`md-text-field--${shape}`);
+            } else {
+                this.classList.remove(`md-text-field--${shape}`);
+            }
+        });
+    }
+
     _applyAdjacentLabelClass() {
         if (this.adjacentLabel) {
             this.classList.add(`md-text-field--adjacent-label`);
@@ -160,6 +173,10 @@ class MDTextField extends MDComponent {
 
         if (_changedProperties.has("variant")) {
             this._applyVariantClass();
+        }
+
+        if (_changedProperties.has("shape")) {
+            this._applyShapeClass();
         }
 
         if (_changedProperties.has("adjacentLabel")) {

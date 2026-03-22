@@ -1,5 +1,5 @@
 import testMain from "./main/main.js";
-import testNotFound from "./not_found/not_found.js";
+import testNotFound from "./not-found/not-found.js";
 
 /* prettier-ignore */
 const routes = [
@@ -16,14 +16,15 @@ const routes = [
         {path:'/switch',load:()=>import('./switch/switch.js').then(module=>module.default)},
         {path:'/avatar',load:()=>import('./avatar/avatar.js').then(module=>module.default)},
         {path:'/text-field',load:()=>import('./text-field/text-field.js').then(module=>module.default)},
+        {path:'/text-field-round',load:()=>import('./text-field-round/text-field-round.js').then(module=>module.default)},
         {path:'/form',load:()=>import('./form/form.js').then(module=>module.default)},
         {path:'/scrim',load:()=>import('./scrim/scrim.js').then(module=>module.default)},
-        {path:'/layout-column',load:()=>import('./layout_column/layout_column.js').then(module=>module.default)},
-        {path:'/layout-column-expanded',load:()=>import('./layout_column_expanded/layout_column_expanded.js').then(module=>module.default)},
-        {path:'/layout-column-medium',load:()=>import('./layout_column_medium/layout_column_medium.js').then(module=>module.default)},
-        {path:'/layout-column-compact',load:()=>import('./layout_column_compact/layout_column_compact.js').then(module=>module.default)},
-        {path:'/layout-border',load:()=>import('./layout_border/layout_border.js').then(module=>module.default)},
-        {path:'/layout-border-modal',load:()=>import('./layout_border_modal/layout_border_modal.js').then(module=>module.default)},
+        {path:'/layout-column',load:()=>import('./layout-column/layout-column.js').then(module=>module.default)},
+        {path:'/layout-column-expanded',load:()=>import('./layout-column-expanded/layout-column-expanded.js').then(module=>module.default)},
+        {path:'/layout-column-medium',load:()=>import('./layout-column-medium/layout-column-medium.js').then(module=>module.default)},
+        {path:'/layout-column-compact',load:()=>import('./layout-column-compact/layout-column-compact.js').then(module=>module.default)},
+        {path:'/layout-border',load:()=>import('./layout-border/layout-border.js').then(module=>module.default)},
+        {path:'/layout-border-modal',load:()=>import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
     ]},
     {path:'*',component:testNotFound},
 ]
