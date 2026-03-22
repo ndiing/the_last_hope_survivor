@@ -20,22 +20,22 @@ class MDCheckbox extends MDComponent {
         unbounded: true,
     });
 
+    get checkboxNative() {
+        return this.querySelector(".md-checkbox__native");
+    }
+
     constructor() {
         super();
 
         this.value = "on";
     }
 
-    get checkboxNative() {
-        return this.querySelector(".md-checkbox__native");
-    }
-
     formResetCallback() {
         this.checkboxNative.indeterminate = this._snapshot.indeterminate;
         this.checkboxNative.checked = this._snapshot.checked;
 
-        this.indeterminate = this._snapshot.indeterminate;
-        this.checked = this._snapshot.checked;
+        this.indeterminate = this.checkboxNative.indeterminate;
+        this.checked = this.checkboxNative.checked;
     }
 
     _handleCheckboxNativeInput(event) {
@@ -65,12 +65,12 @@ class MDCheckbox extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-checkbox");
-
         this._snapshot = {
             indeterminate: this.indeterminate,
             checked: this.checked,
         };
+
+        this.classList.add("md-checkbox");
     }
 }
 

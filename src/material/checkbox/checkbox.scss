@@ -51,5 +51,10 @@
     border: 2px solid var(--md-sys-color-on-surface-variant);
     border-radius: 2px;
 }
+.md-checkbox__container,
 .md-checkbox__icon {
+    will-change: background-color, color, border, margin, transform, height;
+    transition-property: background-color, color, border, margin, transform, height;
+    transition-duration: var(--md-sys-motion-duration-short1);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }

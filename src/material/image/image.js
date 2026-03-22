@@ -15,9 +15,11 @@ class MDImage extends MDComponent {
 
     get _imageNativeStyle() {
         const style = {};
+
         if (this.ratio) {
             style["aspect-ratio"] = this.ratio;
         }
+
         if (this.shape === "round") {
             if (this.ratio) {
                 const [x, y] = this.ratio.split("/");
@@ -32,6 +34,7 @@ class MDImage extends MDComponent {
                 style["border-radius"] = "50%";
             }
         }
+
         return style;
     }
 

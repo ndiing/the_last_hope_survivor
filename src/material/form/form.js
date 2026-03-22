@@ -19,6 +19,10 @@ class MDForm extends MDComponent {
         target: { type: String },
     };
 
+    get formNative() {
+        return this.querySelector(".md-form__native");
+    }
+
     constructor() {
         super();
 
@@ -33,10 +37,6 @@ class MDForm extends MDComponent {
 
         this._childNodes = Array.from(this.childNodes);
         this.innerHTML = "";
-    }
-
-    get formNative() {
-        return this.querySelector(".md-form__native");
     }
 
     _handleFormNativedata(event) {

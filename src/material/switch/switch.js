@@ -10,16 +10,7 @@ class MDSwitch extends MDComponent {
         name: { type: String },
         value: { type: String },
         checked: { type: Boolean },
-        icons: {
-            type: Array,
-            converter: (value, type) => {
-                if (typeof value === "string") {
-                    return JSON.parse(value);
-                } else {
-                    return value;
-                }
-            },
-        },
+        icons: { type: Array },
     };
 
     ripple = new RippleController(this, {
@@ -30,8 +21,12 @@ class MDSwitch extends MDComponent {
         centered: true,
     });
 
-    get icon() {
+    get _icon() {
         return this.icons[~~this.checked];
+    }
+
+    get switchNative() {
+        return this.querySelector(".md-switch__native");
     }
 
     constructor() {
@@ -41,14 +36,10 @@ class MDSwitch extends MDComponent {
         this.icons = [];
     }
 
-    get switchNative() {
-        return this.querySelector(".md-switch__native");
-    }
-
     formResetCallback() {
         this.switchNative.checked = this._snapshot.checked;
 
-        this.checked = this._snapshot.checked;
+        this.checked = this.switchNative.checked;
     }
 
     _handleCheckboxNativeInput(event) {
@@ -69,7 +60,7 @@ class MDSwitch extends MDComponent {
                 @input="${this._handleCheckboxNativeInput}"
             >
             <div class="md-switch__track">
-                <div class="md-switch__thumb">${this.icon?html`<md-icon class="md-switch__icon">${this.icon}</md-icon>`:nothing}</div>
+                <div class="md-switch__thumb">${this._icon?html`<md-icon class="md-switch__icon">${this._icon}</md-icon>`:nothing}</div>
             </div>
         `
     }
@@ -77,11 +68,11 @@ class MDSwitch extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-switch");
-
         this._snapshot = {
             checked: this.checked,
         };
+
+        this.classList.add("md-switch");
     }
 }
 

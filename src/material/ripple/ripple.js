@@ -60,7 +60,9 @@ class RippleController {
         await this.host.updateComplete;
 
         this.container = this.options.container ? this.host.querySelector(this.options.container) : this.host;
+
         this.container.classList.add("md-ripple");
+
         if (!this.options.unbounded) {
             this.container.classList.add("md-ripple--bounded");
         }
@@ -73,6 +75,7 @@ class RippleController {
         this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
 
         this.trigger = this.options.trigger ? this.host.querySelector(this.options.trigger) : this.host;
+
         this.trigger.classList.add("md-ripple--trigger");
 
         this._handlePointerenter = this._handlePointerenter.bind(this);
@@ -93,7 +96,9 @@ class RippleController {
         await this.host.updateComplete;
 
         this.container.classList.remove("md-ripple");
+
         this.container.classList.remove("md-ripple--bounded");
+
         this.container.removeAttribute("tabIndex");
 
         this.container.style.removeProperty("--md-comp-ripple-radius");

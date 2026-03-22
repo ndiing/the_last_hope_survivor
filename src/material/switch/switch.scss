@@ -98,6 +98,6 @@
 .md-switch__icon {
     will-change: background-color, color, border, left, width, height, border-radius;
     transition-property: background-color, color, border, left, width, height, border-radius;
-    transition-duration: var(--md-sys-motion-duration-short3);
+    transition-duration: var(--md-sys-motion-duration-short1);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }

@@ -14,9 +14,13 @@ class MDIconButton extends MDComponent {
     };
 
     variants = ["default", "toggle"];
+
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
+
     shapes = ["round", "square"];
+
     colors = ["filled", "tonal", "outlined", "standard"];
+
     widths = ["default", "narrow", "wide"];
 
     ripple = new RippleController(this);
@@ -42,6 +46,7 @@ class MDIconButton extends MDComponent {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
         }
+
         this.emit("iconButtonClick", { event });
     }
 
@@ -122,21 +127,27 @@ class MDIconButton extends MDComponent {
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
+
         if (_changedProperties.has("variant")) {
             this._applyVariantClass();
         }
+
         if (_changedProperties.has("size")) {
             this._applySizeClass();
         }
+
         if (_changedProperties.has("shape")) {
             this._applyShapeClass();
         }
+
         if (_changedProperties.has("color")) {
             this._applyColorClass();
         }
+
         if (_changedProperties.has("width")) {
             this._applyWidthClass();
         }
+
         if (_changedProperties.has("selected")) {
             this._applySelectedClass();
         }

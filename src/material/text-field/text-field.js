@@ -34,6 +34,10 @@ class MDTextField extends MDComponent {
 
     variants = ["standard", "filled", "outlined"];
 
+    get textFieldNative() {
+        return this.querySelector(".md-text-field__native");
+    }
+
     constructor() {
         super();
 
@@ -42,14 +46,10 @@ class MDTextField extends MDComponent {
         this.value = "";
     }
 
-    get textFieldNative() {
-        return this.querySelector(".md-text-field__native");
-    }
-
     formResetCallback() {
         this.textFieldNative.value = this._snapshot.value;
 
-        this.value = this._snapshot.value;
+        this.value = this.textFieldNative.value;
         this.validationMessage = "";
     }
 
@@ -67,7 +67,6 @@ class MDTextField extends MDComponent {
 
     _handleTextFieldNativeInput(event) {
         this.value = this.textFieldNative.value;
-        this.validationMessage = this.textFieldNative.validationMessage;
 
         this.emit("textFieldNativeInput", { event });
     }
@@ -174,6 +173,7 @@ class MDTextField extends MDComponent {
         if (_changedProperties.has("value")) {
             this.classList.toggle("md-text-field--populated", !!this.value);
         }
+
         if (_changedProperties.has("validationMessage")) {
             this.classList.toggle("md-text-field--error", !!this.validationMessage);
         }

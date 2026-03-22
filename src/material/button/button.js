@@ -16,8 +16,11 @@ class MDButton extends MDComponent {
     };
 
     variants = ["default", "toggle"];
+
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
+
     shapes = ["round", "square"];
+
     colors = ["elevated", "filled", "tonal", "outlined", "standard"];
 
     ripple = new RippleController(this, {
@@ -47,6 +50,7 @@ class MDButton extends MDComponent {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
         }
+
         this.emit("buttonClick", { event });
     }
 
@@ -121,15 +125,19 @@ class MDButton extends MDComponent {
         if (_changedProperties.has("variant")) {
             this._applyVariantClass();
         }
+
         if (_changedProperties.has("size")) {
             this._applySizeClass();
         }
+
         if (_changedProperties.has("shape")) {
             this._applyShapeClass();
         }
+
         if (_changedProperties.has("color")) {
             this._applyColorClass();
         }
+
         if (_changedProperties.has("selected")) {
             this._applySelectedClass();
         }

@@ -19,20 +19,20 @@ class MDRadioButton extends MDComponent {
         unbounded: true,
     });
 
+    get radioButtonNative() {
+        return this.querySelector(".md-radio-button__native");
+    }
+
     constructor() {
         super();
 
         this.value = "on";
     }
 
-    get radioButtonNative() {
-        return this.querySelector(".md-radio-button__native");
-    }
-
     formResetCallback() {
         this.radioButtonNative.checked = this._snapshot.checked;
 
-        this.checked = this._snapshot.checked;
+        this.checked = this.radioButtonNative.checked;
     }
 
     _handleCheckboxNativeInput(event) {
@@ -61,11 +61,11 @@ class MDRadioButton extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-radio-button");
-
         this._snapshot = {
             checked: this.checked,
         };
+
+        this.classList.add("md-radio-button");
     }
 }
 

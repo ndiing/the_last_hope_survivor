@@ -38,5 +38,10 @@
     border-radius: 10px;
     border: 2px solid var(--md-sys-color-on-surface-variant);
 }
+.md-radio-button__container,
 .md-radio-button__icon {
+    will-change: background-color, color, border;
+    transition-property: background-color, color, border;
+    transition-duration: var(--md-sys-motion-duration-short1);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }

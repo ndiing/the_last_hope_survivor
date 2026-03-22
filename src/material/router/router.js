@@ -56,6 +56,7 @@ class Router {
      */
     _buildQuery(search) {
         const searchParams = new URLSearchParams(search);
+
         const query = {};
         for (const [name, value] of searchParams.entries()) {
             if (query[name]) {
@@ -89,7 +90,6 @@ class Router {
     _prepareNavigation(event) {
         let pathname = "/";
         let search = "";
-
         if (this.options.historyApiFallback) {
             pathname = window.location.pathname;
             search = window.location.search;
@@ -122,7 +122,6 @@ class Router {
                 this.params = {
                     ...matches?.groups,
                 };
-
                 return [...results, route];
             }
 
@@ -149,7 +148,6 @@ class Router {
             let outlet;
             let selector = "md-outlet:not([name])";
             let target = container;
-
             if (route.outlet) {
                 selector = `md-outlet[name="${route.outlet}"]`;
                 target = document.body;
@@ -165,7 +163,6 @@ class Router {
 
             const callback = () => {
                 outlet = target.querySelector(selector);
-
                 if (outlet) {
                     window.clearTimeout(timeout);
 
@@ -200,6 +197,7 @@ class Router {
         await new Promise((resolve, reject) => {
             const next = (error) => {
                 this.controller.signal.removeEventListener("abort", abortCallback);
+
                 window.clearTimeout(timeout);
 
                 if (error) {
@@ -218,7 +216,9 @@ class Router {
             };
 
             const timeout = window.setTimeout(timeoutCallback, 1000 * 5);
+
             this.controller.signal.addEventListener("abort", abortCallback);
+
             route.beforeLoad(next);
         });
     }
@@ -249,6 +249,7 @@ class Router {
 
         if (!route.component.isConnected) {
             route.component.isComponent = true;
+
             outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
         }
     }
@@ -288,6 +289,7 @@ class Router {
     async _handleNavigation(event) {
         try {
             this._emit("routeStart");
+
             if (this.controller && !this.controller.signal.aborted) {
                 this.controller.abort();
             }
@@ -295,11 +297,13 @@ class Router {
             if (!this.controller || (this.controller && this.controller.signal.aborted)) {
                 this.controller = new AbortController();
             }
+
             this._prepareNavigation(event);
 
             const routes = this._getRoutes();
 
             this._emit("routeUpdate");
+
             for (const route of routes) {
                 if (route.beforeLoad) {
                     try {
@@ -309,7 +313,6 @@ class Router {
                             throw error;
                         } else {
                             this._emit("routeAbort");
-
                             break;
                         }
                     }
@@ -319,6 +322,7 @@ class Router {
             }
 
             this._removeComponents(routes);
+
             this._emit("routeEnd");
         } catch (error) {
             this._emit("routeError");

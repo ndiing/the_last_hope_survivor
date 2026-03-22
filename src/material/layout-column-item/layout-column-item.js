@@ -13,6 +13,16 @@ class MDLayoutColumnItem extends MDComponent {
         this.classList.add("md-layout-column__item");
     }
 
+    _applySizeClass(columns, size) {
+        for (let i = 1; i <= columns; i++) {
+            if (this[size] === i) {
+                this.classList.add(`md-layout-column__item--${size}${i}`);
+            } else {
+                this.classList.remove(`md-layout-column__item--${size}${i}`);
+            }
+        }
+    }
+
     updated(_changedProperties) {
         super.updated(_changedProperties);
         if (_changedProperties.has("expanded")) {
@@ -25,16 +35,6 @@ class MDLayoutColumnItem extends MDComponent {
 
         if (_changedProperties.has("compact")) {
             this._applySizeClass(4, "compact");
-        }
-    }
-
-    _applySizeClass(columns, size) {
-        for (let i = 1; i <= columns; i++) {
-            if (this[size] === i) {
-                this.classList.add(`md-layout-column__item--${size}${i}`);
-            } else {
-                this.classList.remove(`md-layout-column__item--${size}${i}`);
-            }
         }
     }
 }
