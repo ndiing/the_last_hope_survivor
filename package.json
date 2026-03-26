@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "version": "1.12.0",
+=======
+  "version": "2.0.0",
+>>>>>>> b9261e80cebe51386333b60bfe48881d59b76a65
   "description": "My webpack project",
   "name": "webpack-project",
   "scripts": {
