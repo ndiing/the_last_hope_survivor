@@ -305,6 +305,10 @@ class Router {
             this._emit("routeUpdate");
 
             for (const route of routes) {
+                if(route.redirectTo){
+                    this.navigate(route.redirectTo)
+                }
+
                 if (route.beforeLoad) {
                     try {
                         await this._handleBeforeLoad(route);

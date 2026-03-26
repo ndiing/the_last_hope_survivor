@@ -33,7 +33,7 @@ class TestMain extends MDComponent {
                         `)}
                     </div>
                 </md-layout-border-item>
-                <md-layout-border-item region="center" style="padding:24px;">
+                <md-layout-border-item region="center" >
                     <md-outlet></md-outlet>
                 </md-layout-border-item>
             </md-layout-border>

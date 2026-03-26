@@ -6,10 +6,7 @@ class TestDev extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
-                <md-layout-column-item expanded="12" medium="8" compact="4">
-                </md-layout-column-item>
-            </md-layout-column>
+        
         `
     }
 }

@@ -11,6 +11,7 @@ const routes = [
         {path:'/icon-button',load:()=>import('./icon-button/icon-button.js').then(module=>module.default)},
         {path:'/image',load:()=>import('./image/image.js').then(module=>module.default)},
         {path:'/button',load:()=>import('./button/button.js').then(module=>module.default)},
+        {path:'/fab',load:()=>import('./fab/fab.js').then(module=>module.default)},
         {path:'/checkbox',load:()=>import('./checkbox/checkbox.js').then(module=>module.default)},
         {path:'/radio-button',load:()=>import('./radio-button/radio-button.js').then(module=>module.default)},
         {path:'/switch',load:()=>import('./switch/switch.js').then(module=>module.default)},
@@ -26,7 +27,7 @@ const routes = [
         {path:'/layout-border',load:()=>import('./layout-border/layout-border.js').then(module=>module.default)},
         {path:'/layout-border-modal',load:()=>import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
     ]},
-    {path:'*',component:testNotFound},
+    {path:'*',component:testNotFound,redirectTo:'/'},
 ]
 
 export { routes };

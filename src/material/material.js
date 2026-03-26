@@ -6,6 +6,7 @@ import "./icon/icon.js";
 import "./icon-button/icon-button.js";
 import "./image/image.js";
 import "./button/button.js";
+import "./fab/fab.js";
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
