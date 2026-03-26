@@ -26,7 +26,7 @@ const routes = [
         {path:'/layout-border',load:()=>import('./layout-border/layout-border.js').then(module=>module.default)},
         {path:'/layout-border-modal',load:()=>import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
     ]},
-    {path:'*',component:testNotFound},
+    {path:'*',component:testNotFound,redirectTo:'/'},
 ]
 
 export { routes };
