@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { RippleController } from "../ripple/ripple.js";
 
@@ -7,11 +7,15 @@ class MDFab extends MDComponent {
         variant:{type:String},
         color:{type:String},
         icon:{type:String},
+        label:{type:String},
     }
 
     variants=[
         'medium',
         'large',
+        // 'small-extended',
+        // 'medium-extended',
+        // 'large-extended',
     ]
 
     colors=[
@@ -34,7 +38,8 @@ class MDFab extends MDComponent {
     render(){
         /* prettier-ignore */
         return html`
-            <md-icon class="md-fab__icon">${this.icon}</md-icon>
+            ${this.icon?html`<md-icon class="md-fab__icon">${this.icon}</md-icon>`:nothing}
+            ${this.label?html`<div class="md-fab__label">${this.label}</div>`:nothing}
         `
     }
 
@@ -65,6 +70,14 @@ class MDFab extends MDComponent {
         });
     }
 
+    _applyExtendedClass(){
+        if(this.label){
+            this.classList.add('md-fab--extended')
+        }else{
+            this.classList.remove('md-fab--extended')
+        }
+    }
+
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
@@ -75,6 +88,10 @@ class MDFab extends MDComponent {
 
         if (_changedProperties.has("color")) {
             this._applyColorClass();
+        }
+
+        if (_changedProperties.has("label")) {
+            this._applyExtendedClass();
         }
 
     }
