@@ -1,7 +1,6 @@
 import "./component/component.js";
 
 import "./router/router.js";
-
 import "./breakpoint/breakpoint.js";
 import "./ripple/ripple.js";
 
