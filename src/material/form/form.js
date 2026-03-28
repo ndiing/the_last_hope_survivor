@@ -1,78 +1,66 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
+import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 class MDForm extends MDComponent {
     static properties = {
-        acceptCharset: { type: String }, //"UTF-8"
-        action: { type: String }, //"/"
-        autocomplete: { type: String }, //"off"
-        // elements: {type:String},
-        // encoding: {type:String},//"application/x-www-form-urlencoded"
-        enctype: { type: String }, //"application/x-www-form-urlencoded"
-        // length: {type:String},
-        method: { type: String }, //"post"
+        acceptCharset: { type: String },
+        action: { type: String },
+        autocomplete: { type: String },
+        encoding: { type: String },
+        enctype: { type: String },
+        method: { type: String },
         name: { type: String },
-        noValidate: { type: Boolean }, //true
-        // rel: {type:String},
-        // relList: {type:String},
-        target: { type: String },
+        noValidate: { type: Boolean },
     };
-
-    get formNative() {
-        return this.querySelector(".md-form__native");
-    }
 
     constructor() {
         super();
 
-        this.acceptCharset = "UTF-8";
-        this.action = "/";
-        this.autocomplete = "off";
-        this.enctype = "application/json";
         this.method = "post";
-        // this.name=''
-        this.noValidate = false;
-        // this.target=''
 
         this._childNodes = Array.from(this.childNodes);
         this.innerHTML = "";
     }
 
-    _handleFormNativedata(event) {
-        console.debug(JSON.stringify([...event.formData.entries()], null, 2));
-
-        this.emit("formNativeData", { event });
+    _handleFormNativeReset(event) {
+        this.emit("formNativeReset", { event, component: this });
     }
 
-    _handleNativeReset(event) {
-        this.emit("formNativeReset", { event });
-    }
+    formNative = createRef();
 
-    _handleNativeSubmit(event) {
+    _handleFormNativeSubmit(event) {
         event.preventDefault();
 
-        new FormData(this.formNative);
+        new FormData(this.formNative.value);
 
-        this.emit("formNativeSubmit", { event });
+        this.emit("formNativeSubmit", { event, component: this });
+    }
+
+    _handleFormNativeFormdata(event) {
+        console.debug("[debug md-form]", JSON.stringify([...event.formData.entries()], null, 2));
+
+        this.emit("formNativeFormdata", { event, component: this });
     }
 
     render() {
         /* prettier-ignore */
         return html`
-            <form
-                class="md-form__native"
+            <form 
                 .acceptCharset="${ifDefined(this.acceptCharset)}"
                 .action="${ifDefined(this.action)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
+                .encoding="${ifDefined(this.encoding)}"
                 .enctype="${ifDefined(this.enctype)}"
                 .method="${ifDefined(this.method)}"
                 .name="${ifDefined(this.name)}"
                 .noValidate="${ifDefined(this.noValidate)}"
-                .target="${ifDefined(this.target)}"
-                @formdata="${this._handleFormNativedata}"
-                @reset="${this._handleNativeReset}"
-                @submit="${this._handleNativeSubmit}"
+                class="md-form__native"
+                ${ref(this.formNative)}
+                @reset="${this._handleFormNativeReset}"
+                @submit="${this._handleFormNativeSubmit}"
+                @formdata="${this._handleFormNativeFormdata}"
             >${this._childNodes}</form>
         `
     }
@@ -83,12 +71,16 @@ class MDForm extends MDComponent {
         this.classList.add("md-form");
     }
 
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+    }
+
     reset() {
-        this.formNative.reset();
+        this.formNative.value.reset();
     }
 
     submit(submitButton) {
-        const formNative = this.formNative;
+        let formNative = this.formNative.value;
 
         if (formNative.requestSubmit) {
             if (submitButton) {

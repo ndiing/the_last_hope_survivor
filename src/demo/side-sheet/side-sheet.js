@@ -1,0 +1,19 @@
+import { html } from "lit";
+import { MDComponent } from "../../material/component/component.js";
+
+class DemoSideSheet extends MDComponent {
+    render() {
+        /* prettier-ignore */
+        return html`
+            <md-layout-column>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    <md-side-sheet></md-side-sheet>
+                </md-layout-column-item>
+            </md-layout-column>
+        `
+    }
+}
+
+customElements.define("demo-side-sheet", DemoSideSheet);
+
+export default document.createElement("demo-side-sheet");

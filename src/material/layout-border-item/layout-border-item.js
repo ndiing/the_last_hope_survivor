@@ -20,7 +20,6 @@ class MDLayoutBorderItem extends MDComponent {
         this.classList.add("md-layout-border__item");
 
         this.scrimElement = document.createElement("md-scrim");
-        // this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
         document.body.append(this.scrimElement);
 
         this._handleScrimClose = this._handleScrimClose.bind(this);
@@ -84,15 +83,19 @@ class MDLayoutBorderItem extends MDComponent {
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
+
         if (_changedProperties.has("region")) {
             this._applyRegionClass();
         }
+
         if (_changedProperties.has("open")) {
             this._applyOpenClass();
         }
+
         if (_changedProperties.has("modal")) {
             this._applyModalClass();
         }
+
         if (_changedProperties.has("margin")) {
             this._applyMarginClass();
         }

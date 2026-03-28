@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { createRef, ref } from "lit/directives/ref.js";
 import { RippleController } from "../ripple/ripple.js";
 
 class MDRadioButton extends MDComponent {
@@ -10,33 +11,28 @@ class MDRadioButton extends MDComponent {
         name: { type: String },
         value: { type: String },
         checked: { type: Boolean },
+        disabled: { type: Boolean, reflect: true },
+        tabindex: { type: Number },
     };
 
-    ripple = new RippleController(this, {
-        container: ".md-radio-button__container",
-        trigger: ".md-radio-button__native",
+    rippleController = new RippleController(this, {
+        centered: true,
         radius: 40,
         unbounded: true,
+        trigger: ".md-radio-button__native",
+        container: ".md-radio-button__container",
     });
 
-    get radioButtonNative() {
-        return this.querySelector(".md-radio-button__native");
-    }
-
-    constructor() {
-        super();
-
-        this.value = "on";
-    }
+    radioButtonNative = createRef();
 
     formResetCallback() {
-        this.radioButtonNative.checked = this._snapshot.checked;
+        this.checked = this._snapshot.checked;
 
-        this.checked = this.radioButtonNative.checked;
+        this.radioButtonNative.value.checked = this.checked;
     }
 
-    _handleCheckboxNativeInput(event) {
-        this.checked = this.radioButtonNative.checked;
+    _handleRadioButtonNativeInput(event) {
+        this.checked = this.radioButtonNative.value.checked;
 
         this.emit("radioButtonNativeInput", { event });
     }
@@ -45,12 +41,15 @@ class MDRadioButton extends MDComponent {
         /* prettier-ignore */
         return html`
             <input 
-                class="md-radio-button__native"
-                type="radio" 
+                tabindex="${ifDefined(this.tabindex)}"
                 name="${ifDefined(this.name)}"
                 value="${ifDefined(this.value)}"
-                checked="${ifDefined(this.checked)}"
-                @input="${this._handleCheckboxNativeInput}"
+                .checked="${ifDefined(this.checked)}"
+                .disabled="${ifDefined(this.disabled)}"
+                type="radio" 
+                class="md-radio-button__native"
+                ${ref(this.radioButtonNative)}
+                @input="${this._handleRadioButtonNativeInput}"
             >
             <div class="md-radio-button__container">
                 <div class="md-radio-button__icon"></div>
@@ -61,11 +60,15 @@ class MDRadioButton extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
+        this.classList.add("md-radio-button");
+
         this._snapshot = {
             checked: this.checked,
         };
+    }
 
-        this.classList.add("md-radio-button");
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
     }
 }
 

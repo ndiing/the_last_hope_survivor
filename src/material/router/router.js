@@ -29,6 +29,8 @@ class Router {
 
         /** @type {Object.<string, string>} */
         this.params = {};
+
+        this.listen();
     }
 
     /**
@@ -305,8 +307,8 @@ class Router {
             this._emit("routeUpdate");
 
             for (const route of routes) {
-                if(route.redirectTo){
-                    this.navigate(route.redirectTo)
+                if (route.redirectTo) {
+                    this.navigate(route.redirectTo);
                 }
 
                 if (route.beforeLoad) {

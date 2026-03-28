@@ -1,6 +1,13 @@
 import { LitElement } from "lit";
+import { updateWhenLocaleChanges } from "@lit/localize";
 
 class MDComponent extends LitElement {
+    constructor() {
+        super();
+
+        updateWhenLocaleChanges(this);
+    }
+
     createRenderRoot() {
         return this;
     }
@@ -13,7 +20,7 @@ class MDComponent extends LitElement {
         this.removeEventListener(type, listener);
     }
 
-    emit(type, detail, target = this) {
+    emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,
@@ -21,8 +28,43 @@ class MDComponent extends LitElement {
             detail,
         });
 
-        target.dispatchEvent(event);
+        this.dispatchEvent(event);
     }
 }
 
-export { MDComponent };
+class MDElement extends HTMLElement {
+    static observedAttributes = [];
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {}
+
+    disconnectedCallback() {}
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {}
+
+    on(type, listener) {
+        this.addEventListener(type, listener);
+    }
+
+    off(type, listener) {
+        this.removeEventListener(type, listener);
+    }
+
+    emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            // composed:true,
+            detail,
+        });
+
+        this.dispatchEvent(event);
+    }
+}
+
+export { MDComponent, MDElement };

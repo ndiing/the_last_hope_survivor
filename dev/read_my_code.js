@@ -37,36 +37,25 @@ function generateCode() {
     fs.mkdirSync(codeDir, { recursive: true });
 
     const excludes = [
-            /^\.git/, //
-            /^app/, //
-            /^data/, //
-            // /^dev/, //
-            /^node_modules/, //
-            /^package-lock\.json/, //
-            /^package\.json/, //
-            /^\.prettierrc/, //
-            /^nodemon\.json/, //
-            /^README\.md/, //
-            /^CHANGELOG\.md/, //
-            /LICENSE/, //
+            /^\.git/,
+            /^dev/,
+            /^node_modules/,
+            // /^src/,
+            /^xliff/,
+            /^\.prettierrc/,
+            /^\.babel\.config\.json/,
+            /^index\.html/,
+            /^lit-localize\.json/,
+            /^package-lock\.json/,
+            /^package\.json/,
+            /^postcss\.config\.json/,
+            /^README.md/,
+            /^webpack\.config\.js/,
         ],
         includes = [
             // /.*/, //
-            // /^src\\material\\checkbox/, //
-            // /^src\\test\\checkbox/, //
-            // /^src\\material\\radio-button/, //
-            // /^src\\test\\radio-button/, //
-            // /^src\\material\\switch/, //
-            // /^src\\test\\switch/, //
-
-            // /^src\\material\\image/, //
-            // /^src\\test\\image/, //
-
-            // /^src\\material\\avatar/, //
-            // /^src\\test\\avatar/, //
-
-            /^src\\material\\text-field/, //
-            // /^src\\test\\text-field/, //
+            // /src\\material\\list/, //
+            // /src\\material\\list-item/, //
         ];
 
     const items = readDir(rootDir, excludes, includes);

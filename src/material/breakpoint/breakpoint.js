@@ -1,9 +1,3 @@
-const DEFAULT_BREAKPOINT_OBSERVER_LIST = [
-    { name: "expanded", query: "(min-width: 840px)" },
-    { name: "medium", query: "(min-width: 600px) and (max-width: 839px)" },
-    { name: "compact", query: "(max-width: 599px)" },
-];
-
 class BreakpointObserver {
     constructor(callback = () => {}) {
         this.callback = callback;
@@ -21,7 +15,13 @@ class BreakpointObserver {
         }
     }
 
-    observe(list = DEFAULT_BREAKPOINT_OBSERVER_LIST) {
+    observe(
+        list = [
+            { name: "expanded", query: "(min-width: 840px)" },
+            { name: "medium", query: "(min-width: 600px) and (max-width: 839px)" },
+            { name: "compact", query: "(max-width: 599px)" },
+        ],
+    ) {
         this._buildList(list);
 
         this.item = this.list.find((item) => item.mql.matches);

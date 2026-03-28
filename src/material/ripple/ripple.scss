@@ -34,7 +34,10 @@
 .md-ripple--focus {
     &::after {
         opacity: 10%;
-        transition: width var(--md-sys-motion-duration-short3) cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        will-change: width;
+        transition-property: width;
+        transition-duration: var(--md-sys-motion-duration-short3);
+        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 .md-ripple--press {

@@ -22,21 +22,25 @@ class MDScrim extends MDComponent {
         super.disconnectedCallback();
 
         this.classList.remove("md-scrim");
+
         this.removeEventListener("click", this._handleClick);
     }
 
     _applyOpenClass() {
         if (this.open) {
             this.classList.add(`md-scrim--open`);
+
             this.emit("scrimShow", { element: this });
         } else {
             this.classList.remove(`md-scrim--open`);
+
             this.emit("scrimClose", { element: this });
         }
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
+
         if (_changedProperties.has("open")) {
             this._applyOpenClass();
         }

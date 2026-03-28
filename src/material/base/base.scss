@@ -1,5 +1,6 @@
 @use "../mixins/mixins.scss";
 
+// global
 * {
     margin: 0;
     border: 0;
@@ -12,11 +13,17 @@
         box-sizing: border-box;
     }
 
-    &:focus {
+    &:focus-visible {
+        outline: 2px solid var(--md-sys-color-outline);
+        outline-offset: -2px;
+    }
+
+    &:focus:not(:focus-visible) {
         outline: none;
     }
 }
 
+// base
 html,
 body {
     width: 100%;
@@ -29,50 +36,4 @@ body {
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
     @include mixins.typescale-body-large();
-}
-
-input,
-select,
-textarea {
-    appearance: none;
-    background-color: inherit;
-    color: inherit;
-    max-width: 100%;
-    padding-block: 0;
-    padding-inline: 0;
-}
-input::-webkit-inner-spin-button {
-    appearance: none;
-}
-input::-webkit-datetime-edit-fields-wrapper {
-    padding: 0;
-}
-input[type="date" i]::-webkit-calendar-picker-indicator,
-input[type="datetime-local" i]::-webkit-calendar-picker-indicator,
-input[type="month" i]::-webkit-calendar-picker-indicator,
-input[type="time" i]::-webkit-calendar-picker-indicator,
-input[type="week" i]::-webkit-calendar-picker-indicator {
-    background-image: none;
-    block-size: 0;
-    inline-size: 0;
-    padding: 0;
-}
-input[type="color" i]::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
-input[type="color" i]::-webkit-color-swatch {
-    border-width: 0;
-}
-input[type="file" i]::-webkit-file-upload-button {
-    appearance: none;
-    margin-inline-end: 0;
-    padding-block: 0;
-    padding-inline: 0;
-    border-width: 0;
-}
-meter {
-    appearance: none;
-    block-size: 0;
-    inline-size: 0;
-    vertical-align: middle;
 }

@@ -1,0 +1,19 @@
+import { html } from "lit";
+import { MDComponent } from "../../material/component/component.js";
+
+class DemoLoadingIndicator extends MDComponent {
+    render() {
+        /* prettier-ignore */
+        return html`
+            <md-layout-column>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    <md-loading-indicator></md-loading-indicator>
+                </md-layout-column-item>
+            </md-layout-column>
+        `
+    }
+}
+
+customElements.define("demo-loading-indicator", DemoLoadingIndicator);
+
+export default document.createElement("demo-loading-indicator");

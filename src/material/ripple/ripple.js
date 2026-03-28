@@ -66,7 +66,6 @@ class RippleController {
         if (!this.options.unbounded) {
             this.container.classList.add("md-ripple--bounded");
         }
-        this.container.setAttribute("tabIndex", 0);
 
         this.radius = 141.4213562373095;
         if (this.options.radius) {
@@ -77,6 +76,10 @@ class RippleController {
         this.trigger = this.options.trigger ? this.host.querySelector(this.options.trigger) : this.host;
 
         this.trigger.classList.add("md-ripple--trigger");
+
+        if (!this.trigger.hasAttribute("tabindex")) {
+            this.trigger.setAttribute("tabindex", 0);
+        }
 
         this._handlePointerenter = this._handlePointerenter.bind(this);
         this._handlePointerleave = this._handlePointerleave.bind(this);

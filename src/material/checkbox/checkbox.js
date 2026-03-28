@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { createRef, ref } from "lit/directives/ref.js";
 import { RippleController } from "../ripple/ripple.js";
 
 class MDCheckbox extends MDComponent {
@@ -11,49 +12,48 @@ class MDCheckbox extends MDComponent {
         value: { type: String },
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
+        disabled: { type: Boolean, reflect: true },
+        tabindex: { type: Number },
     };
 
-    ripple = new RippleController(this, {
-        container: ".md-checkbox__container",
-        trigger: ".md-checkbox__native",
+    rippleController = new RippleController(this, {
+        centered: true,
         radius: 40,
         unbounded: true,
+        trigger: ".md-checkbox__native",
+        container: ".md-checkbox__container",
     });
 
-    get checkboxNative() {
-        return this.querySelector(".md-checkbox__native");
-    }
-
-    constructor() {
-        super();
-
-        this.value = "on";
-    }
+    checkboxNative = createRef();
 
     formResetCallback() {
-        this.checkboxNative.indeterminate = this._snapshot.indeterminate;
-        this.checkboxNative.checked = this._snapshot.checked;
+        this.indeterminate = this._snapshot.indeterminate;
+        this.checked = this._snapshot.checked;
 
-        this.indeterminate = this.checkboxNative.indeterminate;
-        this.checked = this.checkboxNative.checked;
+        this.checkboxNative.value.indeterminate = this.indeterminate;
+        this.checkboxNative.value.checked = this.checked;
     }
 
     _handleCheckboxNativeInput(event) {
-        this.checked = this.checkboxNative.checked;
+        this.indeterminate = this.checkboxNative.value.indeterminate;
+        this.checked = this.checkboxNative.value.checked;
 
-        this.emit("checkboxNativeInput", { event });
+        this.emit("checkboxNativeInput", { event, component: this });
     }
 
     render() {
         /* prettier-ignore */
         return html`
             <input 
-                class="md-checkbox__native"
-                type="checkbox" 
+                tabindex="${ifDefined(this.tabindex)}"
                 name="${ifDefined(this.name)}"
                 value="${ifDefined(this.value)}"
                 .indeterminate="${ifDefined(this.indeterminate)}"
-                checked="${ifDefined(this.checked)}"
+                .checked="${ifDefined(this.checked)}"
+                .disabled="${ifDefined(this.disabled)}"
+                type="checkbox" 
+                class="md-checkbox__native"
+                ${ref(this.checkboxNative)}
                 @input="${this._handleCheckboxNativeInput}"
             >
             <div class="md-checkbox__container">
@@ -65,12 +65,16 @@ class MDCheckbox extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
+        this.classList.add("md-checkbox");
+
         this._snapshot = {
             indeterminate: this.indeterminate,
             checked: this.checked,
         };
+    }
 
-        this.classList.add("md-checkbox");
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
     }
 }
 

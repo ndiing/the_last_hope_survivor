@@ -1,51 +1,73 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
-import { styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { styleMap } from "lit/directives/style-map.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 class MDImage extends MDComponent {
     static properties = {
         src: { type: String },
         alt: { type: String },
-        ratio: { type: String },
+        loading: { type: String },
+        aspectRatio: { type: String },
         shape: { type: String },
     };
 
-    shapes = ["round", "square"];
+    shapes = ["square", "round"];
 
     get _imageNativeStyle() {
         const style = {};
 
-        if (this.ratio) {
-            style["aspect-ratio"] = this.ratio;
+        if (this.aspectRatio) {
+            style["aspect-ratio"] = this.aspectRatio;
         }
 
         if (this.shape === "round") {
-            if (this.ratio) {
-                const [x, y] = this.ratio.split("/");
+            let borderRadius = "50%";
 
-                const xNumber = Number(x.trim());
-                const yNumber = Number(y.trim());
-
-                const verticalRadius = (xNumber / yNumber) * 50;
-
-                style["border-radius"] = `50% / ${verticalRadius}%`;
-            } else {
-                style["border-radius"] = "50%";
+            if (this.aspectRatio) {
+                const [width, height] = this.aspectRatio.split("/").map((string) => Number(string.trim()));
+                borderRadius = `50% / ${(width / height) * 50}%`;
             }
+
+            style["border-radius"] = borderRadius;
         }
 
         return style;
+    }
+
+    constructor() {
+        super();
+
+        this.loading = "lazy";
+        this.shape = "square";
+    }
+
+    imageNative = createRef();
+
+    _handleImageNativeLoad(event) {
+        this.emit("imageNativeLoad", { event, component: this });
+    }
+
+    _handleImageNativeError(event) {
+        this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+
+        this.emit("imageNativeError", { event, component: this });
     }
 
     render() {
         /* prettier-ignore */
         return html`
             <img 
-                class="md-image__native" 
-                style="${styleMap(this._imageNativeStyle)}" 
-                .src="${ifDefined(this.src)}" 
-                .alt="${ifDefined(this.alt)}">
+                src="${ifDefined(this.src)}" 
+                alt="${ifDefined(this.alt)}" 
+                loading="${ifDefined(this.loading)}" 
+                class="md-image__native"
+                style="${styleMap(this._imageNativeStyle)}"
+                ${ref(this.imageNative)}
+                @load="${this._handleImageNativeLoad}"
+                @error="${this._handleImageNativeError}"
+                >
         `
     }
 
@@ -53,6 +75,24 @@ class MDImage extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-image");
+    }
+
+    _applyShapeClass() {
+        this.shapes.forEach((shape) => {
+            if (shape === this.shape) {
+                this.classList.add(`md-image--${shape}`);
+            } else {
+                this.classList.remove(`md-image--${shape}`);
+            }
+        });
+    }
+
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has("shape")) {
+            this._applyShapeClass();
+        }
     }
 }
 
