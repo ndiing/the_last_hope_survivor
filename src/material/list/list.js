@@ -62,23 +62,29 @@ class MDList extends MDComponent {
     }
 
     _handleCheckboxNativeInput(event) {
-        const snapshot = event.currentTarget.snapshot;
-        snapshot.selected = !snapshot.selected;
-        this.requestUpdate();
+        if (this.interactive && this.selection) {
+            const snapshot = event.currentTarget.snapshot;
+            snapshot.selected = !snapshot.selected;
+            this.requestUpdate();
+        }
     }
 
     _handleRadioButtonNativeInput(event) {
-        const snapshot = event.currentTarget.snapshot;
-        this.items.forEach((item) => {
-            item.selected = item === snapshot;
-        });
-        this.requestUpdate();
+        if (this.interactive && this.selection) {
+            const snapshot = event.currentTarget.snapshot;
+            this.items.forEach((item) => {
+                item.selected = item === snapshot;
+            });
+            this.requestUpdate();
+        }
     }
 
     _handleSwitchNativeInput(event) {
-        const snapshot = event.currentTarget.snapshot;
-        snapshot.selected = !snapshot.selected;
-        this.requestUpdate();
+        if (this.interactive && this.selection) {
+            const snapshot = event.currentTarget.snapshot;
+            snapshot.selected = !snapshot.selected;
+            this.requestUpdate();
+        }
     }
 
     render() {

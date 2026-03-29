@@ -7,6 +7,7 @@ class DemoListBehavior extends MDComponent {
         return html`
             <md-layout-column>
 
+            
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list0"
@@ -147,7 +148,7 @@ class DemoListBehavior extends MDComponent {
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
-                
+
             </md-layout-column>
         `
     }
