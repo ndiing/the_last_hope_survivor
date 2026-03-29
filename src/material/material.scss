@@ -33,6 +33,8 @@
 @use "./tool/tool.scss";
 @use "./tool-group/tool-group.scss";
 
+@use "./badge/badge.scss";
+
 @use "./list-item/list-item.scss";
 @use "./list/list.scss";
 
@@ -40,7 +42,6 @@
 
 @use "./app-bar/app-bar.scss";
 
-@use "./badge/badge.scss";
 @use "./card/card.scss";
 @use "./carousel/carousel.scss";
 @use "./chip/chip.scss";

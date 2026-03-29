@@ -110,9 +110,22 @@ function _renderText(properties = {}) {
             class="${classMap({'md-tool':true,...properties.class})}"
             style="${styleMap({...properties.style})}"
             tabindex="${ifDefined(properties.tabindex)}"
-
         >${properties.text}
         </md-text>
+    `
+}
+
+function _renderBadge(properties = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-badge
+            id="${ifDefined(properties.id)}"
+            class="${classMap({'md-tool':true,...properties.class})}"
+            style="${styleMap({...properties.style})}"
+            tabindex="${ifDefined(properties.tabindex)}"
+            .label="${ifDefined(properties.label)}"
+            .max="${ifDefined(properties.max)}"
+        ></md-badge>
     `
 }
 
@@ -127,6 +140,7 @@ function renderTool(component = "icon", properties = {}) {
         ['radio-button',() => _renderRadioButton(properties)],
         ['switch',() => _renderSwitch(properties)],
         ['text',() => _renderText(properties)],
+        ['badge',() => _renderBadge(properties)],
     ],() => nothing)
 }
 

@@ -34,6 +34,8 @@ import "./switch/switch.js";
 import "./tool/tool.js";
 import "./tool-group/tool-group.js";
 
+import "./badge/badge.js";
+
 import "./list-item/list-item.js";
 import "./list/list.js";
 
@@ -41,7 +43,6 @@ import "./text-field/text-field.js";
 
 import "./app-bar/app-bar.js";
 
-import "./badge/badge.js";
 import "./card/card.js";
 import "./carousel/carousel.js";
 import "./chip/chip.js";

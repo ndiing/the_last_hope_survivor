@@ -30,7 +30,6 @@ class Router {
         /** @type {Object.<string, string>} */
         this.params = {};
 
-        this.listen();
     }
 
     /**

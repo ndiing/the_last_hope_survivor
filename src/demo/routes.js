@@ -30,7 +30,7 @@ const routes = [
         {path:'/tool-group',label:'Tool Group',load:() => import('./tool-group/tool-group.js').then(module=>module.default),},      
 
         // {path:'/app-bar',label:'App Bar',load:() => import('./app-bar/app-bar.js').then(module=>module.default)},
-        // {path:'/badge',label:'Badge',load:() => import('./badge/badge.js').then(module=>module.default)},
+        {path:'/badge',label:'Badge',load:() => import('./badge/badge.js').then(module=>module.default)},
         // {path:'/button-group',label:'Button Group',load:() => import('./button-group/button-group.js').then(module=>module.default)},
         // {path:'/button',label:'Button',load:() => import('./button/button.js').then(module=>module.default)},
         // {path:'/extended-fab',label:'Extended Fab',load:() => import('./extended-fab/extended-fab.js').then(module=>module.default)},

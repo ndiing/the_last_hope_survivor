@@ -53,6 +53,22 @@ class DemoTool extends MDComponent {
                         text: '⌘+C'
                     })}
                 </md-layout-column-item>
+                
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    ${renderTool('badge',{
+                        label: 0
+                    })}
+                </md-layout-column-item>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    ${renderTool('badge',{
+                        label: 3
+                    })}
+                </md-layout-column-item>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    ${renderTool('badge',{
+                        label: 1000
+                    })}
+                </md-layout-column-item>
 
             </md-layout-column>
         `

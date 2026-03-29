@@ -7,7 +7,9 @@ class DemoBadge extends MDComponent {
         return html`
             <md-layout-column>
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    <md-badge></md-badge>
+                    <md-badge label=""></md-badge>
+                    <md-badge label="3"></md-badge>
+                    <md-badge label="1000"></md-badge>
                 </md-layout-column-item>
             </md-layout-column>
         `

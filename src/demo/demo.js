@@ -5,4 +5,6 @@ const router = new Router(routes, {
     // historyApiFallback: true,
 });
 
+router.listen()
+
 export { router };
