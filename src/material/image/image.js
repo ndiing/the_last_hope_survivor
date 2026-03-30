@@ -46,13 +46,13 @@ class MDImage extends MDComponent {
     }
 
     _handleImageNativeLoad(event) {
-        this.emit("imageNativeLoad", { event, component: this });
+        this.emit("imageNativeLoad", { event });
     }
 
     _handleImageNativeError(event) {
         this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
-        this.emit("imageNativeError", { event, component: this });
+        this.emit("imageNativeError", { event });
     }
 
     _updateShapeClass() {

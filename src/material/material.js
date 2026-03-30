@@ -1,9 +1,11 @@
+// shared
 import "./component/component.js";
 
 import "./router/router.js";
 import "./breakpoint/breakpoint.js";
 import "./ripple/ripple.js";
 
+// components
 import "./scrim/scrim.js";
 import "./layout-column/layout-column.js";
 import "./layout-column-item/layout-column-item.js";

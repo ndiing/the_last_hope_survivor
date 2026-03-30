@@ -1,24 +1,20 @@
 import { MDComponent } from "../component/component.js";
 
+/**
+ * @class
+ * @fires scrimClick
+ * @fires scrimShow
+ * @fires scrimClose
+ */
 class MDScrim extends MDComponent {
     static properties = {
         open: { type: Boolean },
     };
 
-    _handleClick(event) {
+    _handleScrimClick(event) {
         this.close();
-    }
 
-    _updateOpenClass() {
-        if (this.open) {
-            this.classList.add(`md-scrim--open`);
-
-            this.emit("scrimShow", { element: this });
-        } else {
-            this.classList.remove(`md-scrim--open`);
-
-            this.emit("scrimClose", { element: this });
-        }
+        this.emit("scrimClick", { event });
     }
 
     connectedCallback() {
@@ -26,8 +22,8 @@ class MDScrim extends MDComponent {
 
         this.classList.add("md-scrim");
 
-        this._handleClick = this._handleClick.bind(this);
-        this.addEventListener("click", this._handleClick);
+        this._handleScrimClick = this._handleScrimClick.bind(this);
+        this.addEventListener("click", this._handleScrimClick);
     }
 
     disconnectedCallback() {
@@ -35,7 +31,15 @@ class MDScrim extends MDComponent {
 
         this.classList.remove("md-scrim");
 
-        this.removeEventListener("click", this._handleClick);
+        this.removeEventListener("click", this._handleScrimClick);
+    }
+
+    _updateOpenClass() {
+        if (this.open) {
+            this.classList.add(`md-scrim--open`);
+        } else {
+            this.classList.remove(`md-scrim--open`);
+        }
     }
 
     updated(_changedProperties) {
@@ -48,14 +52,22 @@ class MDScrim extends MDComponent {
 
     show() {
         this.open = true;
+
+        this.emit("scrimShow", {});
     }
 
     close() {
         this.open = false;
+
+        this.emit("scrimClose", {});
     }
 
     toggle() {
-        this.open = !this.open;
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 }
 

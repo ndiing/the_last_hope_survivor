@@ -25,11 +25,10 @@ class MDSwitch extends MDComponent {
 
     switchNative = createRef();
 
-    get _icon() {
-        if (!Array.isArray(this.icons)) {
-            return null;
-        }
-        return this.icons[~~this.checked];
+    formResetCallback() {
+        this.checked = this._snapshot.checked;
+
+        this.switchNative.value.checked = this.checked;
     }
 
     _handleSwitchNativeInput(event) {
@@ -38,10 +37,11 @@ class MDSwitch extends MDComponent {
         this.emit("switchNativeInput", { event });
     }
 
-    formResetCallback() {
-        this.checked = this._snapshot.checked;
-
-        this.switchNative.value.checked = this.checked;
+    get _icon() {
+        if (!Array.isArray(this.icons)) {
+            return null;
+        }
+        return this.icons[~~this.checked];
     }
 
     render() {

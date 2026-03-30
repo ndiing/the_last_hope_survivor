@@ -1,5 +1,10 @@
 import { MDComponent } from "../component/component.js";
 
+/**
+ * @class
+ * @fires layoutBorderItemShow
+ * @fires layoutBorderItemClose
+ */
 class MDLayoutBorderItem extends MDComponent {
     static properties = {
         region: { type: String },
@@ -12,50 +17,6 @@ class MDLayoutBorderItem extends MDComponent {
 
     _handleScrimClose() {
         this.close();
-    }
-
-    _updateModalClass() {
-        if (this.modal) {
-            this.classList.add(`md-layout-border__item--modal`);
-        } else {
-            this.classList.remove(`md-layout-border__item--modal`);
-        }
-    }
-
-    _updateMarginClass() {
-        if (this.margin) {
-            this.classList.add(`md-layout-border__item--margin`);
-        } else {
-            this.classList.remove(`md-layout-border__item--margin`);
-        }
-    }
-
-    _updateOpenClass() {
-        if (this.open) {
-            this.classList.add(`md-layout-border__item--open`);
-
-            if (this.modal) {
-                this.scrimElement.show();
-            }
-
-            this.emit("layoutBorderItemShow", { element: this });
-        } else {
-            this.classList.remove(`md-layout-border__item--open`);
-
-            this.scrimElement.close();
-
-            this.emit("layoutBorderItemClose", { element: this });
-        }
-    }
-
-    _updateRegionClass() {
-        this.regions.forEach((region) => {
-            if (this.region === region) {
-                this.classList.add(`md-layout-border__item--${region}`);
-            } else {
-                this.classList.remove(`md-layout-border__item--${region}`);
-            }
-        });
     }
 
     connectedCallback() {
@@ -81,6 +42,46 @@ class MDLayoutBorderItem extends MDComponent {
         this.scrimElement = null;
     }
 
+    _updateRegionClass() {
+        this.regions.forEach((region) => {
+            if (this.region === region) {
+                this.classList.add(`md-layout-border__item--${region}`);
+            } else {
+                this.classList.remove(`md-layout-border__item--${region}`);
+            }
+        });
+    }
+
+    _updateOpenClass() {
+        if (this.open) {
+            this.classList.add(`md-layout-border__item--open`);
+
+            if (this.modal) {
+                this.scrimElement.show();
+            }
+        } else {
+            this.classList.remove(`md-layout-border__item--open`);
+
+            this.scrimElement.close();
+        }
+    }
+
+    _updateModalClass() {
+        if (this.modal) {
+            this.classList.add(`md-layout-border__item--modal`);
+        } else {
+            this.classList.remove(`md-layout-border__item--modal`);
+        }
+    }
+
+    _updateMarginClass() {
+        if (this.margin) {
+            this.classList.add(`md-layout-border__item--margin`);
+        } else {
+            this.classList.remove(`md-layout-border__item--margin`);
+        }
+    }
+
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
@@ -103,14 +104,22 @@ class MDLayoutBorderItem extends MDComponent {
 
     show() {
         this.open = true;
+
+        this.emit("layoutBorderItemShow", {});
     }
 
     close() {
         this.open = false;
+
+        this.emit("layoutBorderItemClose", {});
     }
 
     toggle() {
-        this.open = !this.open;
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 }
 

@@ -3,6 +3,12 @@ import { MDComponent } from "../component/component.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+/**
+ * @class
+ * @fires formNativeReset
+ * @fires formNativeSubmit
+ * @fires formNativeFormdata
+ */
 class MDForm extends MDComponent {
     static properties = {
         acceptCharset: { type: String },
@@ -15,8 +21,6 @@ class MDForm extends MDComponent {
         noValidate: { type: Boolean },
     };
 
-    formNative = createRef();
-
     constructor() {
         super();
 
@@ -27,21 +31,23 @@ class MDForm extends MDComponent {
     }
 
     _handleFormNativeReset(event) {
-        this.emit("formNativeReset", { event, component: this });
+        this.emit("formNativeReset", { event });
     }
+
+    formNative = createRef();
 
     _handleFormNativeSubmit(event) {
         event.preventDefault();
 
         new FormData(this.formNative.value);
 
-        this.emit("formNativeSubmit", { event, component: this });
+        this.emit("formNativeSubmit", { event });
     }
 
     _handleFormNativeFormdata(event) {
-        console.debug("[debug md-form]", JSON.stringify([...event.formData.entries()], null, 2));
+        console.debug("[_handleFormNativeFormdata]", JSON.stringify([...event.formData.entries()], null, 2));
 
-        this.emit("formNativeFormdata", { event, component: this });
+        this.emit("formNativeFormdata", { event });
     }
 
     render() {

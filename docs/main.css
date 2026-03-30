@@ -938,6 +938,30 @@ body {
     gap: 0 4px;
 }
 
+.md-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    padding: 0 4px;
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
+}
+.md-badge:empty {
+    min-width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    padding: 0;
+}
+
 .md-list {
     display: flex;
     flex-direction: column;

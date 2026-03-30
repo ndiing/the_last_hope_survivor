@@ -30,7 +30,8 @@ class MDListItem extends MDComponent {
                 ...this.leading,
                 class:{
                     'md-list__leading':true,
-                    [`md-list__leading--${this.leading.component}`]:true,
+                    'md-list__leading-item':true,
+                    [`md-list__leading-item--${this.leading.component}`]:true,
                     ...this.leading.class
                 },
                 tabindex:-1,
@@ -44,6 +45,11 @@ class MDListItem extends MDComponent {
             `:nothing}
             ${Array.isArray(this.trailing)?html`<md-tool-group class="md-list__trailing" .tools="${this.trailing.map(item=>({
                 ...item,
+                class:{
+                    'md-list__trailing-item':true,
+                    [`md-list__trailing-item--${item.component}`]:true,
+                    ...item.class
+                },
                 tabindex:-1,
                 checked:this.selected
             }))}"></md-tool-group>`:nothing}

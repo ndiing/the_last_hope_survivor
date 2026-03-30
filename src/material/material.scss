@@ -1,3 +1,4 @@
+// shared
 @use "./tokens/tokens.scss";
 @use "./mixins/mixins.scss";
 
@@ -6,6 +7,7 @@
 
 @use "./base/base.scss";
 
+// components
 @use "./scrim/scrim.scss";
 @use "./layout/layout.scss";
 
