@@ -37,7 +37,7 @@ class MDAvatar extends MDComponent {
         this.classList.add("md-avatar");
     }
 
-    _applySizeClass() {
+    _updateSizeClass() {
         this.sizes.forEach((size) => {
             if (size === this.size) {
                 this.classList.add(`md-avatar--${size}`);
@@ -47,7 +47,7 @@ class MDAvatar extends MDComponent {
         });
     }
 
-    _applyShapeClass() {
+    _updateShapeClass() {
         this.shapes.forEach((shape) => {
             if (shape === this.shape) {
                 this.classList.add(`md-avatar--${shape}`);
@@ -61,11 +61,11 @@ class MDAvatar extends MDComponent {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("size")) {
-            this._applySizeClass();
+            this._updateSizeClass();
         }
 
         if (_changedProperties.has("shape")) {
-            this._applyShapeClass();
+            this._updateShapeClass();
         }
     }
 }

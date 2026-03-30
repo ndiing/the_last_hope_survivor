@@ -26,7 +26,7 @@ class MDScrim extends MDComponent {
         this.removeEventListener("click", this._handleClick);
     }
 
-    _applyOpenClass() {
+    _updateOpenClass() {
         if (this.open) {
             this.classList.add(`md-scrim--open`);
 
@@ -42,7 +42,7 @@ class MDScrim extends MDComponent {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("open")) {
-            this._applyOpenClass();
+            this._updateOpenClass();
         }
     }
 

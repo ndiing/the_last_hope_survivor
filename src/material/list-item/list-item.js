@@ -79,7 +79,7 @@ class MDListItem extends MDComponent {
         this._setLayout();
     }
 
-    _applyLayoutClass() {
+    _updateLayoutClass() {
         this.layouts.forEach((layout) => {
             if (layout === this.layout) {
                 this.classList.add(`md-list__item--${layout}`);
@@ -89,19 +89,23 @@ class MDListItem extends MDComponent {
         });
     }
 
+    _updateInteractiveClass() {
+        if (this.interactive) {
+            this.classList.add("md-list__item--interactive");
+        } else {
+            this.classList.remove("md-list__item--interactive");
+        }
+    }
+
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("layout")) {
-            this._applyLayoutClass();
+            this._updateLayoutClass();
         }
 
         if (_changedProperties.has("interactive")) {
-            if (this.interactive) {
-                this.classList.add("md-list__item--interactive");
-            } else {
-                this.classList.remove("md-list__item--interactive");
-            }
+            this._updateInteractiveClass();
         }
     }
 }

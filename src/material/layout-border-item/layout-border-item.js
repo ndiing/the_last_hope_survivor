@@ -37,7 +37,7 @@ class MDLayoutBorderItem extends MDComponent {
         this.scrimElement = null;
     }
 
-    _applyModalClass() {
+    _updateModalClass() {
         if (this.modal) {
             this.classList.add(`md-layout-border__item--modal`);
         } else {
@@ -45,7 +45,7 @@ class MDLayoutBorderItem extends MDComponent {
         }
     }
 
-    _applyMarginClass() {
+    _updateMarginClass() {
         if (this.margin) {
             this.classList.add(`md-layout-border__item--margin`);
         } else {
@@ -53,7 +53,7 @@ class MDLayoutBorderItem extends MDComponent {
         }
     }
 
-    _applyOpenClass() {
+    _updateOpenClass() {
         if (this.open) {
             this.classList.add(`md-layout-border__item--open`);
 
@@ -71,7 +71,7 @@ class MDLayoutBorderItem extends MDComponent {
         }
     }
 
-    _applyRegionClass() {
+    _updateRegionClass() {
         this.regions.forEach((region) => {
             if (this.region === region) {
                 this.classList.add(`md-layout-border__item--${region}`);
@@ -85,19 +85,19 @@ class MDLayoutBorderItem extends MDComponent {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("region")) {
-            this._applyRegionClass();
+            this._updateRegionClass();
         }
 
         if (_changedProperties.has("open")) {
-            this._applyOpenClass();
+            this._updateOpenClass();
         }
 
         if (_changedProperties.has("modal")) {
-            this._applyModalClass();
+            this._updateModalClass();
         }
 
         if (_changedProperties.has("margin")) {
-            this._applyMarginClass();
+            this._updateMarginClass();
         }
     }
 

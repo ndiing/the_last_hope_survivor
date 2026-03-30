@@ -14,9 +14,9 @@ class DemoToolGroup extends MDComponent {
             { component: "radio-button" },
             { component: "switch" },
             { component: "text", text: "⌘+C" },
-            { component: "badge", label:0 },
-            { component: "badge", label:3 },
-            { component: "badge", label:1000 },
+            { component: "badge", label: 0 },
+            { component: "badge", label: 3 },
+            { component: "badge", label: 1000 },
         ];
     }
     render() {

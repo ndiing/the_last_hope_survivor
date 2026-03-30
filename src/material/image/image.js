@@ -77,7 +77,7 @@ class MDImage extends MDComponent {
         this.classList.add("md-image");
     }
 
-    _applyShapeClass() {
+    _updateShapeClass() {
         this.shapes.forEach((shape) => {
             if (shape === this.shape) {
                 this.classList.add(`md-image--${shape}`);
@@ -91,7 +91,7 @@ class MDImage extends MDComponent {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("shape")) {
-            this._applyShapeClass();
+            this._updateShapeClass();
         }
     }
 }
