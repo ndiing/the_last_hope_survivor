@@ -7,12 +7,6 @@ class MDLayoutColumnItem extends MDComponent {
         compact: { type: Number },
     };
 
-    connectedCallback() {
-        super.connectedCallback();
-
-        this.classList.add("md-layout-column__item");
-    }
-
     _updateSizeClass(columns, size) {
         for (let i = 1; i <= columns; i++) {
             if (this[size] === i) {
@@ -21,6 +15,12 @@ class MDLayoutColumnItem extends MDComponent {
                 this.classList.remove(`md-layout-column__item--${size}${i}`);
             }
         }
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-layout-column__item");
     }
 
     updated(_changedProperties) {

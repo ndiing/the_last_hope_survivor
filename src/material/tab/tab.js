@@ -6,10 +6,6 @@ class MDTab extends MDComponent {
 
         this.classList.add("md-tab");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-tab", MDTab);

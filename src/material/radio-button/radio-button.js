@@ -25,16 +25,16 @@ class MDRadioButton extends MDComponent {
 
     radioButtonNative = createRef();
 
-    formResetCallback() {
-        this.checked = this._snapshot.checked;
-
-        this.radioButtonNative.value.checked = this.checked;
-    }
-
     _handleRadioButtonNativeInput(event) {
         this.checked = this.radioButtonNative.value.checked;
 
         this.emit("radioButtonNativeInput", { event });
+    }
+
+    formResetCallback() {
+        this.checked = this._snapshot.checked;
+
+        this.radioButtonNative.value.checked = this.checked;
     }
 
     render() {
@@ -65,10 +65,6 @@ class MDRadioButton extends MDComponent {
         this._snapshot = {
             checked: this.checked,
         };
-    }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
     }
 }
 

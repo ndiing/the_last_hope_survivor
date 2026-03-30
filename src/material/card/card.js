@@ -6,10 +6,6 @@ class MDCard extends MDComponent {
 
         this.classList.add("md-card");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-card", MDCard);

@@ -14,29 +14,6 @@ class MDLayoutBorderItem extends MDComponent {
         this.close();
     }
 
-    connectedCallback() {
-        super.connectedCallback();
-
-        this.classList.add("md-layout-border__item");
-
-        this.scrimElement = document.createElement("md-scrim");
-        document.body.append(this.scrimElement);
-
-        this._handleScrimClose = this._handleScrimClose.bind(this);
-        this.scrimElement.addEventListener("scrimClose", this._handleScrimClose);
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-
-        this.classList.remove("md-layout-border__item");
-
-        this.scrimElement.removeEventListener("scrimClose", this._handleScrimClose);
-        this.scrimElement.remove();
-
-        this.scrimElement = null;
-    }
-
     _updateModalClass() {
         if (this.modal) {
             this.classList.add(`md-layout-border__item--modal`);
@@ -79,6 +56,29 @@ class MDLayoutBorderItem extends MDComponent {
                 this.classList.remove(`md-layout-border__item--${region}`);
             }
         });
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-layout-border__item");
+
+        this.scrimElement = document.createElement("md-scrim");
+        document.body.append(this.scrimElement);
+
+        this._handleScrimClose = this._handleScrimClose.bind(this);
+        this.scrimElement.addEventListener("scrimClose", this._handleScrimClose);
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-layout-border__item");
+
+        this.scrimElement.removeEventListener("scrimClose", this._handleScrimClose);
+        this.scrimElement.remove();
+
+        this.scrimElement = null;
     }
 
     updated(_changedProperties) {

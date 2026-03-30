@@ -6,10 +6,6 @@ class MDButton extends MDComponent {
 
         this.classList.add("md-button");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-button", MDButton);

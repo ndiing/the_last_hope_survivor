@@ -6,10 +6,6 @@ class MDChip extends MDComponent {
 
         this.classList.add("md-chip");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-chip", MDChip);

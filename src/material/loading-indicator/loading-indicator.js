@@ -6,10 +6,6 @@ class MDLoadingIndicator extends MDComponent {
 
         this.classList.add("md-loading-indicator");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-loading-indicator", MDLoadingIndicator);

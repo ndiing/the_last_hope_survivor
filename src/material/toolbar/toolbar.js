@@ -6,10 +6,6 @@ class MDToolbar extends MDComponent {
 
         this.classList.add("md-toolbar");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-toolbar", MDToolbar);

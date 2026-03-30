@@ -6,10 +6,6 @@ class MDAppBar extends MDComponent {
 
         this.classList.add("md-app-bar");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-app-bar", MDAppBar);

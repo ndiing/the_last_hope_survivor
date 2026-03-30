@@ -6,10 +6,6 @@ class MDSnackbar extends MDComponent {
 
         this.classList.add("md-snackbar");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-snackbar", MDSnackbar);

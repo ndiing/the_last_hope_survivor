@@ -6,10 +6,6 @@ class MDEmoji extends MDComponent {
 
         this.classList.add("md-emoji");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-emoji", MDEmoji);

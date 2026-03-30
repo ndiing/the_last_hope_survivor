@@ -36,14 +36,14 @@ class MDImage extends MDComponent {
         return style;
     }
 
+    imageNative = createRef();
+
     constructor() {
         super();
 
         this.loading = "lazy";
         this.shape = "square";
     }
-
-    imageNative = createRef();
 
     _handleImageNativeLoad(event) {
         this.emit("imageNativeLoad", { event, component: this });
@@ -53,6 +53,16 @@ class MDImage extends MDComponent {
         this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
         this.emit("imageNativeError", { event, component: this });
+    }
+
+    _updateShapeClass() {
+        this.shapes.forEach((shape) => {
+            if (shape === this.shape) {
+                this.classList.add(`md-image--${shape}`);
+            } else {
+                this.classList.remove(`md-image--${shape}`);
+            }
+        });
     }
 
     render() {
@@ -75,16 +85,6 @@ class MDImage extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-image");
-    }
-
-    _updateShapeClass() {
-        this.shapes.forEach((shape) => {
-            if (shape === this.shape) {
-                this.classList.add(`md-image--${shape}`);
-            } else {
-                this.classList.remove(`md-image--${shape}`);
-            }
-        });
     }
 
     updated(_changedProperties) {

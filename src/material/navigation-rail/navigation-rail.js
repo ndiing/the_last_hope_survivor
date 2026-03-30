@@ -6,10 +6,6 @@ class MDNavigationRail extends MDComponent {
 
         this.classList.add("md-navigation-rail");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-navigation-rail", MDNavigationRail);

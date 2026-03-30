@@ -6,10 +6,6 @@ class MDTextField extends MDComponent {
 
         this.classList.add("md-text-field");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-text-field", MDTextField);

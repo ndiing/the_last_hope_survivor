@@ -20,10 +20,6 @@ class MDToolGroup extends MDComponent {
 
         this.classList.add("md-tool-group");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-tool-group", MDToolGroup);

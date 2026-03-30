@@ -6,10 +6,6 @@ class MDProgressIndicator extends MDComponent {
 
         this.classList.add("md-progress-indicator");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-progress-indicator", MDProgressIndicator);

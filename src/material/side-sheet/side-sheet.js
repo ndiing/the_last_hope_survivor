@@ -6,10 +6,6 @@ class MDSideSheet extends MDComponent {
 
         this.classList.add("md-side-sheet");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-side-sheet", MDSideSheet);

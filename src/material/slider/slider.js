@@ -6,10 +6,6 @@ class MDSlider extends MDComponent {
 
         this.classList.add("md-slider");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-slider", MDSlider);

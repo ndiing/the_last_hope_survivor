@@ -6,10 +6,6 @@ class MDFabMenu extends MDComponent {
 
         this.classList.add("md-fab-menu");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-fab-menu", MDFabMenu);

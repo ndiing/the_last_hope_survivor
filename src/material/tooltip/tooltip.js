@@ -6,10 +6,6 @@ class MDTooltip extends MDComponent {
 
         this.classList.add("md-tooltip");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-tooltip", MDTooltip);

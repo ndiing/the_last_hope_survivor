@@ -153,10 +153,6 @@ class MDList extends MDComponent {
         this._handleListKeydown = this._handleListKeydown.bind(this);
         this.addEventListener("keydown", this._handleListKeydown);
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-list", MDList);

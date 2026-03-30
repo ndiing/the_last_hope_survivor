@@ -6,10 +6,6 @@ class MDNavigationBar extends MDComponent {
 
         this.classList.add("md-navigation-bar");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-navigation-bar", MDNavigationBar);

@@ -6,10 +6,6 @@ class MDTimePicker extends MDComponent {
 
         this.classList.add("md-time-picker");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-time-picker", MDTimePicker);

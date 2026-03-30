@@ -6,10 +6,6 @@ class MDNavigationDrawer extends MDComponent {
 
         this.classList.add("md-navigation-drawer");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-navigation-drawer", MDNavigationDrawer);

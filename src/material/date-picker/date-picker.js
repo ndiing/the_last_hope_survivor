@@ -6,10 +6,6 @@ class MDDatePicker extends MDComponent {
 
         this.classList.add("md-date-picker");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-date-picker", MDDatePicker);

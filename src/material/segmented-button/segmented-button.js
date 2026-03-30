@@ -6,10 +6,6 @@ class MDSegmentedButton extends MDComponent {
 
         this.classList.add("md-segmented-button");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-segmented-button", MDSegmentedButton);

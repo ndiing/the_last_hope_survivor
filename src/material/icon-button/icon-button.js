@@ -6,10 +6,6 @@ class MDIconButton extends MDComponent {
 
         this.classList.add("md-icon-button");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-icon-button", MDIconButton);

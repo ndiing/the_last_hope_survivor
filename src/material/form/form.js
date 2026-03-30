@@ -15,6 +15,8 @@ class MDForm extends MDComponent {
         noValidate: { type: Boolean },
     };
 
+    formNative = createRef();
+
     constructor() {
         super();
 
@@ -27,8 +29,6 @@ class MDForm extends MDComponent {
     _handleFormNativeReset(event) {
         this.emit("formNativeReset", { event, component: this });
     }
-
-    formNative = createRef();
 
     _handleFormNativeSubmit(event) {
         event.preventDefault();
@@ -69,10 +69,6 @@ class MDForm extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-form");
-    }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
     }
 
     reset() {

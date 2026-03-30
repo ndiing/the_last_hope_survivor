@@ -20,23 +20,6 @@ class MDAvatar extends MDComponent {
         this.shape = "round";
     }
 
-    render() {
-        /* prettier-ignore */
-        return html`
-            <md-image 
-                class="md-avatar__native"
-                src="${ifDefined(this.src)}"
-                shape="${ifDefined(this.shape)}"
-            ></md-image>
-        `
-    }
-
-    connectedCallback() {
-        super.connectedCallback();
-
-        this.classList.add("md-avatar");
-    }
-
     _updateSizeClass() {
         this.sizes.forEach((size) => {
             if (size === this.size) {
@@ -55,6 +38,23 @@ class MDAvatar extends MDComponent {
                 this.classList.remove(`md-avatar--${shape}`);
             }
         });
+    }
+
+    render() {
+        /* prettier-ignore */
+        return html`
+            <md-image 
+                class="md-avatar__native"
+                src="${ifDefined(this.src)}"
+                shape="${ifDefined(this.shape)}"
+            ></md-image>
+        `
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-avatar");
     }
 
     updated(_changedProperties) {

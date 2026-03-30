@@ -6,10 +6,6 @@ class MDSearch extends MDComponent {
 
         this.classList.add("md-search");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-search", MDSearch);

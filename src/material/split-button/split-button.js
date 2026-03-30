@@ -6,10 +6,6 @@ class MDSplitButton extends MDComponent {
 
         this.classList.add("md-split-button");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-split-button", MDSplitButton);

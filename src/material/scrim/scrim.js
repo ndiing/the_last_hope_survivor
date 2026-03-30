@@ -9,6 +9,18 @@ class MDScrim extends MDComponent {
         this.close();
     }
 
+    _updateOpenClass() {
+        if (this.open) {
+            this.classList.add(`md-scrim--open`);
+
+            this.emit("scrimShow", { element: this });
+        } else {
+            this.classList.remove(`md-scrim--open`);
+
+            this.emit("scrimClose", { element: this });
+        }
+    }
+
     connectedCallback() {
         super.connectedCallback();
 
@@ -24,18 +36,6 @@ class MDScrim extends MDComponent {
         this.classList.remove("md-scrim");
 
         this.removeEventListener("click", this._handleClick);
-    }
-
-    _updateOpenClass() {
-        if (this.open) {
-            this.classList.add(`md-scrim--open`);
-
-            this.emit("scrimShow", { element: this });
-        } else {
-            this.classList.remove(`md-scrim--open`);
-
-            this.emit("scrimClose", { element: this });
-        }
     }
 
     updated(_changedProperties) {

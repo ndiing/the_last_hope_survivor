@@ -6,10 +6,6 @@ class MDText extends MDComponent {
 
         this.classList.add("md-text");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-text", MDText);

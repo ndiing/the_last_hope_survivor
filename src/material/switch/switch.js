@@ -32,16 +32,16 @@ class MDSwitch extends MDComponent {
         return this.icons[~~this.checked];
     }
 
-    formResetCallback() {
-        this.checked = this._snapshot.checked;
-
-        this.switchNative.value.checked = this.checked;
-    }
-
     _handleSwitchNativeInput(event) {
         this.checked = this.switchNative.value.checked;
 
         this.emit("switchNativeInput", { event });
+    }
+
+    formResetCallback() {
+        this.checked = this._snapshot.checked;
+
+        this.switchNative.value.checked = this.checked;
     }
 
     render() {
@@ -71,10 +71,6 @@ class MDSwitch extends MDComponent {
         this._snapshot = {
             checked: this.checked,
         };
-    }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
     }
 }
 

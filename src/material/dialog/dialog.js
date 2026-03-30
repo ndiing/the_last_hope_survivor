@@ -6,10 +6,6 @@ class MDDialog extends MDComponent {
 
         this.classList.add("md-dialog");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-dialog", MDDialog);

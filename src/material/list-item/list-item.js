@@ -50,18 +50,18 @@ class MDListItem extends MDComponent {
         `
     }
 
-    get listSupportingText() {
+    get _listSupportingText() {
         return this.querySelector(".md-list__supporting-text");
     }
 
     _setLayout() {
         let layout = "one-line";
 
-        if (this.listSupportingText) {
-            const lineHeight = parseInt(window.getComputedStyle(this.listSupportingText).getPropertyValue("line-height"));
+        if (this._listSupportingText) {
+            const lineHeight = parseInt(window.getComputedStyle(this._listSupportingText).getPropertyValue("line-height"));
 
             layout = "two-line";
-            if (this.listSupportingText.clientHeight > lineHeight) {
+            if (this._listSupportingText.clientHeight > lineHeight) {
                 layout = "three-line";
             }
         }

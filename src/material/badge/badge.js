@@ -22,10 +22,6 @@ class MDBadge extends MDComponent {
 
         this.classList.add("md-badge");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-badge", MDBadge);

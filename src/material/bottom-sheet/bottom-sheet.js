@@ -6,10 +6,6 @@ class MDBottomSheet extends MDComponent {
 
         this.classList.add("md-bottom-sheet");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-bottom-sheet", MDBottomSheet);

@@ -6,10 +6,6 @@ class MDExtendedFab extends MDComponent {
 
         this.classList.add("md-extended-fab");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-extended-fab", MDExtendedFab);

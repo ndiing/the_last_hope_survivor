@@ -6,10 +6,6 @@ class MDMenu extends MDComponent {
 
         this.classList.add("md-menu");
     }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-    }
 }
 
 customElements.define("md-menu", MDMenu);
