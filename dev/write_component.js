@@ -62,6 +62,8 @@ const components = [
     // 'breakpoint',
     // 'tree',
     // 'tree-item',
+    // 'push-menu',
+    // 'push-menu-item',
 ];
 
 function toPascalCase(string) {

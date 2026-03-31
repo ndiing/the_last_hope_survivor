@@ -6,9 +6,9 @@ class DemoToolGroup extends MDComponent {
         super();
         this.tools = [
             //
-            { component: "avatar", src: "https://api.dicebear.com/9.x/icons/svg?seed=0&scale=50" },
-            { component: "image", src: "https://api.dicebear.com/9.x/icons/svg?seed=1&scale=50" },
-            { component: "video", src: "https://api.dicebear.com/9.x/icons/svg?seed=2&scale=50" },
+            { component: "avatar", src: "https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50" },
+            { component: "image", src: "https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50" },
+            { component: "video", src: "https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50" },
             { component: "icon", icon: "image" },
             { component: "checkbox" },
             { component: "radio-button" },

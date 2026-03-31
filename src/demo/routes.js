@@ -52,7 +52,8 @@ const routes = [
         {id:'38',path:'/list-behavior',label:'List Behavior',load:() => import('./list-behavior/list-behavior.js').then(module=>module.default)},
         // {id:'58',path:'/tree-item',label:'Tree Item',load:() => import('./tree-item/tree-item.js').then(module=>module.default),},
         {id:'57',path:'/tree',label:'Tree',load:() => import('./tree/tree.js').then(module=>module.default),},
-
+        // {id:'59',path:'/push-menu-item',label:'Push Menu Item',load:() => import('./push-menu-item/push-menu-item.js').then(module=>module.default),},
+        {id:'60',path:'/push-menu',label:'Push Menu',load:() => import('./push-menu/push-menu.js').then(module=>module.default),},
 
         // {id:'39',path:'/loading-indicator',label:'Loading Indicator',load:() => import('./loading-indicator/loading-indicator.js').then(module=>module.default)},
         // {id:'40',path:'/progress-indicator',label:'Progress Indicator',load:() => import('./progress-indicator/progress-indicator.js').then(module=>module.default)},

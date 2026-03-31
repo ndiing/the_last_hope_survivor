@@ -4,14 +4,14 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { repeat } from "lit/directives/repeat.js";
 
-class MDTree extends MDComponent {
+class MDPushMenu extends MDComponent {
     static properties = {
         items: { type: Array },
         interactive: { type: Boolean },
         selection: { type: Boolean },
         mode: { type: String },
-        inputFormat: { type: String }, // nested/flat
-        _list: { type: Array, state: true },
+        inputFormat: { type: String },
+        _stack: { state: true },
     };
 
     constructor() {
@@ -21,65 +21,88 @@ class MDTree extends MDComponent {
         this.selection = true;
         this.mode = "single-select";
         this.selected = new Set();
-        this.expanded = new Set();
         this.inputFormat = "nested";
         this._tree = [];
-        this._list = [];
+        this._stack = [];
     }
 
-    _handleTreeItemClick(event) {
+    get current() {
+        return this._stack[this._stack.length - 1];
+    }
+
+    push(item) {
+        this._stack = [
+            ...this._stack,
+            {
+                items: item.children,
+                parent: item,
+            },
+        ];
+    }
+
+    pop() {
+        if (this._stack.length > 1) {
+            this._stack = this._stack.slice(0, -1);
+        }
+    }
+
+    _handlePushMenuItemClick(event) {
         if (this.interactive && this.selection) {
             const snapshot = event.currentTarget.snapshot;
 
-            if (this.mode === "single-select") {
-                if (snapshot.hasChildren) {
-                    if (this.expanded.has(snapshot.id)) {
-                        this.expanded.delete(snapshot.id);
-                    } else {
-                        this.expanded.add(snapshot.id);
-                    }
-                }
-
+            if (snapshot?.children?.length) {
+                this.push(snapshot);
+            } else {
                 this.selected.clear();
                 this.selected.add(snapshot.id);
-            } else if (this.mode === "multi-select") {
-                if (this.selected.has(snapshot.id)) {
-                    this.selected.delete(snapshot.id);
-                } else {
-                    this.selected.add(snapshot.id);
-                }
+                this._setStack();
             }
 
-            this._setList();
-
-            this.emit("treeItemSelected", { event });
+            this.emit("pushMenuItemSelected", { event });
         }
 
-        this.emit("treeItemClick", { event });
+        this.emit("pushMenuItemClick", { event });
     }
 
     render() {
+        const { items, parent } = this.current;
+
         /* prettier-ignore */
-        return repeat(this._list,(item)=>item.id,(item)=>html`
-            <md-tree-item
-                style="${styleMap({'--md-comp-tree-item-level':item.level})}"
-                .snapshot="${item}"
-                .leading="${ifDefined(item.leading)}"
-                .label="${ifDefined(item.label)}"
-                .supportingText="${ifDefined(item.supportingText)}"
-                .trailing="${ifDefined(item.trailing)}"
-                .selected="${this.selected.has(item.id)}"
-                routerLink="${ifDefined(item.routerLink)}"
-                .interactive="${ifDefined(this.interactive)}"
-                @click="${this._handleTreeItemClick}"
-            ></md-tree-item>
-        `)
+        return html`
+            ${parent?html`
+                <md-push-menu-item
+                    .parent="${parent}"
+                    .leading="${ifDefined(parent.leading)}"
+                    .label="${ifDefined(parent.label)}"
+                    .supportingText="${ifDefined(parent.supportingText)}"
+                    .trailing="${ifDefined(parent.trailing)}"
+                    .selected="${this.selected.has(parent.id)}"
+                    routerLink="${ifDefined(parent.routerLink)}"
+                    .interactive="${ifDefined(this.interactive)}"
+                    @click="${this.pop}"
+                ></md-push-menu-item>
+            `:nothing}
+            ${repeat(items,(item)=>item.id,(item)=>html`
+                <md-push-menu-item
+                    style="${styleMap({'--md-comp-push-menu-item-level':~~!!parent})}"
+                    .snapshot="${item}"
+                    .leading="${ifDefined(item.leading)}"
+                    .label="${ifDefined(item.label)}"
+                    .supportingText="${ifDefined(item.supportingText)}"
+                    .trailing="${ifDefined(item.trailing)}"
+                    .selected="${this.selected.has(item.id)}"
+                    routerLink="${ifDefined(item.routerLink)}"
+                    .interactive="${ifDefined(this.interactive)}"
+                    @click="${this._handlePushMenuItemClick}"
+                ></md-push-menu-item>
+            `)}
+        `
     }
 
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-tree");
+        this.classList.add("md-push-menu");
     }
 
     _buildTree(list) {
@@ -173,53 +196,38 @@ class MDTree extends MDComponent {
         return path.reverse();
     }
 
-    _getAllSelectedParents() {
-        const parents = new Set();
+    _setStack() {
+        const [selectedId] = this.selected;
 
-        for (const id of this.selected) {
-            const path = this._getSelectedParents(id);
-            path.forEach((p) => parents.add(p));
+        if (!selectedId) {
+            this._stack = [{ items: this._tree, parent: null }];
+            return;
         }
 
-        return parents;
-    }
+        const path = this._getSelectedParents(selectedId);
 
-    _setExpanded() {
-        const parents = this._getAllSelectedParents();
-        parents.forEach((id) => this.expanded.add(id));
-    }
+        const stack = [];
+        let current = this._tree;
 
-    _getList() {
-        const list = [];
+        stack.push({
+            items: current,
+            parent: null,
+        });
 
-        const walk = (node, level = 0) => {
-            const expanded = this.expanded.has(node.id);
+        for (const parentId of path) {
+            const node = current.find((n) => n.id === parentId);
 
-            const { children, ...item } = node;
+            if (!node) break;
 
-            list.push({
-                ...item,
-                hasChildren: !!children?.length,
-                expanded,
-                level,
+            current = node.children || [];
+
+            stack.push({
+                items: current,
+                parent: node,
             });
+        }
 
-            if (!expanded) {
-                return;
-            }
-
-            if (children?.length) {
-                children.forEach((node) => walk(node, level + 1));
-            }
-        };
-
-        this._tree.forEach((node) => walk(node));
-
-        return list;
-    }
-
-    _setList() {
-        this._list = this._getList();
+        this._stack = stack;
     }
 
     willUpdate(_changedProperties) {
@@ -229,12 +237,11 @@ class MDTree extends MDComponent {
             this._setTree();
             this._setSelected();
             this._setParents();
-            this._setExpanded();
-            this._setList();
+            this._setStack();
         }
     }
 }
 
-customElements.define("md-tree", MDTree);
+customElements.define("md-push-menu", MDPushMenu);
 
-export { MDTree };
+export { MDPushMenu };

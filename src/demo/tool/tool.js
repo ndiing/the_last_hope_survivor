@@ -10,20 +10,20 @@ class DemoTool extends MDComponent {
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     ${renderTool('avatar',{
-                        src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'
+                        src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     ${renderTool('image',{
-                        src:'https://api.dicebear.com/9.x/icons/svg?seed=11&scale=50',
+                        src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50',
                     })}
                 </md-layout-column-item>
                 
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     ${renderTool('video',{
-                        src:'https://api.dicebear.com/9.x/icons/svg?seed=12&scale=50',
+                        src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50',
                     })}
                 </md-layout-column-item>
                 

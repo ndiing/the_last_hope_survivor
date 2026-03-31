@@ -10,37 +10,18 @@ class DemoList extends MDComponent {
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
-                            {id:'0',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
-                            {id:'1',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text'},
-                            {id:'2',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text'},
+                            {id:'0',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
+                            {id:'1',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text'},
+                            {id:'2',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text'},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
-                            {id:'3',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
-                            {id:'4',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text',trailing:[{component:'checkbox'}]},
-                            {id:'5',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',trailing:[{component:'checkbox'}]},
-                        ]}"
-                    ></md-list>
-                </md-layout-column-item>
-
-                <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-list
-                        .items="${[
-                            {id:'6',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
-                            {id:'7',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text'},
-                            {id:'8',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text'},
-                        ]}"
-                    ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-list
-                        .items="${[
-                            {id:'9',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
-                            {id:'10',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text',trailing:[{component:'checkbox'}]},
-                            {id:'11',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',trailing:[{component:'checkbox'}]},
+                            {id:'3',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
+                            {id:'4',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text',trailing:[{component:'checkbox'}]},
+                            {id:'5',leading:{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
@@ -48,18 +29,37 @@ class DemoList extends MDComponent {
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
-                            {id:'12',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
-                            {id:'13',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text'},
-                            {id:'14',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text'},
+                            {id:'6',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
+                            {id:'7',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text'},
+                            {id:'8',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text'},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
-                            {id:'15',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
-                            {id:'16',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',supportingText:'Supporting text',trailing:[{component:'checkbox'}]},
-                            {id:'17',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=10&scale=50'},label:'Label text',trailing:[{component:'checkbox'}]},
+                            {id:'9',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
+                            {id:'10',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text',trailing:[{component:'checkbox'}]},
+                            {id:'11',leading:{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',trailing:[{component:'checkbox'}]},
+                        ]}"
+                    ></md-list>
+                </md-layout-column-item>
+
+                <md-layout-column-item expanded="6" medium="4" compact="4">
+                    <md-list
+                        .items="${[
+                            {id:'12',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
+                            {id:'13',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text'},
+                            {id:'14',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text'},
+                        ]}"
+                    ></md-list>
+                </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="4" compact="4">
+                    <md-list
+                        .items="${[
+                            {id:'15',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
+                            {id:'16',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',supportingText:'Supporting text',trailing:[{component:'checkbox'}]},
+                            {id:'17',leading:{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'},label:'Label text',trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>

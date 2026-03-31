@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoTree extends MDComponent {
+class DemoPushMenu extends MDComponent {
     constructor() {
         super();
 
@@ -121,22 +121,22 @@ class DemoTree extends MDComponent {
         return html`
             <md-layout-column>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-tree
+                    <md-push-menu
                         .items="${this.data0}"
                         inputFormat="nested"
-                    ></md-tree>
+                    ></md-push-menu>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-tree
+                    <md-push-menu
                         .items="${this.data1}"
                         inputFormat="flat"
-                    ></md-tree>
+                    ></md-push-menu>
                 </md-layout-column-item>
             </md-layout-column>
         `
     }
 }
 
-customElements.define("demo-tree", DemoTree);
+customElements.define("demo-push-menu", DemoPushMenu);
 
-export default document.createElement("demo-tree");
+export default document.createElement("demo-push-menu");
