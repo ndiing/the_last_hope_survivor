@@ -36,7 +36,7 @@ const routes = [
         // {id:'22',path:'/extended-fab',label:'Extended Fab',load:() => import('./extended-fab/extended-fab.js').then(module=>module.default)},
         // {id:'23',path:'/fab-menu',label:'Fab Menu',load:() => import('./fab-menu/fab-menu.js').then(module=>module.default)},
         // {id:'24',path:'/fab',label:'Fab',load:() => import('./fab/fab.js').then(module=>module.default)},
-        // {id:'25',path:'/icon-button',label:'Icon Button',load:() => import('./icon-button/icon-button.js').then(module=>module.default)},
+        {id:'25',path:'/icon-button',label:'Icon Button',load:() => import('./icon-button/icon-button.js').then(module=>module.default)},
         // {id:'26',path:'/segmented-button',label:'Segmented Button',load:() => import('./segmented-button/segmented-button.js').then(module=>module.default)},
         // {id:'27',path:'/split-button',label:'Split Button',load:() => import('./split-button/split-button.js').then(module=>module.default)},
         // {id:'28',path:'/card',label:'Card',load:() => import('./card/card.js').then(module=>module.default)},

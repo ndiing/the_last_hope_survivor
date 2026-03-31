@@ -21,7 +21,7 @@ class MDForm extends MDComponent {
         this.method = "post";
 
         this._childNodes = Array.from(this.childNodes);
-        this.innerHTML = "";
+        this.replaceChildren();
     }
 
     _handleFormNativeReset(event) {

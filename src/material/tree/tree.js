@@ -62,6 +62,7 @@ class MDTree extends MDComponent {
         /* prettier-ignore */
         return repeat(this._list,(item)=>item.id,(item)=>html`
             <md-tree-item
+                style="${styleMap({'--md-comp-tree-item-level':item.level})}"
                 .snapshot="${item}"
                 .leading="${ifDefined(item.leading)}"
                 .label="${ifDefined(item.label)}"
@@ -102,7 +103,6 @@ class MDTree extends MDComponent {
 
         return tree;
     }
-
 
     _setTree() {
         this._tree = this.inputFormat === "tree" ? this.items : this._buildTree(this.items);
@@ -181,13 +181,13 @@ class MDTree extends MDComponent {
 
     _setExpanded() {
         const parents = this._getAllSelectedParents();
-        parents.forEach(id => this.expanded.add(id));
+        parents.forEach((id) => this.expanded.add(id));
     }
 
     _getList() {
         const list = [];
 
-        const walk = (node) => {
+        const walk = (node, level = 0) => {
             const expanded = this.expanded.has(node.id);
 
             const { children, ...item } = node;
@@ -196,6 +196,7 @@ class MDTree extends MDComponent {
                 ...item,
                 hasChildren: !!children?.length,
                 expanded,
+                level,
             });
 
             if (!expanded) {
@@ -203,7 +204,7 @@ class MDTree extends MDComponent {
             }
 
             if (children?.length) {
-                children.forEach((node) => walk(node));
+                children.forEach((node) => walk(node, level + 1));
             }
         };
 
@@ -227,7 +228,6 @@ class MDTree extends MDComponent {
             this._setList();
         }
     }
-
 }
 
 customElements.define("md-tree", MDTree);

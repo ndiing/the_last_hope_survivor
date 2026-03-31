@@ -54,8 +54,14 @@ function generateCode() {
         ],
         includes = [
             // /.*/, //
-            // /src\\material\\list/, //
-            // /src\\material\\list-item/, //
+            // /src\\material\\tree/, //
+            // /src\\material\\tree-item/, //
+            // /src\\material\\checkbox/, //
+            // /src\\material\\radio-button/, //
+            // /src\\material\\switch/, //
+            // /src\\demo\\icon\\/, //
+            // /src\\demo\\emoji\\/, //
+            // /src\\material\\icon-button/, //
         ];
 
     const items = readDir(rootDir, excludes, includes);
