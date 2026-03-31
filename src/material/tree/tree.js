@@ -7,43 +7,52 @@ import { repeat } from "lit/directives/repeat.js";
 class MDTree extends MDComponent {
     static properties = {
         items: { type: Array },
-        _list: { type: Array, state: true },
-        format: { type: String },
         interactive: { type: Boolean },
         selection: { type: Boolean },
-        mode: { type: String }, // single-select/multi-select
+        mode: { type: String },
+        inputFormat: { type: String }, // tree/list
+        _list: { type: Array, state: true },
     };
 
     constructor() {
         super();
         this.items = [];
-        this._tree = [];
-        this._list = [];
-        this.format = "nested"; // flat/nested
         this.interactive = true;
         this.selection = true;
-        this.expanded = new Set();
+        this.mode = "single-select";
         this.selected = new Set();
+        this.expanded = new Set();
+        this.inputFormat = "tree";
+        this._tree = [];
+        this._list = [];
     }
 
     _handleTreeItemClick(event) {
         if (this.interactive && this.selection) {
             const snapshot = event.currentTarget.snapshot;
 
-            if (snapshot.hasChildren) {
-                if (this.expanded.has(snapshot.id)) {
-                    this.expanded.delete(snapshot.id);
+            if (this.mode === "single-select") {
+                if (snapshot.hasChildren) {
+                    if (this.expanded.has(snapshot.id)) {
+                        this.expanded.delete(snapshot.id);
+                    } else {
+                        this.expanded.add(snapshot.id);
+                    }
+                }
+
+                this.selected.clear();
+                this.selected.add(snapshot.id);
+            } else if (this.mode === "multi-select") {
+                if (this.selected.has(snapshot.id)) {
+                    this.selected.delete(snapshot.id);
                 } else {
-                    this.expanded.add(snapshot.id);
+                    this.selected.add(snapshot.id);
                 }
             }
 
-            this.selected.clear();
-            this.selected.add(snapshot.id);
+            this._setList();
 
-            this._updateList();
-
-            this.emit("treeItemSelection", { selected: this.selected });
+            this.emit("treeItemSelected", { event });
         }
 
         this.emit("treeItemClick", { event });
@@ -73,8 +82,8 @@ class MDTree extends MDComponent {
     }
 
     _buildTree(list) {
-        const tree = [];
         const map = new Map();
+        const tree = [];
 
         list.forEach((item) => {
             map.set(item.id, { ...item, children: [] });
@@ -85,9 +94,7 @@ class MDTree extends MDComponent {
 
             if (item.parent_id) {
                 const parent = map.get(item.parent_id);
-                if (parent) {
-                    parent.children.push(node);
-                }
+                parent.children.push(node);
             } else {
                 tree.push(node);
             }
@@ -96,37 +103,97 @@ class MDTree extends MDComponent {
         return tree;
     }
 
-    _getSelected(items) {
-        const result = new Set();
-        const stack = [...items];
-        while (stack.length) {
-            const node = stack.pop();
-            if (node.selected) {
-                result.add(node.id);
-            }
-            if (node.children?.length) {
-                stack.push(...node.children);
-            }
-        }
-        return result;
+
+    _setTree() {
+        this._tree = this.inputFormat === "tree" ? this.items : this._buildTree(this.items);
     }
 
-    _updateSelected() {
-        const selected = this._getSelected(this.items);
+    _getSelected() {
+        const selected = new Set();
+        const nodes = [...this._tree];
+
+        while (nodes.length) {
+            const node = nodes.pop();
+
+            if (node.selected) {
+                selected.add(node.id);
+            }
+
+            if (node.children?.length) {
+                nodes.push(...node.children);
+            }
+        }
+
+        return selected;
+    }
+
+    _setSelected() {
+        const selected = this._getSelected();
         selected.forEach((id) => this.selected.add(id));
+    }
+
+    _getParents() {
+        const parents = new Map();
+
+        const walk = (node, parent) => {
+            if (parent) {
+                parents.set(node.id, parent.id);
+            }
+
+            if (node.children?.length) {
+                node.children.forEach((child) => walk(child, node));
+            }
+        };
+
+        this._tree.forEach((node) => walk(node));
+
+        return parents;
+    }
+
+    _setParents() {
+        this._parents = this._getParents();
+    }
+
+    _getSelectedParents(id) {
+        const path = [];
+        let current = id;
+
+        while (this._parents.has(current)) {
+            const parent = this._parents.get(current);
+            path.push(parent);
+
+            current = parent;
+        }
+
+        return path.reverse();
+    }
+
+    _getAllSelectedParents() {
+        const parents = new Set();
+
+        for (const id of this.selected) {
+            const path = this._getSelectedParents(id);
+            path.forEach((p) => parents.add(p));
+        }
+
+        return parents;
+    }
+
+    _setExpanded() {
+        const parents = this._getAllSelectedParents();
+        parents.forEach(id => this.expanded.add(id));
     }
 
     _getList() {
         const list = [];
 
-        const walk = (node, level = 0) => {
+        const walk = (node) => {
             const expanded = this.expanded.has(node.id);
 
             const { children, ...item } = node;
 
             list.push({
                 ...item,
-                level,
                 hasChildren: !!children?.length,
                 expanded,
             });
@@ -136,7 +203,7 @@ class MDTree extends MDComponent {
             }
 
             if (children?.length) {
-                children.forEach((node) => walk(node, level + 1));
+                children.forEach((node) => walk(node));
             }
         };
 
@@ -145,59 +212,22 @@ class MDTree extends MDComponent {
         return list;
     }
 
-    _updateList() {
+    _setList() {
         this._list = this._getList();
-        console.debug("[_updateList]", this._list);
     }
 
-    _getParents(tree) {
-        const map = new Map();
-        const walk = (node, parent = null) => {
-            if (parent) {
-                map.set(node.id, parent.id);
-            }
-            if (node.children?.length) {
-                node.children.forEach((child) => walk(child, node));
-            }
-        };
-        tree.forEach((node) => walk(node));
-        return map;
-    }
-
-    _getParentsId(id) {
-        const path = [];
-        let current = id;
-        while (this._parents.has(current)) {
-            const parent = this._parents.get(current);
-            path.push(parent);
-            current = parent;
-        }
-        return path.reverse();
-    }
-    _getAllParents() {
-        const parents = new Set();
-        for (const id of this.selected) {
-            const path = this._getParentsId(id);
-            path.forEach((p) => parents.add(p));
-        }
-        return parents;
-    }
-
-    _updateExpanded() {
-        const parents = this._getAllParents();
-        parents.forEach((id) => this.expanded.add(id));
-    }
     willUpdate(_changedProperties) {
         super.willUpdate(_changedProperties);
 
-        if (_changedProperties.has("items")) {
-            this._tree = this.format === "nested" ? this.items : this._buildTree(this.items);
-            this._updateSelected();
-            this._parents = this._getParents(this._tree);
-            this._updateExpanded();
-            this._updateList();
+        if (_changedProperties.has("items") || _changedProperties.has("inputFormat")) {
+            this._setTree();
+            this._setSelected();
+            this._setParents();
+            this._setExpanded();
+            this._setList();
         }
     }
+
 }
 
 customElements.define("md-tree", MDTree);

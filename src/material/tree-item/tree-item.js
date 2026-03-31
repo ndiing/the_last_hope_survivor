@@ -18,11 +18,6 @@ class MDTreeItem extends MDComponent {
 
     rippleController = new RippleController(this, {});
 
-    constructor() {
-        super();
-        this.interactive = true;
-    }
-
     render() {
         /* prettier-ignore */
         return html`

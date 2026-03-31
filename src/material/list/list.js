@@ -37,7 +37,7 @@ class MDList extends MDComponent {
 
             this.requestUpdate();
 
-            this.emit("listItemSelection", { selected: this.selected });
+            this.emit("listItemSelected", { event });
         }
 
         this.emit("listItemClick", { event });
@@ -66,23 +66,23 @@ class MDList extends MDComponent {
         this.classList.add("md-list");
     }
 
-    _getSelected(items) {
-        const result = new Set();
-        const stack = [...items];
-        while (stack.length) {
-            const node = stack.pop();
-            if (node.selected) {
-                result.add(node.id);
-            }
-            if (node.children?.length) {
-                stack.push(...node.children);
+    _getSelected() {
+        const selected = new Set();
+        const items = [...this.items];
+
+        while (items.length) {
+            const item = items.pop();
+
+            if (item.selected) {
+                selected.add(item.id);
             }
         }
-        return result;
+
+        return selected;
     }
 
-    _updateSelected() {
-        const selected = this._getSelected(this.items);
+    _setSelected() {
+        const selected = this._getSelected();
         selected.forEach((id) => this.selected.add(id));
     }
 
@@ -90,7 +90,7 @@ class MDList extends MDComponent {
         super.willUpdate(_changedProperties);
 
         if (_changedProperties.has("items")) {
-            this._updateSelected();
+            this._setSelected();
         }
     }
 }

@@ -123,13 +123,13 @@ class DemoTree extends MDComponent {
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-tree
                         .items="${this.data0}"
-                        format="nested"
+                        inputFormat="tree"
                     ></md-tree>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-tree
                         .items="${this.data1}"
-                        format="flat"
+                        inputFormat="list"
                     ></md-tree>
                 </md-layout-column-item>
             </md-layout-column>
