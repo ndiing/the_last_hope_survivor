@@ -61,6 +61,7 @@ const components = [
     // 'list-item',
     // 'breakpoint',
     // 'tree',
+    // 'tree-item',
 ];
 
 function toPascalCase(string) {

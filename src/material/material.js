@@ -40,6 +40,8 @@ import "./badge/badge.js";
 
 import "./list-item/list-item.js";
 import "./list/list.js";
+import "./tree-item/tree-item.js";
+import "./tree/tree.js";
 
 import "./text-field/text-field.js";
 

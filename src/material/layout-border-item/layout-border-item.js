@@ -1,10 +1,5 @@
 import { MDComponent } from "../component/component.js";
 
-/**
- * @class
- * @fires layoutBorderItemShow
- * @fires layoutBorderItemClose
- */
 class MDLayoutBorderItem extends MDComponent {
     static properties = {
         region: { type: String },

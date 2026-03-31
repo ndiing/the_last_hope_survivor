@@ -3,12 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-/**
- * @class
- * @fires formNativeReset
- * @fires formNativeSubmit
- * @fires formNativeFormdata
- */
 class MDForm extends MDComponent {
     static properties = {
         acceptCharset: { type: String },

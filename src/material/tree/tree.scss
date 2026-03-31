@@ -1,71 +1,71 @@
 @use "../mixins/mixins.scss";
 
-.md-list {
+.md-tree {
     display: flex;
     flex-direction: column;
     padding: 8px 0;
     // background-color: var(--md-sys-color-surface-container); // remove it later
 }
-.md-list__item {
+.md-tree__item {
     display: flex;
     align-items: center;
-    padding: 8px 16px 8px calc(16px + (24px * var(--md-comp-list-item-level, 0)));
+    padding: 8px 16px 8px calc(16px + (24px * var(--md-comp-tree-item-level, 0)));
     gap: 0 16px;
 }
-.md-list__leading {
+.md-tree__leading {
     flex: 0 0 auto;
 }
-// .md-list__leading-item--avatar{}
-// .md-list__leading-item--image{}
-.md-list__leading-item--video {
+// .md-tree__leading-item--avatar{}
+// .md-tree__leading-item--image{}
+.md-tree__leading-item--video {
     margin: 4px 0 4px -16px;
 }
-// .md-list__leading-item--icon{}
-// .md-list__leading-item--checkbox{}
-// .md-list__leading-item--radio-button{}
-.md-list__content {
+// .md-tree__leading-item--icon{}
+// .md-tree__leading-item--checkbox{}
+// .md-tree__leading-item--radio-button{}
+.md-tree__content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-.md-list__label {
+.md-tree__label {
     @include mixins.typescale-body-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.md-list__supporting-text {
+.md-tree__supporting-text {
     @include mixins.typescale-body-medium();
     max-height: calc(var(--md-sys-typescale-body-medium-line-height) * 2);
     overflow: hidden;
 }
-.md-list__trailing {
+.md-tree__trailing {
     flex: 0 0 auto;
 }
-.md-list__item--one-line {
+.md-tree__item--one-line {
     min-height: 56px;
 }
-.md-list__item--two-line {
+.md-tree__item--two-line {
     min-height: 72px;
 }
-.md-list__item--three-line {
+.md-tree__item--three-line {
     min-height: 88px;
     padding-top: 12px;
     padding-bottom: 12px;
     align-items: flex-start;
 
-    .md-list__leading-item--video {
+    .md-tree__leading-item--video {
         margin: 0 0 0 -16px;
     }
 }
 
-.md-list__item:not(.md-list__item--interactive) {
+.md-tree__item:not(.md-tree__item--interactive) {
     &::after {
         display: none;
     }
 }
 
-.md-list__item[selected] {
+.md-tree__item[selected] {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 }

@@ -50,6 +50,9 @@ const routes = [
         // {id:'36',path:'/list-item',label:'List Item',load:() => import('./list-item/list-item.js').then(module=>module.default),},
         {id:'37',path:'/list',label:'List',load:() => import('./list/list.js').then(module=>module.default)},
         {id:'38',path:'/list-behavior',label:'List Behavior',load:() => import('./list-behavior/list-behavior.js').then(module=>module.default)},
+        // {id:'58',path:'/tree-item',label:'Tree Item',load:() => import('./tree-item/tree-item.js').then(module=>module.default),},
+        {id:'57',path:'/tree',label:'Tree',load:() => import('./tree/tree.js').then(module=>module.default),},
+
 
         // {id:'39',path:'/loading-indicator',label:'Loading Indicator',load:() => import('./loading-indicator/loading-indicator.js').then(module=>module.default)},
         // {id:'40',path:'/progress-indicator',label:'Progress Indicator',load:() => import('./progress-indicator/progress-indicator.js').then(module=>module.default)},

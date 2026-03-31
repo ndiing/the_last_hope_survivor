@@ -1,11 +1,5 @@
 import { MDComponent } from "../component/component.js";
 
-/**
- * @class
- * @fires scrimClick
- * @fires scrimShow
- * @fires scrimClose
- */
 class MDScrim extends MDComponent {
     static properties = {
         open: { type: Boolean },
