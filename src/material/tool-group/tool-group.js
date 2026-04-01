@@ -1,5 +1,5 @@
 import { MDComponent } from "../component/component.js";
-import { renderTool } from "../tool/tool.js";
+import { tool } from "../tool/tool.js";
 
 class MDToolGroup extends MDComponent {
     static properties = {
@@ -12,7 +12,7 @@ class MDToolGroup extends MDComponent {
     }
 
     render() {
-        return this.tools.map(({ component, ...properties }) => renderTool(component, properties));
+        return this.tools.map(({ component, ...properties }) => tool(component, properties));
     }
 
     connectedCallback() {

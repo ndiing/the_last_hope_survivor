@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import { renderTool } from "../../material/tool/tool.js";
+import { tool } from "../../material/tool/tool.js";
 
 class DemoTool extends MDComponent {
     render() {
@@ -9,64 +9,69 @@ class DemoTool extends MDComponent {
             <md-layout-column>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('avatar',{
+                    ${tool('avatar',{
                         src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('image',{
+                    ${tool('image',{
                         src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50',
                     })}
                 </md-layout-column-item>
                 
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('video',{
+                    ${tool('video',{
                         src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50',
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('icon',{
+                    ${tool('icon',{
                         icon:'image'
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('checkbox',{
+                    ${tool('checkbox',{
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('radio-button',{
+                    ${tool('radio-button',{
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('switch',{
+                    ${tool('switch',{
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('text',{
+                    ${tool('text',{
                         text: '⌘+C'
                     })}
                 </md-layout-column-item>
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('badge',{
+                    ${tool('badge',{
                         label: 0
                     })}
                 </md-layout-column-item>
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('badge',{
+                    ${tool('badge',{
                         label: 3
                     })}
                 </md-layout-column-item>
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    ${renderTool('badge',{
+                    ${tool('badge',{
                         label: 1000
+                    })}
+                </md-layout-column-item>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    ${tool('icon-button',{
+                        icon: 'menu'
                     })}
                 </md-layout-column-item>
 

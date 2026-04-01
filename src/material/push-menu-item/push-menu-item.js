@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderTool } from "../tool/tool.js";
+import { tool } from "../tool/tool.js";
 import { RippleController } from "../ripple/ripple.js";
 
 class MDTreeItem extends MDComponent {
@@ -21,7 +21,7 @@ class MDTreeItem extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${this.leading?.component?renderTool(this.leading.component,{
+            ${this.leading?.component?tool(this.leading.component,{
                 ...this.leading,
                 class:{
                     'md-push-menu__leading':true,

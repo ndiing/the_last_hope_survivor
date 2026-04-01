@@ -5,7 +5,7 @@ import { RippleController } from "../ripple/ripple.js";
 class MDIconButton extends MDComponent {
     static properties = {
         icon: {
-            type: Array,
+            type: String,
             converter: (value, type) => {
                 try {
                     return JSON.parse(value);

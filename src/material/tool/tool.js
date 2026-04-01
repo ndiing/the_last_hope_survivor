@@ -129,7 +129,26 @@ function _renderBadge(properties = {}) {
     `
 }
 
-function renderTool(component = "icon", properties = {}) {
+function _renderIconButton(properties = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-icon-button
+            id="${ifDefined(properties.id)}"
+            class="${classMap({'md-tool':true,...properties.class})}"
+            style="${styleMap({...properties.style})}"
+            tabindex="${ifDefined(properties.tabindex)}"
+            icon="${ifDefined(properties.icon)}"
+            .variant="${ifDefined(properties.variant)}"
+            .size="${ifDefined(properties.size)}"
+            .shape="${ifDefined(properties.shape)}"
+            .color="${ifDefined(properties.color)}"
+            .width="${ifDefined(properties.width)}"
+            .selected="${ifDefined(properties.selected)}"
+        ></md-icon-button>
+    `
+}
+
+function tool(component = "icon", properties = {}) {
     /* prettier-ignore */
     return choose(component,[
         ['avatar',() => _renderAvatar({size:'extra-large',...properties})],
@@ -141,7 +160,8 @@ function renderTool(component = "icon", properties = {}) {
         ['switch',() => _renderSwitch(properties)],
         ['text',() => _renderText(properties)],
         ['badge',() => _renderBadge(properties)],
+        ['icon-button',() => _renderIconButton(properties)],
     ],() => nothing)
 }
 
-export { renderTool };
+export { tool };
