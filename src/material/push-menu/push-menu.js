@@ -73,7 +73,7 @@ class MDPushMenu extends MDComponent {
                 <md-push-menu-item
                     .parent="${parent}"
                     .leading="${ifDefined(parent.leading)}"
-                    .label="${'Back'}"
+                    .label="${ifDefined(parent.label)}"
                     .supportingText="${ifDefined(parent.supportingText)}"
                     .trailing="${ifDefined(parent.trailing)}"
                     .selected="${this.selected.has(parent.id)}"
