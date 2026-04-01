@@ -68,11 +68,11 @@ class MDPushMenu extends MDComponent {
         const { items, parent } = this.current;
 
         /* prettier-ignore */
-        return html`
+        return html`    
             ${parent?html`
                 <md-push-menu-item
-                    .parent="${parent}"
-                    .leading="${ifDefined(parent.leading)}"
+                    .snapshot="${parent}"
+                    .leading="${{component:'icon',icon:'arrow_back'}}"
                     .label="${ifDefined(parent.label)}"
                     .supportingText="${ifDefined(parent.supportingText)}"
                     .trailing="${ifDefined(parent.trailing)}"
@@ -84,12 +84,11 @@ class MDPushMenu extends MDComponent {
             `:nothing}
             ${repeat(items,(item)=>item.id,(item)=>html`
                 <md-push-menu-item
-                    style="${styleMap({'--md-comp-push-menu-item-level':~~!!parent})}"
                     .snapshot="${item}"
-                    .leading="${ifDefined(item.leading)}"
+                    .leading="${(item.leading?.icon||parent)?{component:'icon',icon:item.leading?.icon||''}:undefined}"
                     .label="${ifDefined(item.label)}"
                     .supportingText="${ifDefined(item.supportingText)}"
-                    .trailing="${ifDefined(item.trailing)}"
+                    .trailing="${[...(item.children?.length?[{component:'icon',icon:'arrow_forward'}]:[])]}"
                     .selected="${this.selected.has(item.id)}"
                     routerLink="${ifDefined(item.routerLink)}"
                     .interactive="${ifDefined(this.interactive)}"
@@ -239,6 +238,12 @@ class MDPushMenu extends MDComponent {
             this._setParents();
             this._setStack();
         }
+    }
+
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        console.log(this._stack)
     }
 }
 
