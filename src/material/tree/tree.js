@@ -59,12 +59,17 @@ class MDTree extends MDComponent {
     }
 
     render() {
+        const rootHasBranch = this._tree.some(node=>node.children?.length)
+
         /* prettier-ignore */
         return repeat(this._list,(item)=>item.id,(item)=>html`
             <md-tree-item
-                style="${styleMap({'--md-comp-tree-item-level':item.level})}"
+                style="${styleMap({'--md-comp-tree-item-level':item.level,})}"
                 .snapshot="${item}"
-                .leading="${[{component:'icon',icon:item.hasChildren?this.expanded.has(item.id)?'folder_open':'folder':'draft'}]}"
+                .leading="${[
+                    ...(rootHasBranch?[{component:'icon',icon:item.hasChildren?item.expanded?'keyboard_arrow_down':'keyboard_arrow_right':''}]:[]),
+                    {component:'icon',icon:item.hasChildren?this.expanded.has(item.id)?'folder_open':'folder':'draft'}
+                ]}"
                 .label="${ifDefined(item.label)}"
                 .supportingText="${ifDefined(item.supportingText)}"
                 .trailing="${ifDefined(item.trailing)}"
@@ -213,7 +218,7 @@ class MDTree extends MDComponent {
             }
         };
 
-        this._tree.forEach((node) => walk(node));
+        this._tree.forEach((node) => walk(node, 0));
 
         return list;
     }

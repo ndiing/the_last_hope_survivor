@@ -6,6 +6,20 @@ class DemoTree extends MDComponent {
         super();
 
         this.data0 = [
+            { label: "Item 1", id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb", parent_id: null },
+            { label: "Item 2", id: "345bad45-2ffd-46ff-8040-929c7a54c8b4", parent_id: null },
+            { label: "Item 3", id: "50f6f958-c3a0-4f65-965d-5ea803dd253b", parent_id: null, children: [] },
+            { label: "Item 4", id: "218d3a52-cd1e-4e59-9ebf-f05caad77236", parent_id: null, children: [] },
+            { label: "Item 5", id: "adaf821d-aeb9-49a1-8f41-90c6e6d31f4d", parent_id: null, children: [] },
+        ];
+        this.data1 = [
+            { label: "Item 1", id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb", parent_id: null },
+            { label: "Item 2", id: "345bad45-2ffd-46ff-8040-929c7a54c8b4", parent_id: null },
+            { label: "Item 3", id: "50f6f958-c3a0-4f65-965d-5ea803dd253b", parent_id: null },
+            { label: "Item 4", id: "218d3a52-cd1e-4e59-9ebf-f05caad77236", parent_id: null },
+            { label: "Item 5", id: "adaf821d-aeb9-49a1-8f41-90c6e6d31f4d", parent_id: null },
+        ];
+        this.data2 = [
             {
                 label: "Item 1",
                 id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb",
@@ -78,7 +92,7 @@ class DemoTree extends MDComponent {
             { label: "Item 4", id: "218d3a52-cd1e-4e59-9ebf-f05caad77236", parent_id: null, children: [] },
             { label: "Item 5", id: "adaf821d-aeb9-49a1-8f41-90c6e6d31f4d", parent_id: null, children: [] },
         ];
-        this.data1 = [
+        this.data3 = [
             { label: "Item 1", id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb", parent_id: null },
             { label: "Item 1.1", id: "519c2499-24c1-40ba-8367-3cb49067003e", parent_id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb" },
             { label: "Item 1.1.1", id: "bd33aa7b-2ed8-4bba-8cc3-db272e262339", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e" },
@@ -129,6 +143,18 @@ class DemoTree extends MDComponent {
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-tree
                         .items="${this.data1}"
+                        inputFormat="flat"
+                    ></md-tree>
+                </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="4" compact="4">
+                    <md-tree
+                        .items="${this.data2}"
+                        inputFormat="nested"
+                    ></md-tree>
+                </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="4" compact="4">
+                    <md-tree
+                        .items="${this.data3}"
                         inputFormat="flat"
                     ></md-tree>
                 </md-layout-column-item>
