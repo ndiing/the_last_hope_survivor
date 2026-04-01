@@ -72,7 +72,7 @@ class MDPushMenu extends MDComponent {
             ${parent?html`
                 <md-push-menu-item
                     .snapshot="${parent}"
-                    .leading="${{component:'icon',icon:'arrow_back'}}"
+                    .leading="${[{component:'icon',icon:'arrow_back'}]}"
                     .label="${ifDefined(parent.label)}"
                     .supportingText="${ifDefined(parent.supportingText)}"
                     .trailing="${ifDefined(parent.trailing)}"
@@ -85,7 +85,7 @@ class MDPushMenu extends MDComponent {
             ${repeat(items,(item)=>item.id,(item)=>html`
                 <md-push-menu-item
                     .snapshot="${item}"
-                    .leading="${(item.leading?.icon||parent)?{component:'icon',icon:item.leading?.icon||''}:undefined}"
+                    .leading="${[...((item.leading?.icon||parent)?[{component:'icon',icon:item.leading?.icon||''}]:[])]}"
                     .label="${ifDefined(item.label)}"
                     .supportingText="${ifDefined(item.supportingText)}"
                     .trailing="${[...(item.children?.length?[{component:'icon',icon:'arrow_forward'}]:[])]}"

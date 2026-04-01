@@ -5,7 +5,7 @@ import { RippleController } from "../ripple/ripple.js";
 
 class MDListItem extends MDComponent {
     static properties = {
-        leading: { type: Object },
+        leading: { type: Array },
         label: { type: Object },
         supportingText: { type: Object },
         trailing: { type: Array },
@@ -21,17 +21,16 @@ class MDListItem extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${this.leading?.component?tool(this.leading.component,{
-                ...this.leading,
+            ${Array.isArray(this.leading)?html`<md-tool-group class="md-list__leading" .tools="${this.leading.map(item=>({
+                ...item,
                 class:{
-                    'md-list__leading':true,
                     'md-list__leading-item':true,
-                    [`md-list__leading-item--${this.leading.component}`]:true,
-                    ...this.leading.class
+                    [`md-list__leading-item--${item.component}`]:true,
+                    ...item.class
                 },
                 tabindex:-1,
                 checked:this.selected
-            }):nothing}
+            }))}"></md-tool-group>`:nothing}
             ${this.label||this.supportingText?html`
                 <div class="md-list__content">
                     ${this.label?html`<div class="md-list__label">${this.label}</div>`:nothing}

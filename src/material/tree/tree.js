@@ -64,7 +64,7 @@ class MDTree extends MDComponent {
             <md-tree-item
                 style="${styleMap({'--md-comp-tree-item-level':item.level})}"
                 .snapshot="${item}"
-                .leading="${ifDefined(item.leading)}"
+                .leading="${[{component:'icon',icon:item.hasChildren?this.expanded.has(item.id)?'folder_open':'folder':'draft'}]}"
                 .label="${ifDefined(item.label)}"
                 .supportingText="${ifDefined(item.supportingText)}"
                 .trailing="${ifDefined(item.trailing)}"

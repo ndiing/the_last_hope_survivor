@@ -72,11 +72,11 @@ class DemoListBehavior extends MDComponent {
                         selection
                         mode="single-select"
                         .items="${[
-                            {id:'20',leading:{component:'radio-button'},label:"List item 0",selected:true},
-                            {id:'21',leading:{component:'radio-button'},label:"List item 1"},
-                            {id:'22',leading:{component:'radio-button'},label:"List item 2"},
-                            {id:'23',leading:{component:'radio-button'},label:"List item 3"},
-                            {id:'24',leading:{component:'radio-button'},label:"List item 4"},
+                            {id:'20',leading:[{component:'radio-button'}],label:"List item 0",selected:true},
+                            {id:'21',leading:[{component:'radio-button'}],label:"List item 1"},
+                            {id:'22',leading:[{component:'radio-button'}],label:"List item 2"},
+                            {id:'23',leading:[{component:'radio-button'}],label:"List item 3"},
+                            {id:'24',leading:[{component:'radio-button'}],label:"List item 4"},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
@@ -86,11 +86,11 @@ class DemoListBehavior extends MDComponent {
                         selection
                         mode="multi-select"
                         .items="${[
-                            {id:'25',leading:{component:'checkbox'},label:"List item 0",selected:true},
-                            {id:'26',leading:{component:'checkbox'},label:"List item 1",selected:true},
-                            {id:'27',leading:{component:'checkbox'},label:"List item 2"},
-                            {id:'28',leading:{component:'checkbox'},label:"List item 3"},
-                            {id:'29',leading:{component:'checkbox'},label:"List item 4"},
+                            {id:'25',leading:[{component:'checkbox'}],label:"List item 0",selected:true},
+                            {id:'26',leading:[{component:'checkbox'}],label:"List item 1",selected:true},
+                            {id:'27',leading:[{component:'checkbox'}],label:"List item 2"},
+                            {id:'28',leading:[{component:'checkbox'}],label:"List item 3"},
+                            {id:'29',leading:[{component:'checkbox'}],label:"List item 4"},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
@@ -100,11 +100,11 @@ class DemoListBehavior extends MDComponent {
                         selection
                         mode="multi-select"
                         .items="${[
-                            {id:'30',leading:{component:'switch'},label:"List item 0",selected:true},
-                            {id:'31',leading:{component:'switch'},label:"List item 1",selected:true},
-                            {id:'32',leading:{component:'switch'},label:"List item 2"},
-                            {id:'33',leading:{component:'switch'},label:"List item 3"},
-                            {id:'34',leading:{component:'switch'},label:"List item 4"},
+                            {id:'30',leading:[{component:'switch'}],label:"List item 0",selected:true},
+                            {id:'31',leading:[{component:'switch'}],label:"List item 1",selected:true},
+                            {id:'32',leading:[{component:'switch'}],label:"List item 2"},
+                            {id:'33',leading:[{component:'switch'}],label:"List item 3"},
+                            {id:'34',leading:[{component:'switch'}],label:"List item 4"},
                         ]}"
                     ></md-list>
                 </md-layout-column-item>
