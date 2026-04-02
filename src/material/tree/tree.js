@@ -31,24 +31,16 @@ class MDTree extends MDComponent {
         if (this.interactive && this.selection) {
             const snapshot = event.currentTarget.snapshot;
 
-            if (this.mode === "single-select") {
-                if (snapshot.hasChildren) {
-                    if (this.expanded.has(snapshot.id)) {
-                        this.expanded.delete(snapshot.id);
-                    } else {
-                        this.expanded.add(snapshot.id);
-                    }
-                }
-
-                this.selected.clear();
-                this.selected.add(snapshot.id);
-            } else if (this.mode === "multi-select") {
-                if (this.selected.has(snapshot.id)) {
-                    this.selected.delete(snapshot.id);
+            if (snapshot.hasChildren) {
+                if (this.expanded.has(snapshot.id)) {
+                    this.expanded.delete(snapshot.id);
                 } else {
-                    this.selected.add(snapshot.id);
+                    this.expanded.add(snapshot.id);
                 }
             }
+
+            this.selected.clear();
+            this.selected.add(snapshot.id);
 
             this._setList();
 
@@ -59,15 +51,18 @@ class MDTree extends MDComponent {
     }
 
     render() {
-        const rootHasBranch = this._tree.some(node=>node.children?.length)
+        const rootHasBranch = this._tree.some((node) => node.children?.length);
 
         /* prettier-ignore */
         return repeat(this._list,(item)=>item.id,(item)=>html`
-            <md-tree-item
+            <md-list-item
+                class="md-tree__item"
                 style="${styleMap({'--md-comp-tree-item-level':item.level,})}"
                 .snapshot="${item}"
                 .leading="${[
-                    ...(rootHasBranch?[{component:'icon',icon:item.hasChildren?item.expanded?'keyboard_arrow_down':'keyboard_arrow_right':''}]:[]),
+                    ...(rootHasBranch?[
+                        {...(item.hasChildren?{component:'icon-button',width:'narrow',color:'standard',icon:item.expanded?'keyboard_arrow_down':'keyboard_arrow_right'}:{component:'icon',icon:'',style:{width:'32px'}})}
+                    ]:[]),
                     {component:'icon',icon:item.hasChildren?this.expanded.has(item.id)?'folder_open':'folder':'draft'}
                 ]}"
                 .label="${ifDefined(item.label)}"
@@ -77,7 +72,7 @@ class MDTree extends MDComponent {
                 routerLink="${ifDefined(item.routerLink)}"
                 .interactive="${ifDefined(this.interactive)}"
                 @click="${this._handleTreeItemClick}"
-            ></md-tree-item>
+            ></md-list-item>
         `)
     }
 

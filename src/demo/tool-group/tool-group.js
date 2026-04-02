@@ -17,7 +17,7 @@ class DemoToolGroup extends MDComponent {
             { component: "badge", label: 0 },
             { component: "badge", label: 3 },
             { component: "badge", label: 1000 },
-            { component: "icon-button", icon:'menu' },
+            { component: "icon-button", icon: "menu" },
         ];
     }
     render() {

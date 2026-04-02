@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoPushMenu extends MDComponent {
+class DemoListInteraction extends MDComponent {
     constructor() {
         super();
 
@@ -129,22 +129,28 @@ class DemoPushMenu extends MDComponent {
             <md-layout-column>
                 
                 <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-push-menu
+                    <md-list
                         .items="${this.basicData}"
                         inputFormat="nested"
-                    ></md-push-menu>
+                        selection
+                        mode="single-select"
+                    ></md-list>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-push-menu
+                    <md-list
                         .items="${this.nestedData}"
                         inputFormat="nested"
-                    ></md-push-menu>
+                        selection
+                        mode="single-select"
+                    ></md-list>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="6" medium="4" compact="4">
-                    <md-push-menu
+                    <md-list
                         .items="${this.flatData}"
                         inputFormat="flat"
-                    ></md-push-menu>
+                        selection
+                        mode="single-select"
+                    ></md-list>
                 </md-layout-column-item>
                 
             </md-layout-column>
@@ -152,6 +158,6 @@ class DemoPushMenu extends MDComponent {
     }
 }
 
-customElements.define("demo-push-menu", DemoPushMenu);
+customElements.define("demo-list-interaction", DemoListInteraction);
 
-export default document.createElement("demo-push-menu");
+export default document.createElement("demo-list-interaction");

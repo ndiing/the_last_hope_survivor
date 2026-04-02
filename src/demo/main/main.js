@@ -4,15 +4,19 @@ import { routes } from "../routes.js";
 import { router } from "../demo.js";
 
 class DemoMain extends MDComponent {
+    static properties = {
+        items: { state: true },
+    };
+
     render() {
         /* prettier-ignore */
         return html`
             <md-layout-border>
                 <md-layout-border-item region="west" open>
-                    <md-list 
+                    <md-push-menu 
                         selection
                         mode="single-select"
-                        .items="${this.items}"></md-list>
+                        .items="${this.items}"></md-push-menu>
                 </md-layout-border-item>
                 <md-layout-border-item region="center" style="padding:24px;"><md-outlet></md-outlet></md-layout-border-item>
             </md-layout-border>
@@ -31,6 +35,10 @@ class DemoMain extends MDComponent {
             .sort((a, b) => {
                 return a.label.localeCompare(b.label);
             });
+    }
+
+    willUpdate(_changedProperties) {
+        super.willUpdate(_changedProperties);
     }
 }
 

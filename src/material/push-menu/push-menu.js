@@ -70,7 +70,8 @@ class MDPushMenu extends MDComponent {
         /* prettier-ignore */
         return html`    
             ${parent?html`
-                <md-push-menu-item
+                <md-list-item
+                    class="md-push-menu__item"
                     .snapshot="${parent}"
                     .leading="${[{component:'icon',icon:'arrow_back'}]}"
                     .label="${ifDefined(parent.label)}"
@@ -80,10 +81,11 @@ class MDPushMenu extends MDComponent {
                     routerLink="${ifDefined(parent.routerLink)}"
                     .interactive="${ifDefined(this.interactive)}"
                     @click="${this.pop}"
-                ></md-push-menu-item>
+                ></md-list-item>
             `:nothing}
             ${repeat(items,(item)=>item.id,(item)=>html`
-                <md-push-menu-item
+                <md-list-item
+                    class="md-push-menu__item"
                     .snapshot="${item}"
                     .leading="${[...((item.leading?.icon||parent)?[{component:'icon',icon:item.leading?.icon||''}]:[])]}"
                     .label="${ifDefined(item.label)}"
@@ -93,7 +95,7 @@ class MDPushMenu extends MDComponent {
                     routerLink="${ifDefined(item.routerLink)}"
                     .interactive="${ifDefined(this.interactive)}"
                     @click="${this._handlePushMenuItemClick}"
-                ></md-push-menu-item>
+                ></md-list-item>
             `)}
         `
     }
@@ -243,7 +245,7 @@ class MDPushMenu extends MDComponent {
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        console.log(this._stack)
+        console.log(this._stack);
     }
 }
 
