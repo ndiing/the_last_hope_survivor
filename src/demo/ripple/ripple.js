@@ -60,7 +60,7 @@ class DemoRipple extends MDComponent {
         this._ripples=[]
 
         this.querySelectorAll('.demo-ripple__item').forEach(element=>{
-            const _ripple=new Ripple(element,element._ripple)
+            const _ripple=new Ripple(element,element.ripple)
             _ripple.init()
             this._ripples.push(_ripple)
         })

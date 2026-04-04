@@ -6,7 +6,7 @@ const routes = [
     {id:'0',path:'/',label:'Main',component:testMain,children:[
         {id:'1',path:'/ripple',label:'Ripple',load:() => import('./ripple/ripple.js').then(module=>module.default),},
         {id:'2',path:'/breakpoint',label:'Breakpoint',load:() => import('./breakpoint/breakpoint.js').then(module=>module.default),},      
-        {id:'3',path:'/virtual-scroll',label:'Virtual Scroll',load:() => import('./virtual-scroll/virtual-scroll.js').then(module=>module.default),},
+        // {id:'3',path:'/virtual-scroll',label:'Virtual Scroll',load:() => import('./virtual-scroll/virtual-scroll.js').then(module=>module.default),},
 
 
 
