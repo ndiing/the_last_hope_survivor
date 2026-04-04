@@ -1,4 +1,4 @@
-class BreakpointObserver {
+class Breakpoint {
     constructor(callback = () => {}) {
         this.callback = callback;
         this._handleChange = this._handleChange.bind(this);
@@ -38,4 +38,4 @@ class BreakpointObserver {
     }
 }
 
-export { BreakpointObserver };
+export { Breakpoint };

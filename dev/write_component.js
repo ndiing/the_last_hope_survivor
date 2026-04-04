@@ -64,6 +64,7 @@ const components = [
     // 'tree-item',
     // 'push-menu',
     // 'push-menu-item',
+    // 'virtual-scroll'
 ];
 
 function toPascalCase(string) {

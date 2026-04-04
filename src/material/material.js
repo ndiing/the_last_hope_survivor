@@ -4,6 +4,8 @@ import "./component/component.js";
 import "./router/router.js";
 import "./breakpoint/breakpoint.js";
 import "./ripple/ripple.js";
+import "./virtual-scroll/virtual-scroll.js";
+
 
 // components
 import "./scrim/scrim.js";

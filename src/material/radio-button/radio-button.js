@@ -19,7 +19,7 @@ class MDRadioButton extends MDComponent {
 
     constructor() {
         super();
-        this.ripple = new Ripple(this, {
+        this._ripple = new Ripple(this, {
             centered: true,
             radius: 40,
             unbounded: true,

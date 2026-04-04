@@ -1,0 +1,20 @@
+.demo-ripple__item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 128px;
+    height: 128px;
+    background-color: var(--md-sys-color-surface-container);
+}
+.demo-ripple__trigger{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
+    background-color: var(--md-sys-color-surface-container-high);
+}
+
+

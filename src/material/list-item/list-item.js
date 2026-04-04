@@ -88,6 +88,8 @@ class MDListItem extends MDComponent {
 
         this.classList.remove("md-list__item");
 
+        await this.updateComplete
+
         this._ripple.destroy();
     }
 
