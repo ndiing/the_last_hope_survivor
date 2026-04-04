@@ -6,7 +6,6 @@ import "./breakpoint/breakpoint.js";
 import "./ripple/ripple.js";
 import "./virtual-scroll/virtual-scroll.js";
 
-
 // components
 import "./scrim/scrim.js";
 import "./layout-column/layout-column.js";
@@ -45,6 +44,10 @@ import "./list/list.js";
 import "./tree/tree.js";
 import "./push-menu/push-menu.js";
 
+import "./navigation-bar/navigation-bar.js";
+import "./navigation-drawer/navigation-drawer.js";
+import "./navigation-rail/navigation-rail.js";
+
 import "./text-field/text-field.js";
 
 import "./app-bar/app-bar.js";
@@ -59,9 +62,6 @@ import "./divider/divider.js";
 import "./loading-indicator/loading-indicator.js";
 import "./progress-indicator/progress-indicator.js";
 import "./menu/menu.js";
-import "./navigation-bar/navigation-bar.js";
-import "./navigation-drawer/navigation-drawer.js";
-import "./navigation-rail/navigation-rail.js";
 import "./search/search.js";
 import "./bottom-sheet/bottom-sheet.js";
 import "./side-sheet/side-sheet.js";

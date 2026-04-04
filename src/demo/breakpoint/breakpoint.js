@@ -3,15 +3,15 @@ import { MDComponent } from "../../material/component/component.js";
 import { Breakpoint } from "../../material/breakpoint/breakpoint.js";
 
 class DemoBreakpoint extends MDComponent {
-    static properties={
-        item:{state:true}
-    }
-    constructor(){
-        super()
-        this.item={}
+    static properties = {
+        item: { state: true },
+    };
+    constructor() {
+        super();
+        this.item = {};
         this._breakpoint = new Breakpoint((item) => {
-            this.item=item
-        })
+            this.item = item;
+        });
     }
     render() {
         /* prettier-ignore */
@@ -23,15 +23,15 @@ class DemoBreakpoint extends MDComponent {
             </md-layout-column>
         `
     }
-    connectedCallback(){
-        super.connectedCallback()
-        
-        this._breakpoint.observe()
+    connectedCallback() {
+        super.connectedCallback();
+
+        this._breakpoint.observe();
     }
-    disconnectedCallback(){
-        super.disconnectedCallback()
-        
-        this._breakpoint.unobserve()
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this._breakpoint.unobserve();
     }
 }
 

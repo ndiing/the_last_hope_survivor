@@ -1,4 +1,4 @@
-.demo-ripple__item{
+.demo-ripple__item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +7,7 @@
     height: 128px;
     background-color: var(--md-sys-color-surface-container);
 }
-.demo-ripple__trigger{
+.demo-ripple__trigger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -16,5 +16,3 @@
     height: 64px;
     background-color: var(--md-sys-color-surface-container-high);
 }
-
-

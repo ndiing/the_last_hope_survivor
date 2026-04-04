@@ -6,9 +6,89 @@ class DemoNavigationRail extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-layout-column>
-                <md-layout-column-item expanded="12" medium="8" compact="4">
-                    <md-navigation-rail></md-navigation-rail>
+
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" .items="${[
+                        {id:'0',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'1',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'2',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'3',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}"></md-navigation-rail>
                 </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" .items="${[
+                        {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'6',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}" expanded></md-navigation-rail>
+                </md-layout-column-item>
+
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" 
+                    .iconButton="${{icon:['menu','menu_open']}}" 
+                    .items="${[
+                        {id:'0',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'1',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'2',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'3',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}"></md-navigation-rail>
+                </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" 
+                    .iconButton="${{icon:['menu','menu_open']}}" 
+                    .items="${[
+                        {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'6',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}" expanded></md-navigation-rail>
+                </md-layout-column-item>
+
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" 
+                    .fab="${{icon:'edit'}}"
+                    .items="${[
+                        {id:'0',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'1',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'2',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'3',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}"></md-navigation-rail>
+                </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" 
+                    .fab="${{icon:'edit'}}"
+                    .items="${[
+                        {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'6',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}" expanded></md-navigation-rail>
+                </md-layout-column-item>
+
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" 
+                    .iconButton="${{icon:['menu','menu_open']}}" 
+                    .fab="${{icon:'edit'}}"
+                    .items="${[
+                        {id:'0',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'1',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'2',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'3',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}"></md-navigation-rail>
+                </md-layout-column-item>
+                <md-layout-column-item expanded="6" medium="8" compact="4">
+                    <md-navigation-rail style="height:480px;" 
+                    .iconButton="${{icon:['menu','menu_open']}}" 
+                    .fab="${{icon:'edit'}}"
+                    .items="${[
+                        {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
+                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'6',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
+                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
+                    ]}" expanded></md-navigation-rail>
+                </md-layout-column-item>
+
             </md-layout-column>
         `
     }

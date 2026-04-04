@@ -3,6 +3,7 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { repeat } from "lit/directives/repeat.js";
+import { classMap } from "lit/directives/class-map.js";
 
 class MDList extends MDComponent {
     static properties = {
@@ -12,6 +13,7 @@ class MDList extends MDComponent {
         mode: { type: String },
         inputFormat: { type: String }, // nested/flat
         _list: { type: Array, state: true },
+        ripple: { type: Object },
     };
 
     constructor() {
@@ -62,7 +64,8 @@ class MDList extends MDComponent {
         /* prettier-ignore */
         return repeat(this._list,(item)=>item.id,(item)=>html`
             <md-list-item
-                style="${styleMap({'--md-comp-list-item-level':item.level,})}"
+                class="${classMap({...item.class})}"
+                style="${styleMap({'--md-comp-list-item-level':item.level,...item.style})}"
                 .snapshot="${item}"
                 .leading="${ifDefined(item.leading)}"
                 .label="${ifDefined(item.label)}"
@@ -74,6 +77,7 @@ class MDList extends MDComponent {
                 .selected="${this.selected.has(item.id)}"
                 routerLink="${ifDefined(item.routerLink)}"
                 .interactive="${ifDefined(this.interactive)}"
+                .ripple="${ifDefined(this.ripple)}"
                 @click="${this._handleTreeItemClick}"
             ></md-list-item>
         `)

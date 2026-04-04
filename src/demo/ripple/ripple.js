@@ -51,30 +51,28 @@ class DemoRipple extends MDComponent {
         `
     }
 
+    async connectedCallback() {
+        super.connectedCallback();
 
-    async connectedCallback(){
-        super.connectedCallback()
+        await this.updateComplete;
 
-        await this.updateComplete
+        this._ripples = [];
 
-        this._ripples=[]
-
-        this.querySelectorAll('.demo-ripple__item').forEach(element=>{
-            const _ripple=new Ripple(element,element.ripple)
-            _ripple.init()
-            this._ripples.push(_ripple)
-        })
+        this.querySelectorAll(".demo-ripple__item").forEach((element) => {
+            const _ripple = new Ripple(element, element.ripple);
+            _ripple.init();
+            this._ripples.push(_ripple);
+        });
     }
 
+    async disconnectedCallback() {
+        super.disconnectedCallback();
 
-    async disconnectedCallback(){
-        super.disconnectedCallback()
+        await this.updateComplete;
 
-        await this.updateComplete
-
-        this._ripples.forEach(_ripple=>{
-            _ripple.destroy()
-        })
+        this._ripples.forEach((_ripple) => {
+            _ripple.destroy();
+        });
     }
 }
 

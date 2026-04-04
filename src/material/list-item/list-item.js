@@ -12,6 +12,7 @@ class MDListItem extends MDComponent {
         layout: { type: String },
         interactive: { type: Boolean },
         selected: { type: Boolean, reflect: true },
+        ripple: { type: Object },
     };
 
     layouts = ["one-line", "two-line", "three-line"];
@@ -19,13 +20,14 @@ class MDListItem extends MDComponent {
     constructor() {
         super();
 
-        this._ripple = new Ripple(this, {});
+        this.ripple = {};
+        this._ripple = new Ripple(this, this.ripple);
     }
 
     render() {
         /* prettier-ignore */
         return html`
-            ${Array.isArray(this.leading)?html`<md-tool-group class="md-list__leading" .tools="${this.leading.map(item=>({
+            ${Array.isArray(this.leading)&&this.leading.length?html`<md-tool-group class="md-list__leading" .tools="${this.leading.map(item=>({
                 ...item,
                 class:{
                     'md-list__leading-item':true,
@@ -40,7 +42,7 @@ class MDListItem extends MDComponent {
                     ${this.supportingText?html`<div class="md-list__supporting-text">${this.supportingText}</div>`:nothing}
                 </div>
             `:nothing}
-            ${Array.isArray(this.trailing)?html`<md-tool-group class="md-list__trailing" .tools="${this.trailing.map(item=>({
+            ${Array.isArray(this.trailing)&&this.trailing.length?html`<md-tool-group class="md-list__trailing" .tools="${this.trailing.map(item=>({
                 ...item,
                 class:{
                     'md-list__trailing-item':true,
@@ -80,6 +82,7 @@ class MDListItem extends MDComponent {
 
         this._setLayout();
 
+        this.ripple.options = this.ripple;
         this._ripple.init();
     }
 
@@ -88,7 +91,7 @@ class MDListItem extends MDComponent {
 
         this.classList.remove("md-list__item");
 
-        await this.updateComplete
+        await this.updateComplete;
 
         this._ripple.destroy();
     }
@@ -111,7 +114,7 @@ class MDListItem extends MDComponent {
         }
     }
 
-    updated(_changedProperties) {
+    async updated(_changedProperties) {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("layout")) {
@@ -120,6 +123,14 @@ class MDListItem extends MDComponent {
 
         if (_changedProperties.has("interactive")) {
             this._updateInteractiveClass();
+        }
+
+        if (_changedProperties.has("ripple")) {
+            await this.updateComplete;
+
+            this._ripple.destroy();
+            this._ripple.options = this.ripple;
+            this._ripple.init();
         }
     }
 }

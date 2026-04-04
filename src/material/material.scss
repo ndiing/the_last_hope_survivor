@@ -43,6 +43,10 @@
 @use "./tree/tree.scss";
 @use "./push-menu/push-menu.scss";
 
+@use "./navigation-bar/navigation-bar.scss";
+@use "./navigation-drawer/navigation-drawer.scss";
+@use "./navigation-rail/navigation-rail.scss";
+
 @use "./text-field/text-field.scss";
 
 @use "./app-bar/app-bar.scss";
@@ -57,9 +61,6 @@
 @use "./loading-indicator/loading-indicator.scss";
 @use "./progress-indicator/progress-indicator.scss";
 @use "./menu/menu.scss";
-@use "./navigation-bar/navigation-bar.scss";
-@use "./navigation-drawer/navigation-drawer.scss";
-@use "./navigation-rail/navigation-rail.scss";
 @use "./search/search.scss";
 @use "./bottom-sheet/bottom-sheet.scss";
 @use "./side-sheet/side-sheet.scss";
