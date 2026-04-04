@@ -6,7 +6,7 @@ class DemoListInteraction extends MDComponent {
         super();
 
         this.basicData = [
-            { label: "Item 1", id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb", parent_id: null },
+            { selected: true, label: "Item 1", id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb", parent_id: null },
             { label: "Item 2", id: "345bad45-2ffd-46ff-8040-929c7a54c8b4", parent_id: null },
             { label: "Item 3", id: "50f6f958-c3a0-4f65-965d-5ea803dd253b", parent_id: null },
             { label: "Item 4", id: "218d3a52-cd1e-4e59-9ebf-f05caad77236", parent_id: null },
@@ -23,7 +23,7 @@ class DemoListInteraction extends MDComponent {
                         id: "519c2499-24c1-40ba-8367-3cb49067003e",
                         parent_id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb",
                         children: [
-                            { label: "Item 1.1.1", id: "bd33aa7b-2ed8-4bba-8cc3-db272e262339", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e", children: [] },
+                            { selected: true, label: "Item 1.1.1", id: "bd33aa7b-2ed8-4bba-8cc3-db272e262339", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e", children: [] },
                             { label: "Item 1.1.2", id: "2a3e1558-af67-4c9d-9eb9-403ba886c174", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e", children: [] },
                             { label: "Item 1.1.3", id: "362fab16-0f34-4df6-8c98-c2a4ce4a887e", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e", children: [] },
                             { label: "Item 1.1.4", id: "7a6efcd4-20de-43ad-ae1b-71fe3a27bb1d", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e", children: [] },
@@ -88,7 +88,7 @@ class DemoListInteraction extends MDComponent {
         this.flatData = [
             { label: "Item 1", id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb", parent_id: null },
             { label: "Item 1.1", id: "519c2499-24c1-40ba-8367-3cb49067003e", parent_id: "5ababecb-e6b9-4de3-b8ac-2431cc1f34fb" },
-            { label: "Item 1.1.1", id: "bd33aa7b-2ed8-4bba-8cc3-db272e262339", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e" },
+            { selected: true, label: "Item 1.1.1", id: "bd33aa7b-2ed8-4bba-8cc3-db272e262339", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e" },
             { label: "Item 1.1.2", id: "2a3e1558-af67-4c9d-9eb9-403ba886c174", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e" },
             { label: "Item 1.1.3", id: "362fab16-0f34-4df6-8c98-c2a4ce4a887e", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e" },
             { label: "Item 1.1.4", id: "7a6efcd4-20de-43ad-ae1b-71fe3a27bb1d", parent_id: "519c2499-24c1-40ba-8367-3cb49067003e" },

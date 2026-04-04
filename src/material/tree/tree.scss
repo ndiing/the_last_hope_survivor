@@ -59,11 +59,11 @@
     }
 }
 
-.md-tree__item:not(.md-tree__item--interactive) {
-    &::after {
-        display: none;
-    }
-}
+// .md-tree__item:not(.md-tree__item--interactive) {
+//     &::after {
+//         display: none;
+//     }
+// }
 
 .md-tree__item[selected] {
     background-color: var(--md-sys-color-secondary-container);

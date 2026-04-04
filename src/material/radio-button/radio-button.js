@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { RippleController } from "../ripple/ripple.js";
+import { Ripple } from "../ripple/ripple.js";
 
 class MDRadioButton extends MDComponent {
     static formAssociated = true;
@@ -15,15 +15,18 @@ class MDRadioButton extends MDComponent {
         tabindex: { type: Number },
     };
 
-    rippleController = new RippleController(this, {
-        centered: true,
-        radius: 40,
-        unbounded: true,
-        trigger: ".md-radio-button__native",
-        container: ".md-radio-button__container",
-    });
-
     radioButtonNative = createRef();
+
+    constructor() {
+        super();
+        this.ripple = new Ripple(this, {
+            centered: true,
+            radius: 40,
+            unbounded: true,
+            trigger: ".md-radio-button__native",
+            container: ".md-radio-button__container",
+        });
+    }
 
     formResetCallback() {
         this.checked = this._snapshot.checked;
@@ -65,6 +68,16 @@ class MDRadioButton extends MDComponent {
         this._snapshot = {
             checked: this.checked,
         };
+
+        this._ripple.init();
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-radio-button");
+
+        this._ripple.destroy();
     }
 }
 

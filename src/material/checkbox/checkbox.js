@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { RippleController } from "../ripple/ripple.js";
+import { Ripple } from "../ripple/ripple.js";
 
 class MDCheckbox extends MDComponent {
     static formAssociated = true;
@@ -16,15 +16,18 @@ class MDCheckbox extends MDComponent {
         tabindex: { type: Number },
     };
 
-    rippleController = new RippleController(this, {
-        centered: true,
-        radius: 40,
-        unbounded: true,
-        trigger: ".md-checkbox__native",
-        container: ".md-checkbox__container",
-    });
-
     checkboxNative = createRef();
+
+    constructor() {
+        super();
+        this._ripple = new Ripple(this, {
+            centered: true,
+            radius: 40,
+            unbounded: true,
+            trigger: ".md-checkbox__native",
+            container: ".md-checkbox__container",
+        });
+    }
 
     formResetCallback() {
         this.indeterminate = this._snapshot.indeterminate;
@@ -71,6 +74,16 @@ class MDCheckbox extends MDComponent {
             indeterminate: this.indeterminate,
             checked: this.checked,
         };
+
+        this._ripple.init();
+    }
+
+    disconnectedCallback() {
+        super.connectedCallback();
+
+        this.classList.remove("md-checkbox");
+
+        this._ripple.destroy();
     }
 }
 

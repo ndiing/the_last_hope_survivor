@@ -1,6 +1,6 @@
-class RippleController {
+class Ripple {
     constructor(host, options = {}) {
-        (this.host = host).addController(this);
+        this.host = host;
         this.options = {
             centered: false,
             radius: undefined,
@@ -56,7 +56,7 @@ class RippleController {
         this.container.classList.remove("md-ripple--focus");
     }
 
-    async hostConnected() {
+    async init() {
         await this.host.updateComplete;
 
         this.container = this.options.container ? this.host.querySelector(this.options.container) : this.host;
@@ -95,7 +95,7 @@ class RippleController {
         this.trigger.addEventListener("blur", this._handleBlur);
     }
 
-    async hostDisconnected() {
+    async destroy() {
         await this.host.updateComplete;
 
         this.container.classList.remove("md-ripple");
@@ -116,4 +116,4 @@ class RippleController {
     }
 }
 
-export { RippleController };
+export { Ripple };

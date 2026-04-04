@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
-import { RippleController } from "../ripple/ripple.js";
+import { Ripple } from "../ripple/ripple.js";
 
 class MDIconButton extends MDComponent {
     static properties = {
@@ -32,8 +32,6 @@ class MDIconButton extends MDComponent {
 
     widths = ["default", "narrow", "wide"];
 
-    rippleController = new RippleController(this, {});
-
     constructor() {
         super();
         this.variant = "default";
@@ -41,6 +39,8 @@ class MDIconButton extends MDComponent {
         this.shape = "round";
         this.color = "filled";
         this.width = "default";
+
+        this._ripple = new Ripple(this, {});
     }
 
     render() {
@@ -67,6 +67,18 @@ class MDIconButton extends MDComponent {
 
         this._handleIconButtonClick = this._handleIconButtonClick.bind(this);
         this.addEventListener("click", this._handleIconButtonClick);
+
+        this._ripple.init();
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-icon-button");
+
+        this.removeEventListener("click", this._handleIconButtonClick);
+
+        this._ripple.destroy();
     }
 
     _updateVariantClass() {

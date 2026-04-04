@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { tool } from "../tool/tool.js";
-import { RippleController } from "../ripple/ripple.js";
+import { Ripple } from "../ripple/ripple.js";
 
 class MDListItem extends MDComponent {
     static properties = {
@@ -16,7 +16,11 @@ class MDListItem extends MDComponent {
 
     layouts = ["one-line", "two-line", "three-line"];
 
-    rippleController = new RippleController(this, {});
+    constructor() {
+        super();
+
+        this._ripple = new Ripple(this, {});
+    }
 
     render() {
         /* prettier-ignore */
@@ -28,7 +32,6 @@ class MDListItem extends MDComponent {
                     [`md-list__leading-item--${item.component}`]:true,
                     ...item.class
                 },
-                tabindex:-1,
                 checked:this.selected
             }))}"></md-tool-group>`:nothing}
             ${this.label||this.supportingText?html`
@@ -44,7 +47,6 @@ class MDListItem extends MDComponent {
                     [`md-list__trailing-item--${item.component}`]:true,
                     ...item.class
                 },
-                tabindex:-1,
                 checked:this.selected
             }))}"></md-tool-group>`:nothing}
         `
@@ -77,6 +79,16 @@ class MDListItem extends MDComponent {
         await this.updateComplete;
 
         this._setLayout();
+
+        this._ripple.init();
+    }
+
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-list__item");
+
+        this._ripple.destroy();
     }
 
     _updateLayoutClass() {

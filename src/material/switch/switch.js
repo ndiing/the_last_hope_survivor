@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { RippleController } from "../ripple/ripple.js";
+import { Ripple } from "../ripple/ripple.js";
 
 class MDSwitch extends MDComponent {
     static formAssociated = true;
@@ -15,15 +15,18 @@ class MDSwitch extends MDComponent {
         tabindex: { type: Number },
     };
 
-    rippleController = new RippleController(this, {
-        centered: true,
-        radius: 40,
-        unbounded: true,
-        trigger: ".md-switch__native",
-        container: ".md-switch__handle",
-    });
-
     switchNative = createRef();
+
+    constructor() {
+        super();
+        this.ripple = new Ripple(this, {
+            centered: true,
+            radius: 40,
+            unbounded: true,
+            trigger: ".md-switch__native",
+            container: ".md-switch__handle",
+        });
+    }
 
     formResetCallback() {
         this.checked = this._snapshot.checked;
@@ -71,6 +74,16 @@ class MDSwitch extends MDComponent {
         this._snapshot = {
             checked: this.checked,
         };
+
+        this._ripple.init();
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-switch");
+
+        this._ripple.destroy();
     }
 }
 

@@ -59,11 +59,11 @@
     }
 }
 
-.md-push-menu__item:not(.md-push-menu__item--interactive) {
-    &::after {
-        display: none;
-    }
-}
+// .md-push-menu__item:not(.md-push-menu__item--interactive) {
+//     &::after {
+//         display: none;
+//     }
+// }
 
 .md-push-menu__item[selected] {
     background-color: var(--md-sys-color-secondary-container);
