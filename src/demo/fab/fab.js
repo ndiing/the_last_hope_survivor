@@ -6,9 +6,21 @@ class DemoFab extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-layout-column>
+                
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    <md-fab></md-fab>
+                    <md-fab icon="edit" variant="small"></md-fab>
+                    <md-fab icon="edit" variant="medium"></md-fab>
+                    <md-fab icon="edit" variant="large"></md-fab>
                 </md-layout-column-item>
+                <md-layout-column-item expanded="12" medium="8" compact="4">
+                    <md-fab icon="edit" color="primary-container"></md-fab>
+                    <md-fab icon="edit" color="secondary-container"></md-fab>
+                    <md-fab icon="edit" color="tertiary-container"></md-fab>
+                    <md-fab icon="edit" color="primary"></md-fab>
+                    <md-fab icon="edit" color="secondary"></md-fab>
+                    <md-fab icon="edit" color="tertiary"></md-fab>
+                </md-layout-column-item>
+
             </md-layout-column>
         `
     }

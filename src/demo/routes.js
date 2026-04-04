@@ -35,9 +35,11 @@ const routes = [
         {id:'20',path:'/badge',label:'Badge',load:() => import('./badge/badge.js').then(module=>module.default)},
         // {id:'21',path:'/button-group',label:'Button Group',load:() => import('./button-group/button-group.js').then(module=>module.default)},
         // {id:'22',path:'/button',label:'Button',load:() => import('./button/button.js').then(module=>module.default)},
-        // {id:'23',path:'/extended-fab',label:'Extended Fab',load:() => import('./extended-fab/extended-fab.js').then(module=>module.default)},
+        
+        {id:'23',path:'/extended-fab',label:'Extended Fab',load:() => import('./extended-fab/extended-fab.js').then(module=>module.default)},
         // {id:'24',path:'/fab-menu',label:'Fab Menu',load:() => import('./fab-menu/fab-menu.js').then(module=>module.default)},
-        // {id:'25',path:'/fab',label:'Fab',load:() => import('./fab/fab.js').then(module=>module.default)},
+        {id:'25',path:'/fab',label:'Fab',load:() => import('./fab/fab.js').then(module=>module.default)},
+
         {id:'26',path:'/icon-button',label:'Icon Button',load:() => import('./icon-button/icon-button.js').then(module=>module.default)},
         // {id:'27',path:'/segmented-button',label:'Segmented Button',load:() => import('./segmented-button/segmented-button.js').then(module=>module.default)},
         // {id:'28',path:'/split-button',label:'Split Button',load:() => import('./split-button/split-button.js').then(module=>module.default)},

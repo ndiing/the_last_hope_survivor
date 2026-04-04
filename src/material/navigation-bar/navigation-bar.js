@@ -22,6 +22,10 @@ class MDNavigationBar extends MDComponent {
         this.items = [];
     }
 
+    _handleListItemClick() {
+        this.style.removeProperty("--navigation-bar-item-selected-icon");
+    }
+
     render() {
         /* prettier-ignore */
         return html`
@@ -31,6 +35,7 @@ class MDNavigationBar extends MDComponent {
                 selection
                 mode="single-select"
                 .ripple="${this.ripple}"
+                @listItemClick="${this._handleListItemClick}"
             ></md-list>
         `
     }
@@ -39,19 +44,25 @@ class MDNavigationBar extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-navigation-bar");
+
+        this.style.setProperty("--navigation-bar-item-selected-icon", "none");
+    }
+
+    _updateLayoutClass() {
+        this.layouts.forEach((layout) => {
+            if (layout === this.layout) {
+                this.classList.add(`md-navigation-bar--${layout}`);
+            } else {
+                this.classList.remove(`md-navigation-bar--${layout}`);
+            }
+        });
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("layout")) {
-            this.layouts.forEach((layout) => {
-                if (layout === this.layout) {
-                    this.classList.add(`md-navigation-bar--${layout}`);
-                } else {
-                    this.classList.remove(`md-navigation-bar--${layout}`);
-                }
-            });
+            this._updateLayoutClass();
         }
     }
 }

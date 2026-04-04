@@ -27,17 +27,17 @@ class DemoNavigationBar extends MDComponent {
                 <md-layout-column-item expanded="6" medium="8" compact="4">
                     <md-navigation-bar .items="${[
                         {id:'0',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
-                        {id:'1',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'1',leading:[{component:'icon',icon:'image'}],label:'Item 2',trailing:[{component:'badge',label:0}]},
                         {id:'2',leading:[{component:'icon',icon:'image'}],label:'Item 3',trailing:[{component:'badge',label:3}]},
-                        {id:'3',leading:[{component:'icon',icon:'image'}],label:'Item 4',trailing:[{component:'badge',label:0}]},
+                        {id:'3',leading:[{component:'icon',icon:'image'}],label:'Item 4',trailing:[{component:'badge',label:123}]},
                     ]}" layout="vertical"></md-navigation-bar>
                 </md-layout-column-item>
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-navigation-bar .items="${[
                         {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
-                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
+                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2',trailing:[{component:'badge',label:0}]},
                         {id:'6',leading:[{component:'icon',icon:'image'}],label:'Item 3',trailing:[{component:'badge',label:3}]},
-                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4',trailing:[{component:'badge',label:0}]},
+                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4',trailing:[{component:'badge',label:123}]},
                     ]}" layout="horizontal"></md-navigation-bar>
                 </md-layout-column-item>
 

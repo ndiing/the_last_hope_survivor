@@ -29,7 +29,7 @@ class MDList extends MDComponent {
         this._list = [];
     }
 
-    _handleTreeItemClick(event) {
+    _handleListItemClick(event) {
         if (this.interactive && this.selection) {
             const snapshot = event.currentTarget.snapshot;
 
@@ -54,10 +54,10 @@ class MDList extends MDComponent {
 
             this._setList();
 
-            this.emit("treeItemSelected", { event });
+            this.emit("listItemSelected", { event });
         }
 
-        this.emit("treeItemClick", { event });
+        this.emit("listItemClick", { event });
     }
 
     render() {
@@ -78,7 +78,7 @@ class MDList extends MDComponent {
                 routerLink="${ifDefined(item.routerLink)}"
                 .interactive="${ifDefined(this.interactive)}"
                 .ripple="${ifDefined(this.ripple)}"
-                @click="${this._handleTreeItemClick}"
+                @click="${this._handleListItemClick}"
             ></md-list-item>
         `)
     }
