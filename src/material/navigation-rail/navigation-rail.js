@@ -42,6 +42,7 @@ class MDNavigationRail extends MDComponent {
                     color="standard"
                     .width="${ifDefined(this.iconButton.width)}"
                     .selected="${this.expanded}"
+                    @click="${this.toggle}"
                 ></md-icon-button>
             `:nothing}
             ${this.fab?html`
@@ -85,6 +86,22 @@ class MDNavigationRail extends MDComponent {
 
         if (_changedProperties.has("expanded")) {
             this._updateExpandedClass();
+        }
+    }
+
+    expand() {
+        this.expanded = true;
+    }
+
+    collapse() {
+        this.expanded = false;
+    }
+
+    toggle() {
+        if (this.expanded) {
+            this.collapse();
+        } else {
+            this.expand();
         }
     }
 }
