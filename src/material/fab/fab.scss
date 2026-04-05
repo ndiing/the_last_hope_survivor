@@ -3,13 +3,26 @@
 .md-fab {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     vertical-align: middle;
     box-shadow: var(--md-sys-elevation-level3);
+
+    will-change: width;
+    transition-property: width;
+    transition-duration: var(--md-sys-motion-duration-short3);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
-// .md-fab__icon{}
-// .md-fab__label{}
+.md-fab--unelevated {
+    box-shadow: var(--md-sys-elevation-level0);
+}
+
+.md-fab__icon {
+    flex: 0 0 auto;
+}
+.md-fab__label {
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 .md-fab--small {
     width: 56px;
@@ -20,9 +33,6 @@
         width: 24px;
         height: 24px;
         font-size: 24px;
-    }
-    .md-fab__label {
-        @include mixins.typescale-title-medium();
     }
 }
 .md-fab--medium {
@@ -35,9 +45,6 @@
         height: 28px;
         font-size: 28px;
     }
-    .md-fab__label {
-        @include mixins.typescale-title-large();
-    }
 }
 .md-fab--large {
     width: 96px;
@@ -49,9 +56,6 @@
         height: 36px;
         font-size: 36px;
     }
-    .md-fab__label {
-        @include mixins.typescale-headline-small();
-    }
 }
 
 .md-fab--extended {
@@ -59,21 +63,32 @@
     min-width: 80px;
 
     &.md-fab--small {
-        padding: 16px;
-        gap: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        column-gap: 8px;
+
+        .md-fab__label {
+            @include mixins.typescale-title-medium();
+        }
     }
     &.md-fab--medium {
-        padding: 26px;
-        gap: 12px;
+        padding-left: 26px;
+        padding-right: 26px;
+        column-gap: 12px;
+
+        .md-fab__label {
+            @include mixins.typescale-title-large();
+        }
     }
     &.md-fab--large {
-        padding: 28px;
-        gap: 16px;
-    }
-}
+        padding-left: 28px;
+        padding-right: 28px;
+        column-gap: 16px;
 
-.md-fab--unelevated {
-    box-shadow: none;
+        .md-fab__label {
+            @include mixins.typescale-headline-small();
+        }
+    }
 }
 
 .md-fab--primary-container {

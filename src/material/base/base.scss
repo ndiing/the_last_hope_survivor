@@ -1,5 +1,9 @@
 @use "../mixins/mixins.scss";
 
+:root {
+    interpolate-size: allow-keywords;
+}
+
 // global
 * {
     margin: 0;

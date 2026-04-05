@@ -24,7 +24,6 @@ class DemoExtendedFab extends MDComponent {
                     <md-fab icon="edit" label="Label"></md-fab>
                     <md-fab label="Label"></md-fab>
                 </md-layout-column-item>
-                
 
             </md-layout-column>
         `
