@@ -34,7 +34,6 @@ import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
 
-import "./tool/tool.js";
 import "./tool-group/tool-group.js";
 
 import "./badge/badge.js";

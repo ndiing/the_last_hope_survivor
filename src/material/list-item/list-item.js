@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { tool } from "../tool/tool.js";
 import { Ripple } from "../ripple/ripple.js";
 
 class MDListItem extends MDComponent {

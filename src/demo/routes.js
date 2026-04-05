@@ -28,7 +28,6 @@ const routes = [
 
         {id:'16',path:'/form',label:'Form',load:() => import('./form/form.js').then(module=>module.default),},
 
-        {id:'17',path:'/tool',label:'Tool',load:() => import('./tool/tool.js').then(module=>module.default),},
         {id:'18',path:'/tool-group',label:'Tool Group',load:() => import('./tool-group/tool-group.js').then(module=>module.default),},      
 
         // {id:'19',path:'/app-bar',label:'App Bar',load:() => import('./app-bar/app-bar.js').then(module=>module.default)},
