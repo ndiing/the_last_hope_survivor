@@ -123,7 +123,7 @@ class MDPushMenu extends MDComponent {
                 if (parent) {
                     parent.children.push(node);
                 } else {
-                    tree.push(node); //fallback
+                    tree.push(node);
                 }
             } else {
                 tree.push(node);

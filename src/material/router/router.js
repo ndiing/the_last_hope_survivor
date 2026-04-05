@@ -40,7 +40,6 @@ class Router {
     _emit(type, detail = this) {
         const event = new CustomEvent(type, {
             bubbles: true,
-            // composed: true,
             cancelable: true,
             detail,
         });
@@ -266,11 +265,7 @@ class Router {
             let element = outlet.nextElementSibling;
 
             while (element) {
-                if (
-                    !outlets.find((outlet) => outlet === element) && //
-                    !routes.find((route) => route.component === element) &&
-                    element.isComponent
-                ) {
+                if (!outlets.find((outlet) => outlet === element) && !routes.find((route) => route.component === element) && element.isComponent) {
                     element.remove();
                 }
 

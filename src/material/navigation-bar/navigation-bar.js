@@ -24,7 +24,6 @@ class MDNavigationBar extends MDComponent {
         this.selection = true;
         this.mode = "single-select";
         this.inputFormat = "flat";
-        // this.ripple = {}
     }
 
     _handleListItemClick() {

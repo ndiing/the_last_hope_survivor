@@ -11,7 +11,7 @@ class MDList extends MDComponent {
         interactive: { type: Boolean },
         selection: { type: Boolean },
         mode: { type: String },
-        inputFormat: { type: String }, // nested/flat
+        inputFormat: { type: String },
         _list: { type: Array, state: true },
         ripple: { type: Object },
     };
@@ -21,7 +21,6 @@ class MDList extends MDComponent {
         this.items = [];
         this.interactive = true;
         this.selection = false;
-        // this.mode = "single-select";
         this.selected = new Set();
         this.expanded = new Set();
         this.inputFormat = "nested";
@@ -106,7 +105,7 @@ class MDList extends MDComponent {
                 if (parent) {
                     parent.children.push(node);
                 } else {
-                    tree.push(node); //fallback
+                    tree.push(node);
                 }
             } else {
                 tree.push(node);
@@ -133,7 +132,7 @@ class MDList extends MDComponent {
                 if (parent) {
                     parent.children.push(node);
                 } else {
-                    tree.push(node); //fallback
+                    tree.push(node);
                 }
             } else {
                 tree.push(node);

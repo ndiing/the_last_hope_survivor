@@ -20,14 +20,11 @@ class MDNavigationRail extends MDComponent {
 
     constructor() {
         super();
-        // this.iconButton={}
-        // this.fab={}
         this.items = [];
         this.interactive = true;
         this.selection = true;
         this.mode = "single-select";
         this.inputFormat = "flat";
-        // this.ripple = {}
         this.expanded = false;
     }
 

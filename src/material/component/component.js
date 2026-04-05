@@ -24,7 +24,6 @@ class MDComponent extends LitElement {
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,
-            // composed:true,
             detail,
         });
 
@@ -59,7 +58,6 @@ class MDElement extends HTMLElement {
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,
-            // composed:true,
             detail,
         });
 

@@ -10,7 +10,7 @@ class MDTree extends MDComponent {
         interactive: { type: Boolean },
         selection: { type: Boolean },
         mode: { type: String },
-        inputFormat: { type: String }, // nested/flat
+        inputFormat: { type: String },
         _list: { type: Array, state: true },
     };
 
@@ -99,7 +99,7 @@ class MDTree extends MDComponent {
                 if (parent) {
                     parent.children.push(node);
                 } else {
-                    tree.push(node); //fallback
+                    tree.push(node);
                 }
             } else {
                 tree.push(node);
