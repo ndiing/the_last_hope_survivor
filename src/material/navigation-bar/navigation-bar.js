@@ -20,6 +20,11 @@ class MDNavigationBar extends MDComponent {
     constructor() {
         super();
         this.items = [];
+        this.interactive = true;
+        this.selection = true;
+        this.mode = "single-select";
+        this.inputFormat = "flat";
+        // this.ripple = {}
     }
 
     _handleListItemClick() {
@@ -30,10 +35,12 @@ class MDNavigationBar extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-list 
-                class="md-navigation-bar__list"
+                class="md-navigation-bar__list"                
                 .items="${this.items}"
-                selection
-                mode="single-select"
+                .interactive="${this.interactive}"
+                .selection="${this.selection}"
+                .mode="${this.mode}"
+                .inputFormat="${this.inputFormat}"
                 .ripple="${this.ripple}"
                 @listItemClick="${this._handleListItemClick}"
             ></md-list>

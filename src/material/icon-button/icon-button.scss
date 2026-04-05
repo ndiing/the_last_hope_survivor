@@ -34,7 +34,7 @@
     &.md-icon-button--round {
         border-radius: 16px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 12px;
         }
     }
@@ -42,14 +42,14 @@
     &.md-icon-button--square {
         border-radius: 12px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 16px;
         }
     }
 
     &:active {
         &,
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 8px;
         }
     }
@@ -77,7 +77,7 @@
     &.md-icon-button--round {
         border-radius: 20px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 12px;
         }
     }
@@ -85,14 +85,14 @@
     &.md-icon-button--square {
         border-radius: 12px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 20px;
         }
     }
 
     &:active {
         &,
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 8px;
         }
     }
@@ -120,7 +120,7 @@
     &.md-icon-button--round {
         border-radius: 28px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 16px;
         }
     }
@@ -128,14 +128,14 @@
     &.md-icon-button--square {
         border-radius: 16px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 28px;
         }
     }
 
     &:active {
         &,
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 12px;
         }
     }
@@ -163,7 +163,7 @@
     &.md-icon-button--round {
         border-radius: 48px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 28px;
         }
     }
@@ -171,14 +171,14 @@
     &.md-icon-button--square {
         border-radius: 28px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 48px;
         }
     }
 
     &:active {
         &,
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 16px;
         }
     }
@@ -206,7 +206,7 @@
     &.md-icon-button--round {
         border-radius: 68px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 28px;
         }
     }
@@ -214,14 +214,14 @@
     &.md-icon-button--square {
         border-radius: 28px;
 
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 68px;
         }
     }
 
     &:active {
         &,
-        &.md-icon-button--selected {
+        &[selected] {
             border-radius: 16px;
         }
     }
@@ -241,7 +241,7 @@
         background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface-container);
 
-        &.md-icon-button--selected {
+        &[selected] {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
         }
@@ -255,7 +255,7 @@
         background-color: var(--md-sys-color-secondary-container);
         color: var(--md-sys-color-on-secondary-container);
 
-        &.md-icon-button--selected {
+        &[selected] {
             background-color: var(--md-sys-color-secondary);
             color: var(--md-sys-color-on-secondary);
         }
@@ -269,7 +269,7 @@
         border: 1px solid var(--md-sys-color-outline-variant);
         color: var(--md-sys-color-on-surface-variant);
 
-        &.md-icon-button--selected {
+        &[selected] {
             border: 1px solid var(--md-sys-color-inverse-surface);
             background-color: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);
@@ -283,7 +283,7 @@
         color: var(--md-sys-color-on-surface-variant);
     }
 
-    &.md-icon-button--selected {
+    &[selected] {
         color: var(--md-sys-color-primary);
     }
 }
