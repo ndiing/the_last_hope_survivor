@@ -44,6 +44,23 @@ class DemoNavigationBar extends MDComponent {
             </md-layout-column>
         `
     }
+    // render() {
+    //     /* prettier-ignore */
+    //     return html`
+    //         <md-layout-border >
+
+    //             <md-navigation-bar .items="${[
+    //                 {id:'0',leading:[{component:'icon',icon:'image'}],label:'Lorem',selected:true},
+    //                 {id:'1',leading:[{component:'icon',icon:'image'}],label:'ipsum'},
+    //                 {id:'2',leading:[{component:'icon',icon:'image'}],label:'dolor'},
+    //                 {id:'3',leading:[{component:'icon',icon:'image'}],label:'sit'},
+    //             ]}" layout="vertical" open></md-navigation-bar>
+    //             <md-layout-border-item region="center" style="padding:24px;">center</md-layout-border-item>
+                
+
+    //         </md-layout-border>
+    //     `
+    // }
 }
 
 customElements.define("demo-navigation-bar", DemoNavigationBar);

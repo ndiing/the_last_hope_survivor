@@ -1,9 +1,12 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
+import { MDList } from "../list/list.js";
+import { MDLayoutBorderItem } from "../layout-border-item/layout-border-item.js";
 
 class MDNavigationBar extends MDComponent {
     static properties = {
-        items: { type: Array },
+        ...MDList.properties,
+        ...MDLayoutBorderItem.properties,
         layout: { type: String },
     };
 
@@ -24,6 +27,7 @@ class MDNavigationBar extends MDComponent {
         this.selection = true;
         this.mode = "single-select";
         this.inputFormat = "flat";
+        this.region='south'
     }
 
     _handleListItemClick() {

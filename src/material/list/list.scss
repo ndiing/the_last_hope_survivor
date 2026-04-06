@@ -26,14 +26,14 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 100%;
+    min-width: 0;
 }
 
 .md-list__label {
     @include mixins.typescale-body-large();
     white-space: nowrap;
     overflow: hidden;
-    // text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 
 .md-list__supporting-text {

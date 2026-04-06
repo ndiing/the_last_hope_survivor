@@ -64,6 +64,7 @@ const routes = [
         {path:'/navigation-drawer',load:() => import('./navigation-drawer/navigation-drawer.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-flat.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-list-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested-modal.js').then(module=>module.default)},
 
         {path:'/navigation-rail',load:() => import('./navigation-rail/navigation-rail.js').then(module=>module.default)},  
         {path:'/radio-button',load:() => import('./radio-button/radio-button.js').then(module=>module.default)},

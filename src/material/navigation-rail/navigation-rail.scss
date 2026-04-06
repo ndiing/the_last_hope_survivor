@@ -41,8 +41,14 @@
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 
+    .md-list__content{
+        min-width: unset;
+    }
+
+
     .md-list__label {
         @include mixins.typescale-label-medium();
+        text-overflow: unset;
     }
 
     .md-list__trailing-item--badge {

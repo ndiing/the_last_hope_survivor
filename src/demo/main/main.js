@@ -85,19 +85,20 @@ class DemoMain extends MDComponent {
                 { id: "51", label: "Navigation Drawer",children:[
                     { id: "52", routerLink: "/navigation-drawer-layout-list-format-nested", label: "List (Nested)" },
                     { id: "53", routerLink: "/navigation-drawer-layout-list-format-flat", label: "List (Flat)" },
+                    { id: "0", routerLink: "/navigation-drawer-layout-list-format-nested-modal", label: "List (Modal)" },
                 ] },
 
-                { id: "0", routerLink: "/radio-button", label: "Radio Button" },
-                // { id: "55", routerLink: "/search", label: "Search" },
-                // { id: "56", routerLink: "/bottom-sheet", label: "Bottom Sheet" },
-                // { id: "57", routerLink: "/side-sheet", label: "Side Sheet" },
-                // { id: "58", routerLink: "/slider", label: "Slider" },
-                // { id: "59", routerLink: "/snackbar", label: "Snackbar" },
-                { id: "60", routerLink: "/switch", label: "Switch" },
-                // { id: "61", routerLink: "/tab", label: "Tab" },
-                // { id: "62", routerLink: "/text-field", label: "Text Field" },
-                // { id: "63", routerLink: "/toolbar", label: "Toolbar" },
-                // { id: "64", routerLink: "/tooltip", label: "Tooltip" },
+                { id: "55", routerLink: "/radio-button", label: "Radio Button" },
+                // { id: "56", routerLink: "/search", label: "Search" },
+                // { id: "57", routerLink: "/bottom-sheet", label: "Bottom Sheet" },
+                // { id: "58", routerLink: "/side-sheet", label: "Side Sheet" },
+                // { id: "59", routerLink: "/slider", label: "Slider" },
+                // { id: "60", routerLink: "/snackbar", label: "Snackbar" },
+                { id: "61", routerLink: "/switch", label: "Switch" },
+                // { id: "62", routerLink: "/tab", label: "Tab" },
+                // { id: "63", routerLink: "/text-field", label: "Text Field" },
+                // { id: "64", routerLink: "/toolbar", label: "Toolbar" },
+                // { id: "65", routerLink: "/tooltip", label: "Tooltip" },
             ] },
         ];
     }
@@ -121,11 +122,11 @@ class DemoMain extends MDComponent {
 
         const sort = (items) =>
             items.sort((a, b) => {
-                const aHasChildren = a.children && a.children.length > 0;
-                const bHasChildren = b.children && b.children.length > 0;
+                // const aHasChildren = a.children && a.children.length > 0;
+                // const bHasChildren = b.children && b.children.length > 0;
 
-                if (aHasChildren && !bHasChildren) return -1;
-                if (!aHasChildren && bHasChildren) return 1;
+                // if (aHasChildren && !bHasChildren) return -1;
+                // if (!aHasChildren && bHasChildren) return 1;
 
                 return a.label.localeCompare(b.label);
             });
