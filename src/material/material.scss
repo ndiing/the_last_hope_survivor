@@ -8,7 +8,6 @@
 
 @use "./scrim/scrim.scss";
 @use "./layout/layout.scss";
-@use "./typography/typography.scss";
 
 @use "./icon/icon.scss";
 @use "./emoji/emoji.scss";
@@ -35,6 +34,8 @@
 
 @use "./badge/badge.scss";
 
+@use "./divider/divider.scss";
+
 @use "./list/list.scss";
 @use "./tree/tree.scss";
 @use "./push-menu/push-menu.scss";
@@ -53,7 +54,6 @@
 @use "./date-picker/date-picker.scss";
 @use "./time-picker/time-picker.scss";
 @use "./dialog/dialog.scss";
-@use "./divider/divider.scss";
 @use "./loading-indicator/loading-indicator.scss";
 @use "./progress-indicator/progress-indicator.scss";
 @use "./menu/menu.scss";

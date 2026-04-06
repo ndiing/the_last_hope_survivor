@@ -245,7 +245,6 @@ class MDPushMenu extends MDComponent {
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        console.log(this._stack);
     }
 }
 

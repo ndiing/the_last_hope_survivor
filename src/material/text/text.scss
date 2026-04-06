@@ -1,2 +1,51 @@
+@use "../mixins/mixins.scss";
+
 .md-text {
+    display: block;
+    margin: 16px 0;
 }
+.md-text--display-large {
+    @include mixins.typescale-display-large();
+} // lh64px
+.md-text--display-medium {
+    @include mixins.typescale-display-medium();
+} // lh48px
+.md-text--display-small {
+    @include mixins.typescale-display-small();
+} // lh48px
+.md-text--headline-large {
+    @include mixins.typescale-headline-large();
+} // lh32px
+.md-text--headline-medium {
+    @include mixins.typescale-headline-medium();
+} // lh32px
+.md-text--headline-small {
+    @include mixins.typescale-headline-small();
+} // lh32px
+.md-text--title-large {
+    @include mixins.typescale-title-large();
+} // lh32px
+.md-text--title-medium {
+    @include mixins.typescale-title-medium();
+} // lh16px
+.md-text--title-small {
+    @include mixins.typescale-title-small();
+} // lh16px
+.md-text--body-large {
+    @include mixins.typescale-body-large();
+} // lh16px
+.md-text--body-medium {
+    @include mixins.typescale-body-medium();
+} // lh16px
+.md-text--body-small {
+    @include mixins.typescale-body-small();
+} // lh16px
+.md-text--label-large {
+    @include mixins.typescale-label-large();
+} // lh16px
+.md-text--label-medium {
+    @include mixins.typescale-label-medium();
+} // lh16px
+.md-text--label-small {
+    @include mixins.typescale-label-small();
+} // lh16px

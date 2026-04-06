@@ -11,7 +11,6 @@ import "./layout-column-item/layout-column-item.js";
 import "./layout-border/layout-border.js";
 import "./layout-border-item/layout-border-item.js";
 import "./color/color.js";
-import "./typography/typography.js";
 
 import "./icon/icon.js";
 import "./emoji/emoji.js";
@@ -38,6 +37,8 @@ import "./tool-group/tool-group.js";
 
 import "./badge/badge.js";
 
+import "./divider/divider.js";
+
 import "./list-item/list-item.js";
 import "./list/list.js";
 import "./tree/tree.js";
@@ -57,7 +58,6 @@ import "./chip/chip.js";
 import "./date-picker/date-picker.js";
 import "./time-picker/time-picker.js";
 import "./dialog/dialog.js";
-import "./divider/divider.js";
 import "./loading-indicator/loading-indicator.js";
 import "./progress-indicator/progress-indicator.js";
 import "./menu/menu.js";

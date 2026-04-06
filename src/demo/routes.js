@@ -9,8 +9,6 @@ const routes = [
         {id:'3',path:'/color',label:'Color',load:() => import('./color/color.js').then(module=>module.default),},      
         // {id:'4',path:'/virtual-scroll',label:'Virtual Scroll',load:() => import('./virtual-scroll/virtual-scroll.js').then(module=>module.default),},
 
-
-
         {id:'5',path:'/scrim',label:'Scrim',load:() => import('./scrim/scrim.js').then(module=>module.default)},
 
         {id:'6',path:'/layout-column',label:'Layout Column',load:() => import('./layout-column/layout-column.js').then(module=>module.default)},
@@ -21,14 +19,11 @@ const routes = [
         {id:'10',path:'/layout-border',label:'Layout Border',load:() => import('./layout-border/layout-border.js').then(module=>module.default)},
         {id:'11',path:'/layout-border-modal',label:'Layout Border Modal',load:() => import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
 
-        {id:'12',path:'/typography',label:'Typography',load:() => import('./typography/typography.js').then(module=>module.default),},
-
-
         {id:'13',path:'/icon',label:'Icon',load:() => import('./icon/icon.js').then(module=>module.default)},
         {id:'14',path:'/emoji',label:'Emoji',load:() => import('./emoji/emoji.js').then(module=>module.default)},
         {id:'15',path:'/image',label:'Image',load:() => import('./image/image.js').then(module=>module.default)},
         {id:'16',path:'/avatar',label:'Avatar',load:() => import('./avatar/avatar.js').then(module=>module.default)},
-        // {id:'17',path:'/text',label:'Text',load:() => import('./text/text.js').then(module=>module.default),},
+        {id:'17',path:'/text',label:'Text',load:() => import('./text/text.js').then(module=>module.default),},
 
         {id:'18',path:'/form',label:'Form',load:() => import('./form/form.js').then(module=>module.default),},
 
@@ -53,7 +48,7 @@ const routes = [
         // {id:'34',path:'/date-picker',label:'Date Picker',load:() => import('./date-picker/date-picker.js').then(module=>module.default)},
         // {id:'35',path:'/time-picker',label:'Time Picker',load:() => import('./time-picker/time-picker.js').then(module=>module.default)},
         // {id:'36',path:'/dialog',label:'Dialog',load:() => import('./dialog/dialog.js').then(module=>module.default)},
-        // {id:'37',path:'/divider',label:'Divider',load:() => import('./divider/divider.js').then(module=>module.default)},
+        {id:'37',path:'/divider',label:'Divider',load:() => import('./divider/divider.js').then(module=>module.default)},
         // {id:'38',path:'/list-item',label:'List Item',load:() => import('./list-item/list-item.js').then(module=>module.default),},
         {id:'39',path:'/list',label:'List',load:() => import('./list/list.js').then(module=>module.default)},
         {id:'40',path:'/list-behavior',label:'List Behavior',load:() => import('./list-behavior/list-behavior.js').then(module=>module.default)},
