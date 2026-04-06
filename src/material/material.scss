@@ -1,7 +1,6 @@
 @use "./tokens/tokens.scss";
 @use "./mixins/mixins.scss";
 
-@use "./breakpoint/breakpoint.scss";
 @use "./ripple/ripple.scss";
 @use "./virtual-scroll/virtual-scroll.scss";
 
@@ -36,7 +35,6 @@
 
 @use "./badge/badge.scss";
 
-@use "./list-item/list-item.scss";
 @use "./list/list.scss";
 @use "./tree/tree.scss";
 @use "./push-menu/push-menu.scss";

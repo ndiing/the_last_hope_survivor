@@ -1,7 +1,7 @@
 import "./component/component.js";
 
 import "./router/router.js";
-import "./breakpoint/breakpoint.js";
+import "./observer/observer.js";
 import "./ripple/ripple.js";
 import "./virtual-scroll/virtual-scroll.js";
 
@@ -10,6 +10,7 @@ import "./layout-column/layout-column.js";
 import "./layout-column-item/layout-column-item.js";
 import "./layout-border/layout-border.js";
 import "./layout-border-item/layout-border-item.js";
+import "./color/color.js";
 import "./typography/typography.js";
 
 import "./icon/icon.js";

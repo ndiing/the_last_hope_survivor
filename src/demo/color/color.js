@@ -1,15 +1,15 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import { BreakpointObserver } from "../../material/observer/observer.js";
+import { ColorObserver } from "../../material/observer/observer.js";
 
-class DemoBreakpoint extends MDComponent {
+class DemoColor extends MDComponent {
     static properties = {
         item: { state: true },
     };
     constructor() {
         super();
         this.item = {};
-        this._breakpoint = new BreakpointObserver((item) => {
+        this._color = new ColorObserver((item) => {
             this.item = item;
         });
     }
@@ -26,15 +26,15 @@ class DemoBreakpoint extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this._breakpoint.observe();
+        this._color.observe();
     }
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this._breakpoint.unobserve();
+        this._color.unobserve();
     }
 }
 
-customElements.define("demo-breakpoint", DemoBreakpoint);
+customElements.define("demo-color", DemoColor);
 
-export default document.createElement("demo-breakpoint");
+export default document.createElement("demo-color");
