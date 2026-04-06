@@ -33,7 +33,7 @@ const routes = [
         // {id:'19',path:'/app-bar',label:'App Bar',load:() => import('./app-bar/app-bar.js').then(module=>module.default)},
         {id:'20',path:'/badge',label:'Badge',load:() => import('./badge/badge.js').then(module=>module.default)},
         // {id:'21',path:'/button-group',label:'Button Group',load:() => import('./button-group/button-group.js').then(module=>module.default)},
-        // {id:'22',path:'/button',label:'Button',load:() => import('./button/button.js').then(module=>module.default)},
+        {id:'22',path:'/button',label:'Button',load:() => import('./button/button.js').then(module=>module.default)},
         
         {id:'23',path:'/extended-fab',label:'Extended Fab',load:() => import('./extended-fab/extended-fab.js').then(module=>module.default)},
         // {id:'24',path:'/fab-menu',label:'Fab Menu',load:() => import('./fab-menu/fab-menu.js').then(module=>module.default)},
