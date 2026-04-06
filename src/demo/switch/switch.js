@@ -5,7 +5,7 @@ class DemoSwitch extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-form>
+            <md-form style="padding:24px;">
                 <md-layout-column>
                     <md-layout-column-item expanded="12" medium="8" compact="4">
                         <md-switch name="switch0" value="switch0"></md-switch>

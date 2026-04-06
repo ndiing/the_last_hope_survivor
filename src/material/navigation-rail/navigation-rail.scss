@@ -19,6 +19,7 @@
     .md-icon-button {
         margin: 20px 20px 0 20px;
     }
+
     .md-fab {
         margin: 12px 12px 0 12px;
     }
@@ -28,6 +29,7 @@
         margin-top: 40px;
         align-items: start;
     }
+
     .md-list__item {
         min-height: 0;
         gap: 0;
@@ -38,20 +40,23 @@
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
+
     .md-list__label {
         @include mixins.typescale-label-medium();
     }
+
     .md-list__trailing-item--badge {
         position: absolute;
     }
 }
 
-.md-navigation-rail:not(.md-navigation-rail--expanded) {
+.md-navigation-rail:not([expanded]) {
     width: 80px;
 
     .md-list {
         row-gap: 4px;
     }
+
     .md-list__item {
         flex-direction: column;
         padding-top: 6px;
@@ -75,6 +80,7 @@
             }
         }
     }
+
     .md-list__leading {
         + .md-list__content {
             .md-list__label {
@@ -82,6 +88,7 @@
             }
         }
     }
+
     .md-list__leading-item--icon {
         display: inline-flex;
         align-items: center;
@@ -91,6 +98,7 @@
         height: 32px;
         border-radius: 16px;
     }
+
     .md-list__trailing-item--badge {
         left: 50%;
         top: 6px;
@@ -100,14 +108,17 @@
         }
     }
 }
-.md-navigation-rail.md-navigation-rail--expanded {
+
+.md-navigation-rail[expanded] {
     width: auto;
     min-width: 220px;
     max-width: 360px;
+
     .md-list {
         margin-left: 12px;
         margin-right: 12px;
     }
+
     .md-list__item {
         padding-top: 16px;
         padding-bottom: 16px;
@@ -115,6 +126,7 @@
         width: auto;
         height: 56px;
     }
+
     .md-list__leading {
         + .md-list__content {
             .md-list__label {
@@ -122,9 +134,11 @@
             }
         }
     }
+
     .md-list__label {
         @include mixins.typescale-label-large();
     }
+
     .md-list__trailing-item--badge {
         left: calc(16px + ((24px - 16px) / 2) + (16px / 2));
         top: calc(16px + ((24px - 16px) / 2) - (16px / 2));

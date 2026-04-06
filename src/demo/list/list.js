@@ -5,7 +5,7 @@ class DemoList extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column style="padding:24px;">
 
                 <md-layout-column-item expanded="6" medium="4" compact="4">
                     <md-list

@@ -16,7 +16,7 @@ class DemoBreakpoint extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column style="padding:24px;">
                 <md-layout-column-item expanded="4" medium="4" compact="4">
                     <pre>${JSON.stringify(this.item,null,2)}</pre>
                 </md-layout-column-item>

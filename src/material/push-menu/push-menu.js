@@ -244,7 +244,6 @@ class MDPushMenu extends MDComponent {
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
-
     }
 }
 

@@ -57,7 +57,7 @@ class MDTree extends MDComponent {
         return repeat(this._list,(item)=>item.id,(item)=>html`
             <md-list-item
                 class="md-tree__item"
-                style="${styleMap({'--md-comp-tree-item-level':item.level,})}"
+                style="${styleMap({'--md-comp-list-item-level':item.level,})}"
                 .snapshot="${item}"
                 .leading="${[
                     ...(rootHasBranch?[

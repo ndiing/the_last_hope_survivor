@@ -5,7 +5,7 @@ class DemoForm extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-form>            
+            <md-form style="padding:24px;">            
                 <input name="hidden" type="hidden">
                 
                 <fieldset>

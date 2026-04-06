@@ -5,7 +5,7 @@ class DemoSideSheet extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column style="padding:24px;">
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-side-sheet></md-side-sheet>
                 </md-layout-column-item>

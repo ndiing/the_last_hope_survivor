@@ -5,7 +5,7 @@ class DemoCheckbox extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-form>
+            <md-form style="padding:24px;">
                 <md-layout-column>
                     <md-layout-column-item expanded="12" medium="8" compact="4">
                         <md-checkbox name="checkbox0" value="checkbox0"></md-checkbox>

@@ -26,11 +26,13 @@
 .md-ripple--bounded {
     overflow: hidden;
 }
+
 .md-ripple--trigger {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
+
 .md-ripple--focus {
     &::after {
         opacity: 10%;
@@ -40,6 +42,7 @@
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
+
 .md-ripple--press {
     &::after {
         opacity: 10%;
@@ -47,16 +50,19 @@
         transition: none;
     }
 }
+
 .md-ripple--hover {
     &::after {
         opacity: 8%;
     }
 }
+
 .md-ripple--drag {
     &::after {
         opacity: 16%;
     }
 }
+
 .md-ripple--disabled {
     pointer-events: none;
 }

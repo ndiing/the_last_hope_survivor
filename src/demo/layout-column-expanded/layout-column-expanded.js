@@ -5,7 +5,7 @@ class DemoLayoutColumnExpanded extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column style="padding:24px;">
                 <md-layout-column-item expanded="1">1</md-layout-column-item>
                 <md-layout-column-item expanded="11">11</md-layout-column-item>
                 <md-layout-column-item expanded="2">2</md-layout-column-item>

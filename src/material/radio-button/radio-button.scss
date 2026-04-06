@@ -7,6 +7,7 @@
     height: 24px;
     position: relative;
 }
+
 .md-radio-button__native {
     appearance: none;
     width: 200%;
@@ -30,6 +31,7 @@
         }
     }
 }
+
 .md-radio-button__container {
     display: inline-flex;
     align-items: center;
@@ -40,6 +42,7 @@
     border: 2px solid var(--md-sys-color-on-surface-variant);
     border-radius: 10px;
 }
+
 .md-radio-button__icon {
 }
 

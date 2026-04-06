@@ -31,10 +31,10 @@ class DemoLayoutBorderModal extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border>
+            <md-layout-border >
                 <md-layout-border-item id="north" region="north" modal>north</md-layout-border-item>
                 <md-layout-border-item id="west" region="west" modal>west</md-layout-border-item>
-                <md-layout-border-item region="center">
+                <md-layout-border-item region="center" style="padding:24px;">
                     <md-button @click="${this._handleNorthClick}" label="North Toggle"></md-button>
                     <md-button @click="${this._handleWestClick}" label="West Toggle"></md-button>
                     <md-button @click="${this._handleEastClick}" label="East Toggle"></md-button>

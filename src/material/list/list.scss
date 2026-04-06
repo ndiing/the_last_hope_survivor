@@ -5,12 +5,14 @@
     flex-direction: column;
     padding: 8px 0;
 }
+
 .md-list__item {
     display: flex;
     align-items: center;
     padding: 8px 16px 8px calc(16px + (24px * var(--md-comp-list-item-level, 0)));
     gap: 0 16px;
 }
+
 .md-list__leading {
     flex: 0 0 auto;
     gap: 0;
@@ -26,25 +28,32 @@
     flex-direction: column;
     max-width: 100%;
 }
+
 .md-list__label {
     @include mixins.typescale-body-large();
     white-space: nowrap;
     overflow: hidden;
+    // text-overflow: ellipsis;
 }
+
 .md-list__supporting-text {
     @include mixins.typescale-body-medium();
     max-height: calc(var(--md-sys-typescale-body-medium-line-height) * 2);
     overflow: hidden;
 }
+
 .md-list__trailing {
     flex: 0 0 auto;
 }
+
 .md-list__item--one-line {
     min-height: 56px;
 }
+
 .md-list__item--two-line {
     min-height: 72px;
 }
+
 .md-list__item--three-line {
     min-height: 88px;
     padding-top: 12px;

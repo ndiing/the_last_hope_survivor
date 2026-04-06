@@ -7,7 +7,7 @@ class MDNavigationRail extends MDComponent {
         iconButton: { type: Object },
         fab: { type: Object },
         items: { type: Array },
-        expanded: { type: Boolean },
+        expanded: { type: Boolean, reflect: true },
     };
 
     get ripple() {
@@ -77,22 +77,6 @@ class MDNavigationRail extends MDComponent {
         this.classList.add("md-navigation-rail");
 
         this.style.setProperty("--navigation-rail-item-selected-icon", "none");
-    }
-
-    _updateExpandedClass() {
-        if (this.expanded) {
-            this.classList.add(`md-navigation-rail--expanded`);
-        } else {
-            this.classList.remove(`md-navigation-rail--expanded`);
-        }
-    }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
-
-        if (_changedProperties.has("expanded")) {
-            this._updateExpandedClass();
-        }
     }
 
     expand() {

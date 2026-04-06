@@ -5,7 +5,7 @@ class DemoAvatar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
+            <md-layout-column style="padding:24px;">
                 
                 <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-avatar src="https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50" size="extra-small"></md-avatar>

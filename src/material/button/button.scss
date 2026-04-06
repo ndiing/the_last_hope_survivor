@@ -25,33 +25,49 @@
     color: transparent;
 }
 
-// .md-button__label {}
-// .md-button__icon {}
+//
+.md-button__label {
+}
+//
+.md-button__icon {
+}
 
-// .md-button--default{}
-// .md-button--toggle{}
+//
+.md-button--default {
+}
+//
+.md-button--toggle {
+}
 
-// .md-button--round{}
-// .md-button--square{}
+//
+.md-button--round {
+}
+//
+.md-button--square {
+}
 
 .md-button--extra-small {
     height: 32px;
     padding: 0 12px;
     gap: 0 4px;
+
     .md-button__icon {
         width: 20px;
         height: 20px;
         font-size: 20px;
     }
+
     .md-button__label {
         @include mixins.typescale-label-large();
     }
+
     &.md-button--round {
         border-radius: 16px;
         &[selected] {
             border-radius: 12px;
         }
     }
+
     &.md-button--square {
         border-radius: 12px;
         &[selected] {
@@ -62,24 +78,29 @@
         border-radius: 8px;
     }
 }
+
 .md-button--small {
     height: 40px;
     padding: 0 16px;
     gap: 0 8px;
+
     .md-button__icon {
         width: 20px;
         height: 20px;
         font-size: 20px;
     }
+
     .md-button__label {
         @include mixins.typescale-label-large();
     }
+
     &.md-button--round {
         border-radius: 20px;
         &[selected] {
             border-radius: 12px;
         }
     }
+
     &.md-button--square {
         border-radius: 12px;
         &[selected] {
@@ -90,24 +111,29 @@
         border-radius: 8px;
     }
 }
+
 .md-button--medium {
     height: 56px;
     padding: 0 24px;
     gap: 0 8px;
+
     .md-button__icon {
         width: 24px;
         height: 24px;
         font-size: 24px;
     }
+
     .md-button__label {
         @include mixins.typescale-title-medium();
     }
+
     &.md-button--round {
         border-radius: 28px;
         &[selected] {
             border-radius: 16px;
         }
     }
+
     &.md-button--square {
         border-radius: 16px;
         &[selected] {
@@ -118,24 +144,29 @@
         border-radius: 12px;
     }
 }
+
 .md-button--large {
     height: 96px;
     padding: 0 48px;
     gap: 0 12px;
+
     .md-button__icon {
         width: 32px;
         height: 32px;
         font-size: 32px;
     }
+
     .md-button__label {
         @include mixins.typescale-headline-small();
     }
+
     &.md-button--round {
         border-radius: 48px;
         &[selected] {
             border-radius: 28px;
         }
     }
+
     &.md-button--square {
         border-radius: 28px;
         &[selected] {
@@ -146,24 +177,29 @@
         border-radius: 16px;
     }
 }
+
 .md-button--extra-large {
     height: 136px;
     padding: 0 64px;
     gap: 0 16px;
+
     .md-button__icon {
         width: 40px;
         height: 40px;
         font-size: 40px;
     }
+
     .md-button__label {
         @include mixins.typescale-headline-large();
     }
+
     &.md-button--round {
         border-radius: 68px;
         &[selected] {
             border-radius: 28px;
         }
     }
+
     &.md-button--square {
         border-radius: 28px;
         &[selected] {
@@ -188,6 +224,7 @@
         }
     }
 }
+
 .md-button--filled {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
@@ -201,6 +238,7 @@
         }
     }
 }
+
 .md-button--tonal {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
@@ -214,6 +252,7 @@
         }
     }
 }
+
 .md-button--outlined {
     border: 1px solid var(--md-sys-color-outline-variant);
     color: var(--md-sys-color-on-surface-variant);
