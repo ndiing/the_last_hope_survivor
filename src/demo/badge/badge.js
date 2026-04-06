@@ -11,6 +11,7 @@ class DemoBadge extends MDComponent {
                     <md-badge label="3"></md-badge>
                     <md-badge label="1000"></md-badge>
                 </md-layout-column-item>
+                
             </md-layout-column>
         `
     }

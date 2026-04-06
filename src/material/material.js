@@ -10,6 +10,7 @@ import "./layout-column/layout-column.js";
 import "./layout-column-item/layout-column-item.js";
 import "./layout-border/layout-border.js";
 import "./layout-border-item/layout-border-item.js";
+import "./typography/typography.js";
 
 import "./icon/icon.js";
 import "./emoji/emoji.js";

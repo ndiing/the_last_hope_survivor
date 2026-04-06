@@ -65,6 +65,7 @@ const components = [
     // 'push-menu',
     // 'push-menu-item',
     // 'virtual-scroll'
+    // 'typography'
 ];
 
 function toPascalCase(string) {

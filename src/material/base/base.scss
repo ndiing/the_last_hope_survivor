@@ -29,6 +29,11 @@
 ul,
 ol {
     list-style: none;
+    counter-reset: counter-number;
+    li:before {
+        counter-increment: counter-number;
+        content: counter(counter-number) ". ";
+    }
 }
 
 html,

@@ -16,8 +16,8 @@ class DemoRadioButton extends MDComponent {
                         <md-radio-button name="radio-button1" value="radio-button1" disabled checked></md-radio-button>
                     </md-layout-column-item>
                     <md-layout-column-item expanded="12" medium="8" compact="4">
-                        <button type="reset">reset</button>
-                        <button type="submit">submit</button>
+                        <md-button type="reset" label="Reset"></md-button>
+                        <md-button type="submit" label="Submit"></md-button>
                     </md-layout-column-item>
                 </md-layout-column>
             </md-form>

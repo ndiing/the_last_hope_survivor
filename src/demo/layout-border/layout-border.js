@@ -35,10 +35,10 @@ class DemoLayoutBorder extends MDComponent {
                 <md-layout-border-item id="north" region="north">north</md-layout-border-item>
                 <md-layout-border-item id="west" region="west">west</md-layout-border-item>
                 <md-layout-border-item region="center">
-                    <button @click="${this._handleNorthClick}">north toggle</button>
-                    <button @click="${this._handleWestClick}">west toggle</button>
-                    <button @click="${this._handleEastClick}">east toggle</button>
-                    <button @click="${this._handleSouthClick}">south toggle</button>
+                    <md-button @click="${this._handleNorthClick}" label="North Toggle"></md-button>
+                    <md-button @click="${this._handleWestClick}" label="West Toggle"></md-button>
+                    <md-button @click="${this._handleEastClick}" label="East Toggle"></md-button>
+                    <md-button @click="${this._handleSouthClick}" label="South Toggle"></md-button>
                 </md-layout-border-item>
                 <md-layout-border-item id="east" region="east">east</md-layout-border-item>
                 <md-layout-border-item id="south" region="south">south</md-layout-border-item>

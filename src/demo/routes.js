@@ -20,6 +20,9 @@ const routes = [
         {id:'9',path:'/layout-border',label:'Layout Border',load:() => import('./layout-border/layout-border.js').then(module=>module.default)},
         {id:'10',path:'/layout-border-modal',label:'Layout Border Modal',load:() => import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
 
+        {id:'1000',path:'/typography',label:'Typography',load:() => import('./typography/typography.js').then(module=>module.default),},
+
+
         {id:'11',path:'/icon',label:'Icon',load:() => import('./icon/icon.js').then(module=>module.default)},
         {id:'12',path:'/emoji',label:'Emoji',load:() => import('./emoji/emoji.js').then(module=>module.default)},
         {id:'13',path:'/image',label:'Image',load:() => import('./image/image.js').then(module=>module.default)},

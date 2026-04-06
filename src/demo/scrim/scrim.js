@@ -15,7 +15,7 @@ class DemoScrim extends MDComponent {
         return html`
             <md-layout-column>
                 <md-layout-column-item expanded="12" medium="8" compact="4">
-                    <button @click="${this._handleClick}">toggle</button>
+                    <md-button @click="${this._handleClick}" label="Toggle"></md-button>
                     <md-scrim id="scrim"></md-scrim>
                 </md-layout-column-item>
             </md-layout-column>

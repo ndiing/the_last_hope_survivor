@@ -78,16 +78,16 @@ class DemoForm extends MDComponent {
                 <meter></meter><br><br>
                 <progress></progress><br><br>
 
-                <button type="button">button</button>
-                <button type="image">image</button>
-                <button type="reset">reset</button>
-                <button type="submit">submit</button>
-                <br><br>
+                <md-button type="button" label="Button"></md-button>
+                <!-- <md-button type="image" label="Image"></md-button> -->
+                <md-button type="reset" label="Reset"></md-button>
+                <md-button type="submit" label="Submit"></md-button>
+                <!-- <br><br> -->
 
-                <input type="button" value="button">
-                <input type="image" value="image">
-                <input type="reset" value="reset">
-                <input type="submit" value="submit">
+                <!-- <input type="button" value="button"> -->
+                <!-- <input type="image" value="image"> -->
+                <!-- <input type="reset" value="reset"> -->
+                <!-- <input type="submit" value="submit"> -->
             </md-form>
         `
     }
