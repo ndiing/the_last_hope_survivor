@@ -17,15 +17,15 @@
     color: var(--md-sys-color-on-surface);
 
     .md-icon-button {
-        margin: 16px 20px 0 20px;
+        margin: 20px 20px 0 20px;
     }
     .md-fab {
-        margin: 16px 12px 0 12px;
+        margin: 12px 12px 0 12px;
     }
 
     .md-list {
         padding: 0;
-        margin: 44px 0 0 0;
+        margin-top: 40px;
         align-items: start;
     }
     .md-list__item {
@@ -105,7 +105,8 @@
     min-width: 220px;
     max-width: 360px;
     .md-list {
-        margin: 44px 12px 0 12px;
+        margin-left: 12px;
+        margin-right: 12px;
     }
     .md-list__item {
         padding-top: 16px;
