@@ -64,6 +64,12 @@ const routes = [
         {path:'/navigation-drawer-layout-list-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-flat.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested-modal.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-tree-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-nested.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-tree-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-flat.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-tree-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-nested-modal.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-push-menu-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-push-menu-format-nested.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-push-menu-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-push-menu-format-flat.js').then(module=>module.default)},
+        {path:'/navigation-drawer-layout-push-menu-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-push-menu-format-nested-modal.js').then(module=>module.default)},
         
         {path:'/navigation-rail',load:() => import('./navigation-rail/navigation-rail.js').then(module=>module.default)},  
 
