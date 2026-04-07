@@ -66,6 +66,11 @@ const components = [
     // 'push-menu-item',
     // 'virtual-scroll'
     // 'typography'
+    // 'layout',
+    // 'layout-header',
+    // 'layout-body',
+    // 'layout-footer',
+    // 'pane'
 ];
 
 function toPascalCase(string) {

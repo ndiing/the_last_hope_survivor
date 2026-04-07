@@ -56,7 +56,6 @@ class DemoNavigationBar extends MDComponent {
     //                 {id:'3',leading:[{component:'icon',icon:'image'}],label:'sit'},
     //             ]}" layout="vertical" open></md-navigation-bar>
     //             <md-layout-border-item region="center" style="padding:24px;">center</md-layout-border-item>
-                
 
     //         </md-layout-border>
     //     `

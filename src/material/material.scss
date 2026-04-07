@@ -6,8 +6,15 @@
 
 @use "./base/base.scss";
 
-@use "./scrim/scrim.scss";
 @use "./layout/layout.scss";
+@use "./layout-header/layout-header.scss";
+@use "./layout-body/layout-body.scss";
+@use "./layout-footer/layout-footer.scss";
+
+@use "./pane/pane.scss";
+@use "./scrim/scrim.scss";
+@use "./layout-column/layout-column.scss";
+@use "./layout-border/layout-border.scss";
 
 @use "./icon/icon.scss";
 @use "./emoji/emoji.scss";

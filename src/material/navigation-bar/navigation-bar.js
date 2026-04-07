@@ -27,7 +27,7 @@ class MDNavigationBar extends MDComponent {
         this.selection = true;
         this.mode = "single-select";
         this.inputFormat = "flat";
-        this.region='south'
+        this.region = "south";
     }
 
     _handleListItemClick() {

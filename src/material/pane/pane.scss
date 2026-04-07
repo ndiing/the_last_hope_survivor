@@ -1,0 +1,24 @@
+.md-pane {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+.md-pane__header {
+    flex: 0 0 auto;
+}
+.md-pane__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.md-pane__main {
+    flex: 1;
+    overflow: auto;
+}
+.md-pane__footer {
+    flex: 0 0 auto;
+}
