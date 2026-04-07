@@ -10,8 +10,8 @@ import "./layout-column/layout-column.js";
 import "./layout-column-item/layout-column-item.js";
 import "./layout-border/layout-border.js";
 import "./layout-border-item/layout-border-item.js";
-import "./color/color.js";
 
+import "./color/color.js";
 import "./icon/icon.js";
 import "./emoji/emoji.js";
 import "./image/image.js";

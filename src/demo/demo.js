@@ -11,15 +11,13 @@ const routes = [
         {path:'/virtual-scroll',load:() => import('./virtual-scroll/virtual-scroll.js').then(module=>module.default),},
 
         {path:'/scrim',load:() => import('./scrim/scrim.js').then(module=>module.default)},
-
         {path:'/layout-column',load:() => import('./layout-column/layout-column.js').then(module=>module.default)},
         {path:'/layout-column-expanded',load:() => import('./layout-column-expanded/layout-column-expanded.js').then(module=>module.default)},
         {path:'/layout-column-medium',load:() => import('./layout-column-medium/layout-column-medium.js').then(module=>module.default)},
         {path:'/layout-column-compact',load:() => import('./layout-column-compact/layout-column-compact.js').then(module=>module.default)},
-
         {path:'/layout-border',load:() => import('./layout-border/layout-border.js').then(module=>module.default)},
         {path:'/layout-border-modal',load:() => import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
-
+        
         {path:'/icon',load:() => import('./icon/icon.js').then(module=>module.default)},
         {path:'/emoji',load:() => import('./emoji/emoji.js').then(module=>module.default)},
         {path:'/image',load:() => import('./image/image.js').then(module=>module.default)},
@@ -34,11 +32,9 @@ const routes = [
         {path:'/badge',load:() => import('./badge/badge.js').then(module=>module.default)},
         {path:'/button-group',load:() => import('./button-group/button-group.js').then(module=>module.default)},
         {path:'/button',load:() => import('./button/button.js').then(module=>module.default)},
-        
         {path:'/extended-fab',load:() => import('./extended-fab/extended-fab.js').then(module=>module.default)},
         {path:'/fab-menu',load:() => import('./fab-menu/fab-menu.js').then(module=>module.default)},
         {path:'/fab',load:() => import('./fab/fab.js').then(module=>module.default)},
-
         {path:'/icon-button',load:() => import('./icon-button/icon-button.js').then(module=>module.default)},
         {path:'/segmented-button',load:() => import('./segmented-button/segmented-button.js').then(module=>module.default)},
         {path:'/split-button',load:() => import('./split-button/split-button.js').then(module=>module.default)},
@@ -50,23 +46,27 @@ const routes = [
         {path:'/time-picker',load:() => import('./time-picker/time-picker.js').then(module=>module.default)},
         {path:'/dialog',load:() => import('./dialog/dialog.js').then(module=>module.default)},
         {path:'/divider',load:() => import('./divider/divider.js').then(module=>module.default)},
+
         {path:'/list',load:() => import('./list/list.js').then(module=>module.default)},
         {path:'/list-behavior',load:() => import('./list-behavior/list-behavior.js').then(module=>module.default)},
         {path:'/list-interaction',load:() => import('./list-interaction/list-interaction.js').then(module=>module.default)},
+
         {path:'/tree',load:() => import('./tree/tree.js').then(module=>module.default),},
         {path:'/push-menu',load:() => import('./push-menu/push-menu.js').then(module=>module.default),},
 
         {path:'/loading-indicator',load:() => import('./loading-indicator/loading-indicator.js').then(module=>module.default)},
         {path:'/progress-indicator',load:() => import('./progress-indicator/progress-indicator.js').then(module=>module.default)},
         {path:'/menu',load:() => import('./menu/menu.js').then(module=>module.default)},
-        {path:'/navigation-bar',load:() => import('./navigation-bar/navigation-bar.js').then(module=>module.default)},
 
+        {path:'/navigation-bar',load:() => import('./navigation-bar/navigation-bar.js').then(module=>module.default)},
+        
         {path:'/navigation-drawer',load:() => import('./navigation-drawer/navigation-drawer.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-flat.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested-modal.js').then(module=>module.default)},
-
+        
         {path:'/navigation-rail',load:() => import('./navigation-rail/navigation-rail.js').then(module=>module.default)},  
+
         {path:'/radio-button',load:() => import('./radio-button/radio-button.js').then(module=>module.default)},
         {path:'/search',load:() => import('./search/search.js').then(module=>module.default)},
         {path:'/bottom-sheet',load:() => import('./bottom-sheet/bottom-sheet.js').then(module=>module.default)},

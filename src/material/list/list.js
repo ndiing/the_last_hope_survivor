@@ -68,6 +68,7 @@ class MDList extends MDComponent {
                 .snapshot="${item}"
                 .leading="${ifDefined(item.leading)}"
                 .label="${ifDefined(item.label)}"
+                title="${ifDefined(item.label)}"
                 .supportingText="${ifDefined(item.supportingText)}"
                 .trailing="${[
                     ...(item.trailing?item.trailing:[]),
