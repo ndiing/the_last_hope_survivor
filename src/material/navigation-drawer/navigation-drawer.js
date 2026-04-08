@@ -8,10 +8,19 @@ import { MDLayoutBorderItem } from "../layout-border-item/layout-border-item.js"
 
 class MDNavigationDrawer extends MDLayoutBorderItem {
     static properties = {
-        ...MDList.properties,
-        ...MDTree.properties,
-        ...MDPushMenu.properties,
-        ...MDLayoutBorderItem.properties,
+        items: { type: Array },
+        interactive: { type: Boolean },
+        selection: { type: Boolean },
+        mode: { type: String },
+        inputFormat: { type: String },
+        ripple: { type: Object },
+
+        // ...MDLayoutBorderItem.properties,
+        region: { type: String },
+        open: { type: Boolean },
+        modal: { type: Boolean },
+        margin: { type: Boolean },
+
         layout: { type: String },
     };
 

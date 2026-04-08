@@ -6,7 +6,7 @@ class DemoVirtualScroll extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-layout-column style="padding:24px;">
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                <md-layout-column-item expanded="12" medium="8" compact="4">
                     <md-virtual-scroll></md-virtual-scroll>
                 </md-layout-column-item>
             </md-layout-column>

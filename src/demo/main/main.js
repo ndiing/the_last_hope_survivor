@@ -16,7 +16,7 @@ class DemoMain extends MDComponent {
                 { id: "1", routerLink: "/ripple", label: "Ripple" },
                 { id: "2", routerLink: "/breakpoint", label: "Breakpoint" },
                 { id: "3", routerLink: "/color", label: "Color" },
-                // { id: "4", routerLink: "/virtual-scroll", label: "Virtual Scroll" },
+                { id: "4", routerLink: "/virtual-scroll", label: "Virtual Scroll" },
             ]},
             { id: "5", label: "Components", children: [
                 { id: "6", label: "Layout", children: [
@@ -119,11 +119,11 @@ class DemoMain extends MDComponent {
                 ></md-navigation-drawer>
                 <md-layout-border-item region="center">
                     <md-layout>
-                        <!-- app-bar -->
+                        <!-- nanti app-bar extend ke layout-header -->
                         <md-layout-header></md-layout-header>
                         <!-- body -->
                         <md-layout-body><md-outlet></md-outlet></md-layout-body>
-                        <!-- navigation-bar -->
+                        <!-- nanti navigation-bar extend ke layout-footer -->
                         <md-layout-footer></md-layout-footer>
                     </md-layout>
                 </md-layout-border-item>
@@ -134,6 +134,8 @@ class DemoMain extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
+        // kalau kita pakai behavior dari windows explorer, yang ada children / folder berarti di atas
+        // tapi kalau kita pakai behavior dari m3, harusnya di abaikan, dan sort by alphabet
         const sort = (items) =>
             items.sort((a, b) => {
                 // const aHasChildren = a.children && a.children.length > 0;
