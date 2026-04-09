@@ -12,7 +12,7 @@ class DemoMain extends MDComponent {
 
         /* prettier-ignore */
         this.items = [
-            { id: "23", label: "Libraries", children: [
+            { id: "58", label: "Libraries", children: [
                 { id: "1", routerLink: "/ripple", label: "Ripple" },
                 { id: "2", routerLink: "/breakpoint", label: "Breakpoint" },
                 { id: "3", routerLink: "/color", label: "Color" },
@@ -37,7 +37,7 @@ class DemoMain extends MDComponent {
                 { id: "20", routerLink: "/image", label: "Image" },
                 { id: "21", routerLink: "/avatar", label: "Avatar" },
                 { id: "22", routerLink: "/text", label: "Text" },
-                { id: "0", routerLink: "/pane", label: "Pane" },
+                { id: "23", routerLink: "/pane", label: "Pane" },
                 { id: "24", routerLink: "/form", label: "Form" },
                 { id: "25", routerLink: "/tool-group", label: "Tool Group" },
                 // { id: "26", routerLink: "/app-bar", label: "App Bar" },
@@ -75,34 +75,37 @@ class DemoMain extends MDComponent {
                 // ]},
                 // { id: "55", routerLink: "/menu", label: "Menu" },
                 { id: "56", label: "Navigation", children: [
-                    { id: "57", routerLink: "/navigation-bar", label: "Navigation Bar" },
-                    { id: "58", routerLink: "/navigation-rail", label: "Navigation Rail" },
+                    // { id: "57", routerLink: "/navigation-bar", label: "Navigation Bar" },
+                    { id: "0", routerLink: "/navigation-bar-vertical", label: "Navigation Bar Vertical" },
+                    { id: "59", routerLink: "/navigation-bar-horizontal", label: "Navigation Bar Horizontal" },
+
+                    { id: "60", routerLink: "/navigation-rail", label: "Navigation Rail" },
                     
-                    { id: "59", routerLink: "/navigation-drawer-layout-list-format-nested", label: "Navigation Drawer List Nested" },
-                    { id: "60", routerLink: "/navigation-drawer-layout-list-format-flat", label: "Navigation Drawer List Flat" },
-                    { id: "61", routerLink: "/navigation-drawer-layout-list-format-nested-modal", label: "Navigation Drawer List Modal" },
+                    { id: "61", routerLink: "/navigation-drawer-layout-list-format-nested", label: "Navigation Drawer List Nested" },
+                    { id: "62", routerLink: "/navigation-drawer-layout-list-format-flat", label: "Navigation Drawer List Flat" },
+                    { id: "63", routerLink: "/navigation-drawer-layout-list-format-nested-modal", label: "Navigation Drawer List Modal" },
 
-                    { id: "62", routerLink: "/navigation-drawer-layout-tree-format-nested", label: "Navigation Drawer Tree Nested" },
-                    { id: "63", routerLink: "/navigation-drawer-layout-tree-format-flat", label: "Navigation Drawer Tree Flat" },
-                    { id: "64", routerLink: "/navigation-drawer-layout-tree-format-nested-modal", label: "Navigation Drawer Tree Modal" },
+                    { id: "64", routerLink: "/navigation-drawer-layout-tree-format-nested", label: "Navigation Drawer Tree Nested" },
+                    { id: "65", routerLink: "/navigation-drawer-layout-tree-format-flat", label: "Navigation Drawer Tree Flat" },
+                    { id: "66", routerLink: "/navigation-drawer-layout-tree-format-nested-modal", label: "Navigation Drawer Tree Modal" },
 
-                    { id: "65", routerLink: "/navigation-drawer-layout-push-menu-format-nested", label: "Navigation Drawer PushMenu Nested" },
-                    { id: "66", routerLink: "/navigation-drawer-layout-push-menu-format-flat", label: "Navigation Drawer PushMenu Flat" },
-                    { id: "67", routerLink: "/navigation-drawer-layout-push-menu-format-nested-modal", label: "Navigation Drawer PushMenu Modal" },
+                    { id: "67", routerLink: "/navigation-drawer-layout-push-menu-format-nested", label: "Navigation Drawer PushMenu Nested" },
+                    { id: "68", routerLink: "/navigation-drawer-layout-push-menu-format-flat", label: "Navigation Drawer PushMenu Flat" },
+                    { id: "69", routerLink: "/navigation-drawer-layout-push-menu-format-nested-modal", label: "Navigation Drawer PushMenu Modal" },
                 ]},
-                { id: "68", routerLink: "/radio-button", label: "Radio Button" },
-                // { id: "69", routerLink: "/search", label: "Search" },
-                // { id: "70", label: "Sheet", children: [
-                //     { id: "71", routerLink: "/bottom-sheet", label: "Bottom Sheet" },
-                //     { id: "72", routerLink: "/side-sheet", label: "Side Sheet" },
+                { id: "70", routerLink: "/radio-button", label: "Radio Button" },
+                // { id: "71", routerLink: "/search", label: "Search" },
+                // { id: "72", label: "Sheet", children: [
+                //     { id: "73", routerLink: "/bottom-sheet", label: "Bottom Sheet" },
+                //     { id: "74", routerLink: "/side-sheet", label: "Side Sheet" },
                 // ]},
-                // { id: "73", routerLink: "/slider", label: "Slider" },
-                // { id: "74", routerLink: "/snackbar", label: "Snackbar" },
-                { id: "75", routerLink: "/switch", label: "Switch" },
-                // { id: "76", routerLink: "/tab", label: "Tab" },
-                // { id: "77", routerLink: "/text-field", label: "Text Field" },
-                // { id: "78", routerLink: "/toolbar", label: "Toolbar" },
-                // { id: "79", routerLink: "/tooltip", label: "Tooltip" },
+                // { id: "75", routerLink: "/slider", label: "Slider" },
+                // { id: "76", routerLink: "/snackbar", label: "Snackbar" },
+                { id: "77", routerLink: "/switch", label: "Switch" },
+                // { id: "78", routerLink: "/tab", label: "Tab" },
+                // { id: "79", routerLink: "/text-field", label: "Text Field" },
+                // { id: "80", routerLink: "/toolbar", label: "Toolbar" },
+                // { id: "81", routerLink: "/tooltip", label: "Tooltip" },
             ]},
         ];
     }

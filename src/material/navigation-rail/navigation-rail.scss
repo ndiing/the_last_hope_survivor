@@ -39,6 +39,8 @@
         transition-property: width, height;
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+        
     }
 
     .md-list__content {
@@ -153,3 +155,4 @@
         }
     }
 }
+
