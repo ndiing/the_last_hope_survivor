@@ -66,6 +66,8 @@ const routes = [
         {path:'/menu',load:() => import('./menu/menu.js').then(module=>module.default)},
 
         {path:'/navigation-bar',load:() => import('./navigation-bar/navigation-bar.js').then(module=>module.default)},
+        // {path:'/navigation-bar-vertical',load:() => import('./navigation-bar-vertical/navigation-bar-vertical.js').then(module=>module.default)},
+        // {path:'/navigation-bar-horizontal',load:() => import('./navigation-bar-horizontal/navigation-bar-vertical.js').then(module=>module.default)},
         
         {path:'/navigation-drawer',load:() => import('./navigation-drawer/navigation-drawer.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested.js').then(module=>module.default)},

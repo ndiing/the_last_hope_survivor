@@ -49,6 +49,10 @@ class MDToolGroup extends MDComponent {
         `
     }
 
+    _handleToolGroupIconAnimationend(event){
+        this.emit('toolGroupIconAnimationend',{event})
+    }
+
     _renderIcon(properties = {}) {
         /* prettier-ignore */
         return html`
@@ -57,7 +61,7 @@ class MDToolGroup extends MDComponent {
                 class="${classMap({'md-tool':true,...properties.class})}"
                 style="${styleMap({...properties.style})}"
                 tabindex="${ifDefined(properties.tabindex)}"
-                @animationend="${properties.animationend}"
+                @animationend="${this._handleToolGroupIconAnimationend}"
             >${properties.icon}
             </md-icon>
         `

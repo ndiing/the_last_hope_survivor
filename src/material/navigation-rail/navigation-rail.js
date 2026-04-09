@@ -32,6 +32,10 @@ class MDNavigationRail extends MDComponent {
         this.style.removeProperty("--navigation-rail-item-selected-icon");
     }
 
+    _handleToolGroupIconAnimationend() {
+        this.style.setProperty("--navigation-rail-item-selected-icon", "none");
+    }
+
     render() {
         /* prettier-ignore */
         return html`
@@ -67,6 +71,7 @@ class MDNavigationRail extends MDComponent {
                 .inputFormat="${this.inputFormat}"
                 .ripple="${this.ripple}"
                 @listItemClick="${this._handleListItemClick}"
+                @toolGroupIconAnimationend="${this._handleToolGroupIconAnimationend}"
             ></md-list>
         `
     }

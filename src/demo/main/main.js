@@ -16,7 +16,7 @@ class DemoMain extends MDComponent {
                 { id: "1", routerLink: "/ripple", label: "Ripple" },
                 { id: "2", routerLink: "/breakpoint", label: "Breakpoint" },
                 { id: "3", routerLink: "/color", label: "Color" },
-                { id: "4", routerLink: "/virtual-scroll", label: "Virtual Scroll" },
+                // { id: "4", routerLink: "/virtual-scroll", label: "Virtual Scroll" },
             ]},
             { id: "5", label: "Components", children: [
                 { id: "6", label: "Layout", children: [

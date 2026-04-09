@@ -2,11 +2,16 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDList } from "../list/list.js";
 import { MDLayoutBorderItem } from "../layout-border-item/layout-border-item.js";
+import { MDLayoutFooter } from "../layout-footer/layout-footer.js";
 
-class MDNavigationBar extends MDComponent {
+class MDNavigationBar extends MDLayoutFooter {
     static properties = {
-        ...MDList.properties,
-        ...MDLayoutBorderItem.properties,
+        items: { type: Array },
+        interactive: { type: Boolean },
+        selection: { type: Boolean },
+        mode: { type: String },
+        inputFormat: { type: String },
+        ripple: { type: Object },
         layout: { type: String },
     };
 
