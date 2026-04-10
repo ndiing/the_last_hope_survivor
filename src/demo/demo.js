@@ -98,6 +98,9 @@ const routes = [
         {path:'/text-field',load:() => import('./text-field/text-field.js').then(module=>module.default)},
         {path:'/toolbar',load:() => import('./toolbar/toolbar.js').then(module=>module.default)},
         {path:'/tooltip',load:() => import('./tooltip/tooltip.js').then(module=>module.default)},
+
+        {path:'/test',load:() => import('./test/test.js').then(module=>module.default),},
+
     ]},
     {path:'*',component:testNotFound,redirectTo:'/'},
 ]

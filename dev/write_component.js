@@ -71,6 +71,7 @@ const components = [
     // 'layout-body',
     // 'layout-footer',
     // 'pane'
+    // 'test'
 ];
 
 function toPascalCase(string) {

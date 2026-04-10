@@ -77,3 +77,5 @@ import "./snackbar/snackbar.js";
 import "./tab/tab.js";
 import "./toolbar/toolbar.js";
 import "./tooltip/tooltip.js";
+
+import "./test/test.js";

@@ -1,24 +1,66 @@
-.md-pane {
+
+@use "../mixins/mixins.scss";
+
+.md-pane{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    overflow: hidden;
+    // width: 100%;
+    // height: 100%;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+
+    // &,
+    // *{
+    //     border: 1px solid;
+    // }
 }
-.md-pane__header {
+.md-pane__header{
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 0 16px;
+    height: 64px;
 }
-.md-pane__body {
-    flex: 1;
+.md-pane__tool-group{
+    display: flex;
+    // gap: 0 24px;
+    gap: 0 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+// .md-pane__tool{}
+.md-pane__content{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+    +.md-pane__tool-group{
+        margin-left: auto;
+    }
 }
-.md-pane__main {
+.md-pane__headline{
+    @include mixins.typescale-title-large();
+}
+.md-pane__subtitle{
+    @include mixins.typescale-label-medium();
+}
+.md-pane__body{
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.md-pane__main{
     flex: 1;
     overflow: auto;
+    padding: 0 16px;
 }
-.md-pane__footer {
+.md-pane__footer{
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0 8px;
+    height: 64px;
 }
+// .md-pane__button{}
