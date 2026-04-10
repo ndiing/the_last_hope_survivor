@@ -1960,6 +1960,9 @@ body {
 .md-navigation-bar--horizontal .md-list {
   -moz-column-gap: 8px;
        column-gap: 8px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 }
 .md-navigation-bar--horizontal .md-list__item {
   border-radius: 20px;
@@ -2068,7 +2071,7 @@ body {
 }
 
 .md-navigation-rail:not([expanded]) {
-  width: 80px;
+  --md-comp-layout-border-item-west-width: 80px;
 }
 .md-navigation-rail:not([expanded]) .md-list {
   row-gap: 4px;
@@ -2115,9 +2118,9 @@ body {
 }
 
 .md-navigation-rail[expanded] {
-  width: auto;
   min-width: 220px;
   max-width: 360px;
+  --md-comp-layout-border-item-west-width: 220px;
 }
 .md-navigation-rail[expanded] .md-list {
   margin-left: 12px;

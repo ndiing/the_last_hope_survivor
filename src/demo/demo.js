@@ -66,14 +66,16 @@ const routes = [
         {path:'/menu',load:() => import('./menu/menu.js').then(module=>module.default)},
 
         {path:'/navigation-bar',load:() => import('./navigation-bar/navigation-bar.js').then(module=>module.default)},
-        {path:'/navigation-bar-vertical',load:() => import('./navigation-bar-vertical/navigation-bar-vertical.js').then(module=>module.default)},
-        {path:'/navigation-bar-horizontal',load:() => import('./navigation-bar-horizontal/navigation-bar-horizontal.js').then(module=>module.default)},
+        {path:'/navigation-bar-vertical',load:() => import('./navigation-bar/navigation-bar-vertical.js').then(module=>module.default)},
+        {path:'/navigation-bar-vertical-badge',load:() => import('./navigation-bar/navigation-bar-vertical-badge.js').then(module=>module.default)},
+        {path:'/navigation-bar-horizontal',load:() => import('./navigation-bar/navigation-bar-horizontal.js').then(module=>module.default)},
+        {path:'/navigation-bar-horizontal-badge',load:() => import('./navigation-bar/navigation-bar-horizontal-badge.js').then(module=>module.default)},
         
         {path:'/navigation-drawer',load:() => import('./navigation-drawer/navigation-drawer.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-flat.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-list-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-list-format-nested-modal.js').then(module=>module.default)},
-        {path:'/navigation-drawer-layout-tree-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-nested.js').then(module=>module.default)},
+        // {path:'/navigation-drawer-layout-tree-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-nested.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-tree-format-flat',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-flat.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-tree-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-tree-format-nested-modal.js').then(module=>module.default)},
         {path:'/navigation-drawer-layout-push-menu-format-nested',load:() => import('./navigation-drawer/navigation-drawer-layout-push-menu-format-nested.js').then(module=>module.default)},
@@ -81,6 +83,9 @@ const routes = [
         {path:'/navigation-drawer-layout-push-menu-format-nested-modal',load:() => import('./navigation-drawer/navigation-drawer-layout-push-menu-format-nested-modal.js').then(module=>module.default)},
         
         {path:'/navigation-rail',load:() => import('./navigation-rail/navigation-rail.js').then(module=>module.default)},  
+        {path:'/navigation-rail-with-icon-and-fab',load:() => import('./navigation-rail/navigation-rail-with-icon-and-fab.js').then(module=>module.default)},  
+        {path:'/navigation-rail-with-fab',load:() => import('./navigation-rail/navigation-rail-with-fab.js').then(module=>module.default)},  
+        {path:'/navigation-rail-with-icon',load:() => import('./navigation-rail/navigation-rail-with-icon.js').then(module=>module.default)},  
 
         {path:'/radio-button',load:() => import('./radio-button/radio-button.js').then(module=>module.default)},
         {path:'/search',load:() => import('./search/search.js').then(module=>module.default)},

@@ -39,8 +39,6 @@
         transition-property: width, height;
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-
-        
     }
 
     .md-list__content {
@@ -58,7 +56,8 @@
 }
 
 .md-navigation-rail:not([expanded]) {
-    width: 80px;
+    // width: 80px;
+    --md-comp-layout-border-item-west-width: 80px;
 
     .md-list {
         row-gap: 4px;
@@ -117,9 +116,10 @@
 }
 
 .md-navigation-rail[expanded] {
-    width: auto;
+    // width: auto;
     min-width: 220px;
     max-width: 360px;
+    --md-comp-layout-border-item-west-width: 220px;
 
     .md-list {
         margin-left: 12px;
@@ -155,4 +155,3 @@
         }
     }
 }
-

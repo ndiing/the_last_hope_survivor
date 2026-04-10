@@ -49,8 +49,8 @@ class MDToolGroup extends MDComponent {
         `
     }
 
-    _handleToolGroupIconAnimationend(event){
-        this.emit('toolGroupIconAnimationend',{event})
+    _handleToolGroupIconAnimationend(event) {
+        this.emit("toolGroupIconAnimationend", { event });
     }
 
     _renderIcon(properties = {}) {

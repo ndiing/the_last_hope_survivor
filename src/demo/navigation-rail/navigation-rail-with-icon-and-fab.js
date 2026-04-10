@@ -1,13 +1,15 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoNavigationRail extends MDComponent {
+class DemoNavigationRailWithIconAndFab extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
             <md-layout-border>
 
                 <md-navigation-rail
+                    .iconButton="${{icon:['menu','menu_open']}}" 
+                    .fab="${{icon:'edit', label:'Label'}}"
                     .items="${[
                         {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
                         {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
@@ -22,6 +24,6 @@ class DemoNavigationRail extends MDComponent {
     }
 }
 
-customElements.define("demo-navigation-rail", DemoNavigationRail);
+customElements.define("demo-navigation-rail-with-icon-and-fab", DemoNavigationRailWithIconAndFab);
 
-export default document.createElement("demo-navigation-rail");
+export default document.createElement("demo-navigation-rail-with-icon-and-fab");

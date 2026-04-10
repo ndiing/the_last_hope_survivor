@@ -1,13 +1,18 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { MDLayoutBorderItem } from "../layout-border-item/layout-border-item.js";
 
-class MDNavigationRail extends MDComponent {
+class MDNavigationRail extends MDLayoutBorderItem {
     static properties = {
         iconButton: { type: Object },
         fab: { type: Object },
         items: { type: Array },
         expanded: { type: Boolean, reflect: true },
+        region: { type: String },
+        open: { type: Boolean },
+        modal: { type: Boolean },
+        margin: { type: Boolean },
     };
 
     get ripple() {
@@ -26,6 +31,7 @@ class MDNavigationRail extends MDComponent {
         this.mode = "single-select";
         this.inputFormat = "flat";
         this.expanded = false;
+        this.region = "west";
     }
 
     _handleListItemClick() {

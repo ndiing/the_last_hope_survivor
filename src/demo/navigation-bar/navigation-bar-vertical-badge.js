@@ -1,9 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoNavigationBarVertical extends MDComponent {
-    
-    
+class DemoNavigationBarVerticalBadge extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
@@ -15,9 +13,9 @@ class DemoNavigationBarVertical extends MDComponent {
                         
                         <md-navigation-bar .items="${[
                             {id:'0',leading:[{component:'icon',icon:'image'}],label:'Lorem',selected:true},
-                            {id:'1',leading:[{component:'icon',icon:'image'}],label:'ipsum'},
-                            {id:'2',leading:[{component:'icon',icon:'image'}],label:'dolor'},
-                            {id:'3',leading:[{component:'icon',icon:'image'}],label:'sit'},
+                            {id:'1',leading:[{component:'icon',icon:'image'}],label:'ipsum',trailing:[{component:'badge',label:0}]},
+                            {id:'2',leading:[{component:'icon',icon:'image'}],label:'dolor',trailing:[{component:'badge',label:3}]},
+                            {id:'3',leading:[{component:'icon',icon:'image'}],label:'sit',trailing:[{component:'badge',label:3333}]},
                         ]}" layout="vertical"></md-navigation-bar>
                         
                     </md-layout>
@@ -27,6 +25,6 @@ class DemoNavigationBarVertical extends MDComponent {
     }
 }
 
-customElements.define("demo-navigation-bar-vertical", DemoNavigationBarVertical);
+customElements.define("demo-navigation-bar-vertical-badge", DemoNavigationBarVerticalBadge);
 
-export default document.createElement("demo-navigation-bar-vertical");
+export default document.createElement("demo-navigation-bar-vertical-badge");
