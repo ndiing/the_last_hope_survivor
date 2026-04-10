@@ -66,7 +66,7 @@ const routes = [
         {path:'/menu',load:() => import('./menu/menu.js').then(module=>module.default)},
 
         {path:'/navigation-bar',load:() => import('./navigation-bar/navigation-bar.js').then(module=>module.default)},
-        {path:'/navigation-bar-vertical',load:() => import('./navigation-bar/navigation-bar-vertical.js').then(module=>module.default)},
+        // {path:'/navigation-bar-vertical',load:() => import('./navigation-bar/navigation-bar-vertical.js').then(module=>module.default)},
         {path:'/navigation-bar-vertical-badge',load:() => import('./navigation-bar/navigation-bar-vertical-badge.js').then(module=>module.default)},
         {path:'/navigation-bar-horizontal',load:() => import('./navigation-bar/navigation-bar-horizontal.js').then(module=>module.default)},
         {path:'/navigation-bar-horizontal-badge',load:() => import('./navigation-bar/navigation-bar-horizontal-badge.js').then(module=>module.default)},

@@ -9,9 +9,17 @@
     flex: 0 0 auto;
     position: sticky;
     top: 0;
+
+    // temp
+    height: 64px;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
 }
 .md-layout__body {
     flex: 1;
+    &:has(.md-layout__body){
+        overflow: hidden;
+    }
 }
 .md-layout__footer {
     flex: 0 0 auto;

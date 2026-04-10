@@ -75,9 +75,9 @@ class DemoMain extends MDComponent {
                 // ]},
                 // { id: "55", routerLink: "/menu", label: "Menu" },
                 { id: "56", label: "Navigation", children: [
-                    // { id: "57", routerLink: "/navigation-bar", label: "Navigation Bar" },
+                    { id: "57", routerLink: "/navigation-bar", label: "Navigation Bar" },
                     // { id: "58", routerLink: "/navigation-bar-vertical", label: "Navigation Bar Vertical" },
-                    { id: "59", routerLink: "/navigation-bar-vertical-badge", label: "Navigation Bar Vertical" },
+                    // { id: "59", routerLink: "/navigation-bar-vertical-badge", label: "Navigation Bar Vertical" },
                     // { id: "60", routerLink: "/navigation-bar-horizontal", label: "Navigation Bar Horizontal" },
                     { id: "61", routerLink: "/navigation-bar-horizontal-badge", label: "Navigation Bar Horizontal" },
 
@@ -119,7 +119,6 @@ class DemoMain extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-layout-border>
-                <!-- navigation-drawer -->
                 <md-navigation-drawer 
                     .items="${this.items}"
                     inputFormat="nested"
@@ -128,12 +127,10 @@ class DemoMain extends MDComponent {
                 ></md-navigation-drawer>
                 <md-layout-border-item region="center">
                     <md-layout>
-                        <!-- nanti app-bar extend ke layout-header -->
-                        <md-layout-header></md-layout-header>
-                        <!-- body -->
-                        <md-layout-body><md-outlet></md-outlet></md-layout-body>
-                        <!-- nanti navigation-bar extend ke layout-footer -->
-                        <md-layout-footer></md-layout-footer>
+                        <!-- <md-layout-header></md-layout-header> -->
+                        <md-layout-body 
+                        ><md-outlet></md-outlet></md-layout-body>
+                        <!-- <md-layout-footer></md-layout-footer> -->
                     </md-layout>
                 </md-layout-border-item>
             </md-layout-border>
