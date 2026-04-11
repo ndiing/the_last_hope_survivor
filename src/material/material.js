@@ -10,8 +10,6 @@ import "./layout-header/layout-header.js";
 import "./layout-body/layout-body.js";
 import "./layout-footer/layout-footer.js";
 
-import "./pane/pane.js";
-
 import "./scrim/scrim.js";
 
 import "./layout-column/layout-column.js";

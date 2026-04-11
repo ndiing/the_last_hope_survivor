@@ -15,8 +15,6 @@ const routes = [
         {path:'/layout-body',load:() => import('./layout-body/layout-body.js').then(module=>module.default),},
         {path:'/layout-footer',load:() => import('./layout-footer/layout-footer.js').then(module=>module.default),},
 
-        {path:'/pane',load:() => import('./pane/pane.js').then(module=>module.default),},
-
         {path:'/scrim',load:() => import('./scrim/scrim.js').then(module=>module.default)},
         {path:'/layout-column',load:() => import('./layout-column/layout-column.js').then(module=>module.default)},
         {path:'/layout-column-expanded',load:() => import('./layout-column-expanded/layout-column-expanded.js').then(module=>module.default)},
