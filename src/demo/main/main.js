@@ -122,8 +122,7 @@ class DemoMain extends MDComponent {
                 <md-navigation-drawer 
                     .items="${this.items}"
                     inputFormat="nested"
-                    !open
-                    style="--md-comp-layout-border-item-west-width:360px;"
+                    open
                 ></md-navigation-drawer>
                 <md-layout-border-item region="center">
                     <md-layout>
