@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoNavigationBarLayoutPushMenuFormatFlat extends MDComponent {
+class DemoNavigationBar extends MDComponent {
     constructor() {
         super();
 
@@ -55,13 +55,12 @@ class DemoNavigationBarLayoutPushMenuFormatFlat extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border >
+            <md-layout-border style="position:relative;">
                 <md-navigation-drawer
                     id="drawer"
                     .items="${[...this.flatData]}"
                     inputFormat="flat"
-                    layout="push-menu"
-                    open
+                    layout="tree"
                 ></md-navigation-drawer>
                 <md-layout-border-item region="center" style="padding:24px;">
                     <md-button label="Toggle" @click="${this._handleDrawerToggle}"></md-button>
@@ -71,6 +70,6 @@ class DemoNavigationBarLayoutPushMenuFormatFlat extends MDComponent {
     }
 }
 
-customElements.define("demo-navigation-drawer-layout-push-menu-format-flat", DemoNavigationBarLayoutPushMenuFormatFlat);
+customElements.define("demo-navigation-drawer-flat-tree", DemoNavigationBar);
 
-export default document.createElement("demo-navigation-drawer-layout-push-menu-format-flat");
+export default document.createElement("demo-navigation-drawer-flat-tree");

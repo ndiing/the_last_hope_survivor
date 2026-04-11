@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoNavigationBarLayoutTreeFormatNestedModal extends MDComponent {
+class DemoNavigationBar extends MDComponent {
     constructor() {
         super();
 
@@ -96,8 +96,7 @@ class DemoNavigationBarLayoutTreeFormatNestedModal extends MDComponent {
                     id="drawer"
                     .items="${[...this.nestedData]}"
                     inputFormat="nested"
-                    layout="tree"
-                    modal
+                    layout="list"
                 ></md-navigation-drawer>
                 <md-layout-border-item region="center" style="padding:24px;">
                     <md-button label="Toggle" @click="${this._handleDrawerToggle}"></md-button>
@@ -107,6 +106,6 @@ class DemoNavigationBarLayoutTreeFormatNestedModal extends MDComponent {
     }
 }
 
-customElements.define("demo-navigation-drawer-layout-tree-format-nested-modal", DemoNavigationBarLayoutTreeFormatNestedModal);
+customElements.define("demo-navigation-drawer-nested-list", DemoNavigationBar);
 
-export default document.createElement("demo-navigation-drawer-layout-tree-format-nested-modal");
+export default document.createElement("demo-navigation-drawer-nested-list");

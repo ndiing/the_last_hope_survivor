@@ -97,7 +97,6 @@ class DemoNavigationBar extends MDComponent {
                     .items="${[...this.nestedData]}"
                     inputFormat="nested"
                     layout="list"
-                    modal
                 ></md-navigation-drawer>
                 <md-layout-border-item region="center" style="padding:24px;">
                     <md-button label="Toggle" @click="${this._handleDrawerToggle}"></md-button>
