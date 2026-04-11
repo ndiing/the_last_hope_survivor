@@ -5,12 +5,12 @@ class DemoListBehavior extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
+            <md-column style="padding:24px;">
 
             
                 
             
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list0"
                         .items="${[
@@ -21,8 +21,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'4',label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list1"
                         .interactive="${false}"
@@ -34,9 +34,9 @@ class DemoListBehavior extends MDComponent {
                             {id:'9',label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list2"
                         selection
@@ -49,8 +49,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'14',label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list3"
                         selection
@@ -63,10 +63,10 @@ class DemoListBehavior extends MDComponent {
                             {id:'19',label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
                 
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list2"
                         selection
@@ -79,8 +79,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'24',leading:[{component:'radio-button'}],label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list3"
                         selection
@@ -93,8 +93,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'29',leading:[{component:'checkbox'}],label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list3"
                         selection
@@ -107,8 +107,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'34',leading:[{component:'switch'}],label:"List item 4"},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list2"
                         selection
@@ -121,8 +121,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'39',label:"List item 4",trailing:[{component:'radio-button'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list3"
                         selection
@@ -135,8 +135,8 @@ class DemoListBehavior extends MDComponent {
                             {id:'44',label:"List item 4",trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         id="list3"
                         selection
@@ -149,9 +149,9 @@ class DemoListBehavior extends MDComponent {
                             {id:'49',label:"List item 4",trailing:[{component:'switch'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-            </md-layout-column>
+            </md-column>
         `
     }
 }

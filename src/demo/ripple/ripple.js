@@ -6,48 +6,48 @@ class DemoRipple extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
+            <md-column style="padding:24px;">
                 
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{}}" class="demo-ripple__item"></div>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{unbounded:true}}" class="demo-ripple__item"></div>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{radius:128}}" class="demo-ripple__item"></div>
-                </md-layout-column-item>
+                </md-column-item>
                 
                 
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{centered:true,}}" class="demo-ripple__item"></div>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{centered:true,unbounded:true}}" class="demo-ripple__item"></div>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{centered:true,radius:128}}" class="demo-ripple__item"></div>
-                </md-layout-column-item>
+                </md-column-item>
                 
                 
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{trigger:'.demo-ripple__trigger',centered:true,}}" class="demo-ripple__item">
                         <div class="demo-ripple__trigger"></div>
                     </div>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{trigger:'.demo-ripple__trigger',centered:true,unbounded:true}}" class="demo-ripple__item">
                         <div class="demo-ripple__trigger"></div>
                     </div>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="4" medium="4" compact="4">
                     <div .ripple="${{trigger:'.demo-ripple__trigger',centered:true,radius:128}}" class="demo-ripple__item">
                         <div class="demo-ripple__trigger"></div>
                     </div>
-                </md-layout-column-item>
+                </md-column-item>
                 
 
-            </md-layout-column>
+            </md-column>
         `
     }
 

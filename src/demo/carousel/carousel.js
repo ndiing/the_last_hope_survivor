@@ -5,11 +5,11 @@ class DemoCarousel extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+            <md-column style="padding:24px;">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-carousel></md-carousel>
-                </md-layout-column-item>
-            </md-layout-column>
+                </md-column-item>
+            </md-column>
         `
     }
 }

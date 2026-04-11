@@ -3,30 +3,29 @@ import { MDComponent } from "../../material/component/component.js";
 import { router } from "../demo.js";
 
 class DemoMain extends MDComponent {
-
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border>
+            <md-layout>
                 <md-navigation-drawer 
                     .items="${this.items}"
                     inputFormat="nested"
                     open
                 ></md-navigation-drawer>
-                <md-layout-border-item region="center"><md-outlet></md-outlet></md-layout-border-item>
-            </md-layout-border>
+                <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
+            </md-layout>
         `
     }
 
     connectedCallback() {
         super.connectedCallback();
 
-        this.items=router.routes[0].children.map((child,index)=>{
-            child.id=index
-            child.label=child.path
-            child.routerLink=child.path
-            return child
-        })
+        this.items = router.routes[0].children.map((child, index) => {
+            child.id = index;
+            child.label = child.path;
+            child.routerLink = child.path;
+            return child;
+        });
 
         // kalau kita pakai behavior dari windows explorer, yang ada children / folder berarti di atas
         // tapi kalau kita pakai behavior dari m3, harusnya di abaikan, dan sort by alphabet

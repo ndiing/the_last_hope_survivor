@@ -6,8 +6,8 @@ class DemoSwitch extends MDComponent {
         /* prettier-ignore */
         return html`
             <md-form style="padding:24px;">
-                <md-layout-column>
-                    <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column>
+                    <md-column-item expanded="12" medium="8" compact="4">
                         <md-switch name="switch0" value="switch0"></md-switch>
                         <md-switch name="switch1" value="switch1" checked></md-switch><br><br>
                         
@@ -17,12 +17,12 @@ class DemoSwitch extends MDComponent {
                         <md-switch name="switch4" value="switch4" icons='["close","check"]'></md-switch>
                         <md-switch name="switch5" value="switch5" checked icons='["close","check"]'></md-switch><br><br>
 
-                    </md-layout-column-item>
-                    <md-layout-column-item expanded="12" medium="8" compact="4">
+                    </md-column-item>
+                    <md-column-item expanded="12" medium="8" compact="4">
                         <md-button type="reset" label="Reset"></md-button>
                         <md-button type="submit" label="Submit"></md-button>
-                    </md-layout-column-item>
-                </md-layout-column>
+                    </md-column-item>
+                </md-column>
             </md-form>
         `
     }

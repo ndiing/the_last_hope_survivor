@@ -1,6 +1,6 @@
 import { MDComponent } from "../component/component.js";
 
-class MDLayoutBorderItem extends MDComponent {
+class MDLayoutItem extends MDComponent {
     static properties = {
         region: { type: String },
         open: { type: Boolean },
@@ -17,7 +17,7 @@ class MDLayoutBorderItem extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-layout-border__item");
+        this.classList.add("md-layout__item");
 
         this.scrimElement = document.createElement("md-scrim");
         document.body.append(this.scrimElement);
@@ -29,7 +29,7 @@ class MDLayoutBorderItem extends MDComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.classList.remove("md-layout-border__item");
+        this.classList.remove("md-layout__item");
 
         this.scrimElement.removeEventListener("scrimClose", this._handleScrimClose);
         this.scrimElement.remove();
@@ -40,22 +40,22 @@ class MDLayoutBorderItem extends MDComponent {
     _updateRegionClass() {
         this.regions.forEach((region) => {
             if (this.region === region) {
-                this.classList.add(`md-layout-border__item--${region}`);
+                this.classList.add(`md-layout__item--${region}`);
             } else {
-                this.classList.remove(`md-layout-border__item--${region}`);
+                this.classList.remove(`md-layout__item--${region}`);
             }
         });
     }
 
     _updateOpenClass() {
         if (this.open) {
-            this.classList.add(`md-layout-border__item--open`);
+            this.classList.add(`md-layout__item--open`);
 
             if (this.modal) {
                 this.scrimElement.show();
             }
         } else {
-            this.classList.remove(`md-layout-border__item--open`);
+            this.classList.remove(`md-layout__item--open`);
 
             this.scrimElement.close();
         }
@@ -63,17 +63,17 @@ class MDLayoutBorderItem extends MDComponent {
 
     _updateModalClass() {
         if (this.modal) {
-            this.classList.add(`md-layout-border__item--modal`);
+            this.classList.add(`md-layout__item--modal`);
         } else {
-            this.classList.remove(`md-layout-border__item--modal`);
+            this.classList.remove(`md-layout__item--modal`);
         }
     }
 
     _updateMarginClass() {
         if (this.margin) {
-            this.classList.add(`md-layout-border__item--margin`);
+            this.classList.add(`md-layout__item--margin`);
         } else {
-            this.classList.remove(`md-layout-border__item--margin`);
+            this.classList.remove(`md-layout__item--margin`);
         }
     }
 
@@ -100,13 +100,13 @@ class MDLayoutBorderItem extends MDComponent {
     show() {
         this.open = true;
 
-        this.emit("layoutBorderItemShow", {});
+        this.emit("layoutItemShow", {});
     }
 
     close() {
         this.open = false;
 
-        this.emit("layoutBorderItemClose", {});
+        this.emit("layoutItemClose", {});
     }
 
     toggle() {
@@ -118,6 +118,6 @@ class MDLayoutBorderItem extends MDComponent {
     }
 }
 
-customElements.define("md-layout-border-item", MDLayoutBorderItem);
+customElements.define("md-layout-item", MDLayoutItem);
 
-export { MDLayoutBorderItem };
+export { MDLayoutItem };

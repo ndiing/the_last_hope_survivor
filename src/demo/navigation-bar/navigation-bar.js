@@ -5,11 +5,11 @@ class DemoNavigationBar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border >
-                <md-layout-border-item region="center">
-                    <md-layout>
-                        <md-layout-header>header</md-layout-header>
-                        <md-layout-body style="padding:24px;">
+            <md-layout >
+                <md-layout-item region="center">
+                    <md-pane>
+                        <md-pane-header>header</md-pane-header>
+                        <md-pane-body style="padding:24px;">
                             
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate aliquid harum ipsam facere esse eveniet accusantium, quos fugiat, repellat deleniti molestiae illum! Quisquam fugiat quos adipisci. Earum incidunt totam modi.</p>
                             <p>Eius, facere. Voluptatibus dolorum necessitatibus praesentium pariatur vero, ad, debitis dolor porro dolores quam similique, quae eius architecto expedita natus odio labore ducimus in aperiam sit nesciunt! Harum, assumenda neque!</p>
@@ -112,7 +112,7 @@ class DemoNavigationBar extends MDComponent {
                             <p>Illo fugiat ipsa alias libero commodi voluptatem nostrum dolor! Pariatur quae laborum, dolores placeat quibusdam velit nesciunt iusto modi vitae dolorem doloremque cumque laboriosam, sint laudantium eveniet accusamus aperiam amet!</p>
                             <p>Optio dignissimos repellat tempora deserunt doloremque consequatur sequi, perferendis eaque consequuntur asperiores similique exercitationem a, id facilis incidunt, ea quasi sed! Distinctio magni expedita praesentium. Inventore blanditiis commodi dolores suscipit?</p>
 
-                        </md-layout-body>
+                        </md-pane-body>
                         
                         <md-navigation-bar .items="${[
                             {id:'0',leading:[{component:'icon',icon:'image'}],label:'Lorem',selected:true},
@@ -121,9 +121,9 @@ class DemoNavigationBar extends MDComponent {
                             {id:'3',leading:[{component:'icon',icon:'image'}],label:'sit'},
                         ]}" layout="vertical"></md-navigation-bar>
                         
-                    </md-layout>
-                </md-layout-border-item>
-            </md-layout-border>
+                    </md-pane>
+                </md-layout-item>
+            </md-layout>
         `
     }
 }

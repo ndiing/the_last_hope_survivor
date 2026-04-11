@@ -5,9 +5,9 @@ class DemoList extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
+            <md-column style="padding:24px;">
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'0',leading:[{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -15,8 +15,8 @@ class DemoList extends MDComponent {
                             {id:'2',leading:[{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'3',leading:[{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
@@ -24,9 +24,9 @@ class DemoList extends MDComponent {
                             {id:'5',leading:[{component:'avatar',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'6',leading:[{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -34,8 +34,8 @@ class DemoList extends MDComponent {
                             {id:'8',leading:[{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'9',leading:[{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
@@ -43,9 +43,9 @@ class DemoList extends MDComponent {
                             {id:'11',leading:[{component:'image',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'12',leading:[{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -53,8 +53,8 @@ class DemoList extends MDComponent {
                             {id:'14',leading:[{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'15',leading:[{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
@@ -62,9 +62,9 @@ class DemoList extends MDComponent {
                             {id:'17',leading:[{component:'video',src:'https://api.dicebear.com/9.x/icons/svg?seed=321654987&scale=50'}],label:'Label text',trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'18',leading:[{component:'icon',icon:'image'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -72,8 +72,8 @@ class DemoList extends MDComponent {
                             {id:'20',leading:[{component:'icon',icon:'image'}],label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'21',leading:[{component:'icon',icon:'image'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'checkbox'}]},
@@ -81,9 +81,9 @@ class DemoList extends MDComponent {
                             {id:'23',leading:[{component:'icon',icon:'image'}],label:'Label text',trailing:[{component:'checkbox'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'24',label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -91,8 +91,8 @@ class DemoList extends MDComponent {
                             {id:'26',label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'27',label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'text',text:'100+'}]},
@@ -100,9 +100,9 @@ class DemoList extends MDComponent {
                             {id:'29',label:'Label text',trailing:[{component:'text',text:'100+'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'30',leading:[{component:'checkbox'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -110,8 +110,8 @@ class DemoList extends MDComponent {
                             {id:'32',leading:[{component:'checkbox'}],label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'33',leading:[{component:'checkbox'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'text',text:'100+'}]},
@@ -119,9 +119,9 @@ class DemoList extends MDComponent {
                             {id:'35',leading:[{component:'checkbox'}],label:'Label text',trailing:[{component:'text',text:'100+'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'36',leading:[{component:'radio-button'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines'},
@@ -129,8 +129,8 @@ class DemoList extends MDComponent {
                             {id:'38',leading:[{component:'radio-button'}],label:'Label text'},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'39',leading:[{component:'radio-button'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'text',text:'100+'}]},
@@ -138,9 +138,9 @@ class DemoList extends MDComponent {
                             {id:'41',leading:[{component:'radio-button'}],label:'Label text',trailing:[{component:'text',text:'100+'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'42',label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'switch'}]},
@@ -148,8 +148,8 @@ class DemoList extends MDComponent {
                             {id:'44',label:'Label text',trailing:[{component:'switch'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-list
                         .items="${[
                             {id:'45',leading:[{component:'icon',icon:'image'}],label:'Label text',supportingText:'Supporting text that is long enough to fill up multiple lines',trailing:[{component:'switch'}]},
@@ -157,9 +157,9 @@ class DemoList extends MDComponent {
                             {id:'47',leading:[{component:'icon',icon:'image'}],label:'Label text',trailing:[{component:'switch'}]},
                         ]}"
                     ></md-list>
-                </md-layout-column-item>
+                </md-column-item>
 
-            </md-layout-column>
+            </md-column>
         `
     }
 }

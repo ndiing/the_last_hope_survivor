@@ -126,28 +126,28 @@ class DemoTree extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
+            <md-column style="padding:24px;">
                 
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-tree
                         .items="${this.basicData}"
                         inputFormat="nested"
                     ></md-tree>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-tree
                         .items="${this.nestedData}"
                         inputFormat="nested"
                     ></md-tree>
-                </md-layout-column-item>
-                <md-layout-column-item expanded="6" medium="4" compact="4">
+                </md-column-item>
+                <md-column-item expanded="6" medium="4" compact="4">
                     <md-tree
                         .items="${this.flatData}"
                         inputFormat="flat"
                     ></md-tree>
-                </md-layout-column-item>
+                </md-column-item>
                 
-            </md-layout-column>
+            </md-column>
         `
     }
 }

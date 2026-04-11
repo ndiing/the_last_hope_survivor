@@ -31,18 +31,18 @@ class DemoLayoutBorderModal extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border >
-                <md-layout-border-item id="north" region="north" modal>north</md-layout-border-item>
-                <md-layout-border-item id="west" region="west" modal>west</md-layout-border-item>
-                <md-layout-border-item region="center" style="padding:24px;">
+            <md-layout >
+                <md-layout-item id="north" region="north" modal>north</md-layout-item>
+                <md-layout-item id="west" region="west" modal>west</md-layout-item>
+                <md-layout-item region="center" style="padding:24px;">
                     <md-button @click="${this._handleNorthClick}" label="North Toggle"></md-button>
                     <md-button @click="${this._handleWestClick}" label="West Toggle"></md-button>
                     <md-button @click="${this._handleEastClick}" label="East Toggle"></md-button>
                     <md-button @click="${this._handleSouthClick}" label="South Toggle"></md-button>
-                </md-layout-border-item>
-                <md-layout-border-item id="east" region="east" modal>east</md-layout-border-item>
-                <md-layout-border-item id="south" region="south" modal>south</md-layout-border-item>
-            </md-layout-border>
+                </md-layout-item>
+                <md-layout-item id="east" region="east" modal>east</md-layout-item>
+                <md-layout-item id="south" region="south" modal>south</md-layout-item>
+            </md-layout>
         `
     }
 }

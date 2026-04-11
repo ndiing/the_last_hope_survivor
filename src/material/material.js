@@ -5,17 +5,18 @@ import "./observer/observer.js";
 import "./ripple/ripple.js";
 import "./virtual-scroll/virtual-scroll.js";
 
-import "./layout/layout.js";
-import "./layout-header/layout-header.js";
-import "./layout-body/layout-body.js";
-import "./layout-footer/layout-footer.js";
+import "./pane/pane.js";
+import "./pane-header/pane-header.js";
+import "./pane-body/pane-body.js";
+import "./pane-footer/pane-footer.js";
 
 import "./scrim/scrim.js";
 
-import "./layout-column/layout-column.js";
-import "./layout-column-item/layout-column-item.js";
-import "./layout-border/layout-border.js";
-import "./layout-border-item/layout-border-item.js";
+import "./column/column.js";
+import "./column-item/column-item.js";
+
+import "./layout/layout.js";
+import "./layout-item/layout-item.js";
 
 import "./color/color.js";
 import "./icon/icon.js";

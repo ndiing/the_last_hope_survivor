@@ -91,7 +91,7 @@ class DemoNavigationBar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border style="position:relative;">
+            <md-layout style="position:relative;">
                 <md-navigation-drawer
                     id="drawer"
                     .items="${[...this.nestedData]}"
@@ -99,10 +99,10 @@ class DemoNavigationBar extends MDComponent {
                     layout="list"
                     modal
                 ></md-navigation-drawer>
-                <md-layout-border-item region="center" style="padding:24px;">
+                <md-layout-item region="center" style="padding:24px;">
                     <md-button label="Toggle" @click="${this._handleDrawerToggle}"></md-button>
-                </md-layout-border-item>
-            </md-layout-border>
+                </md-layout-item>
+            </md-layout>
         `
     }
 }

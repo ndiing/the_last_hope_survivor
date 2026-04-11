@@ -1,0 +1,28 @@
+.md-pane {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.md-pane__header {
+    flex: 0 0 auto;
+    position: sticky;
+    top: 0;
+
+    // temp
+    height: 64px;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+}
+.md-pane__body {
+    flex: 1;
+    &:has(.md-pane__body) {
+        overflow: hidden;
+    }
+}
+.md-pane__footer {
+    flex: 0 0 auto;
+    position: sticky;
+    bottom: 0;
+}

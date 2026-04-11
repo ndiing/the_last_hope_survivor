@@ -1,10 +1,10 @@
 import { MDComponent } from "../component/component.js";
 
-class MDLayoutFooter extends MDComponent {
+class MDPaneFooter extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-layout__footer");
+        this.classList.add("md-pane__footer");
     }
 
     updated(_changedProperties) {
@@ -12,6 +12,6 @@ class MDLayoutFooter extends MDComponent {
     }
 }
 
-customElements.define("md-layout-footer", MDLayoutFooter);
+customElements.define("md-pane-footer", MDPaneFooter);
 
-export { MDLayoutFooter };
+export { MDPaneFooter };

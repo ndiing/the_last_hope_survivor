@@ -3,7 +3,7 @@ import { MDComponent } from "../component/component.js";
 /**
  * @class
  */
-class MDLayoutColumnItem extends MDComponent {
+class MDColumnItem extends MDComponent {
     static properties = {
         expanded: { type: Number },
         medium: { type: Number },
@@ -13,15 +13,15 @@ class MDLayoutColumnItem extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-layout-column__item");
+        this.classList.add("md-column__item");
     }
 
     _updateSizeClass(columns, size) {
         for (let i = 1; i <= columns; i++) {
             if (this[size] === i) {
-                this.classList.add(`md-layout-column__item--${size}${i}`);
+                this.classList.add(`md-column__item--${size}${i}`);
             } else {
-                this.classList.remove(`md-layout-column__item--${size}${i}`);
+                this.classList.remove(`md-column__item--${size}${i}`);
             }
         }
     }
@@ -43,6 +43,6 @@ class MDLayoutColumnItem extends MDComponent {
     }
 }
 
-customElements.define("md-layout-column-item", MDLayoutColumnItem);
+customElements.define("md-column-item", MDColumnItem);
 
-export { MDLayoutColumnItem };
+export { MDColumnItem };

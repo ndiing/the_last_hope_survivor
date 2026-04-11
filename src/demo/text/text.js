@@ -5,8 +5,8 @@ class DemoText extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
-                <md-layout-column-item expanded="12" medium="4" compact="4">
+            <md-column style="padding:24px;">
+                <md-column-item expanded="12" medium="4" compact="4">
                     <md-text scale="display-large">Display Large</md-text>
                     <md-text scale="display-medium">Display Medium</md-text>
                     <md-text scale="display-small">Display Small</md-text>
@@ -22,8 +22,8 @@ class DemoText extends MDComponent {
                     <md-text scale="label-large">Label Large</md-text>
                     <md-text scale="label-medium">Label Medium</md-text>
                     <md-text scale="label-small">Label Small</md-text>
-                </md-layout-column-item>
-            </md-layout-column>
+                </md-column-item>
+            </md-column>
         `
     }
 }

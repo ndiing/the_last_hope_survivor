@@ -1,9 +1,9 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { MDLayoutBorderItem } from "../layout-border-item/layout-border-item.js";
+import { MDLayoutItem } from "../layout-item/layout-item.js";
 
-class MDNavigationRail extends MDLayoutBorderItem {
+class MDNavigationRail extends MDLayoutItem {
     static properties = {
         iconButton: { type: Object },
         fab: { type: Object },

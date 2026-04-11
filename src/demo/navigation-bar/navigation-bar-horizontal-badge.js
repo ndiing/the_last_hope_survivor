@@ -5,11 +5,11 @@ class DemoNavigationBarHorizontalBadge extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border >
-                <md-layout-border-item region="center">
-                    <md-layout>
-                        <md-layout-header>header</md-layout-header>
-                        <md-layout-body>body</md-layout-body>
+            <md-layout >
+                <md-layout-item region="center">
+                    <md-pane>
+                        <md-pane-header>header</md-pane-header>
+                        <md-pane-body>body</md-pane-body>
                         
                         <md-navigation-bar .items="${[
                             {id:'0',leading:[{component:'icon',icon:'image'}],label:'Lorem',selected:true},
@@ -18,9 +18,9 @@ class DemoNavigationBarHorizontalBadge extends MDComponent {
                             {id:'3',leading:[{component:'icon',icon:'image'}],label:'sit',trailing:[{component:'badge',label:3333}]},
                         ]}" layout="horizontal"></md-navigation-bar>
                         
-                    </md-layout>
-                </md-layout-border-item>
-            </md-layout-border>
+                    </md-pane>
+                </md-layout-item>
+            </md-layout>
         `
     }
 }

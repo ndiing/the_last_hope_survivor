@@ -5,7 +5,7 @@ class DemoNavigationRailWithIconAndFab extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-border>
+            <md-layout>
 
                 <md-navigation-rail
                     .iconButton="${{icon:['menu','menu_open']}}" 
@@ -17,9 +17,9 @@ class DemoNavigationRailWithIconAndFab extends MDComponent {
                         {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
                     ]}" open></md-navigation-rail>
 
-                <md-layout-border-item region="center" style="padding:24px;">body</md-layout-border-item>
+                <md-layout-item region="center" style="padding:24px;">body</md-layout-item>
 
-            </md-layout-border>
+            </md-layout>
         `
     }
 }

@@ -5,36 +5,36 @@ class DemoButton extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column style="padding:24px;">
+            <md-column style="padding:24px;">
                 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button label="Label" variant="default"></md-button>
                     <md-button label="Label" variant="toggle"></md-button>
                     <md-button label="Label" variant="toggle" selected></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button label="Label" size="extra-small" color="tonal"></md-button>
                     <md-button label="Label" size="small" color="tonal"></md-button>
                     <md-button label="Label" size="medium" color="tonal"></md-button>
                     <md-button label="Label" size="large" color="tonal"></md-button>
                     <md-button label="Label" size="extra-large" color="tonal"></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button label="Label" shape="round" color="outlined"></md-button>
                     <md-button label="Label" shape="square" color="outlined"></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button label="Label" color="elevated"></md-button>
                     <md-button label="Label" color="filled"></md-button>
                     <md-button label="Label" color="tonal"></md-button>
                     <md-button label="Label" color="outlined"></md-button>
                     <md-button label="Label" color="text"></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button label="Label" color="elevated"></md-button>
                     <md-button label="Label" color="elevated" variant="toggle"></md-button>
                     <md-button label="Label" color="elevated" variant="toggle" selected></md-button><br><br>
@@ -55,9 +55,9 @@ class DemoButton extends MDComponent {
                     <md-button label="Label" color="text" variant="toggle"></md-button>
                     <md-button label="Label" color="text" variant="toggle" selected></md-button><br><br>
 
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button label="Label" shape="round" variant="default"></md-button>
                     <md-button label="Label" shape="round" variant="toggle"></md-button>
                     <md-button label="Label" shape="round" variant="toggle" selected></md-button><br><br>
@@ -65,36 +65,36 @@ class DemoButton extends MDComponent {
                     <md-button label="Label" shape="square" variant="default"></md-button>
                     <md-button label="Label" shape="square" variant="toggle"></md-button>
                     <md-button label="Label" shape="square" variant="toggle" selected></md-button><br><br>
-                </md-layout-column-item>
+                </md-column-item>
                 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button icon="edit" label="Label" variant="default"></md-button>
                     <md-button icon="edit" label="Label" variant="toggle"></md-button>
                     <md-button icon="edit" label="Label" variant="toggle" selected></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button icon="edit" label="Label" size="extra-small" color="tonal"></md-button>
                     <md-button icon="edit" label="Label" size="small" color="tonal"></md-button>
                     <md-button icon="edit" label="Label" size="medium" color="tonal"></md-button>
                     <md-button icon="edit" label="Label" size="large" color="tonal"></md-button>
                     <md-button icon="edit" label="Label" size="extra-large" color="tonal"></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button icon="edit" label="Label" shape="round" color="outlined"></md-button>
                     <md-button icon="edit" label="Label" shape="square" color="outlined"></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button icon="edit" label="Label" color="elevated"></md-button>
                     <md-button icon="edit" label="Label" color="filled"></md-button>
                     <md-button icon="edit" label="Label" color="tonal"></md-button>
                     <md-button icon="edit" label="Label" color="outlined"></md-button>
                     <md-button icon="edit" label="Label" color="text"></md-button>
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button icon="edit" label="Label" color="elevated"></md-button>
                     <md-button icon="edit" label="Label" color="elevated" variant="toggle"></md-button>
                     <md-button icon="edit" label="Label" color="elevated" variant="toggle" selected></md-button><br><br>
@@ -115,9 +115,9 @@ class DemoButton extends MDComponent {
                     <md-button icon="edit" label="Label" color="text" variant="toggle"></md-button>
                     <md-button icon="edit" label="Label" color="text" variant="toggle" selected></md-button><br><br>
 
-                </md-layout-column-item>
+                </md-column-item>
 
-                <md-layout-column-item expanded="12" medium="8" compact="4">
+                <md-column-item expanded="12" medium="8" compact="4">
                     <md-button icon="edit" label="Label" shape="round" variant="default"></md-button>
                     <md-button icon="edit" label="Label" shape="round" variant="toggle"></md-button>
                     <md-button icon="edit" label="Label" shape="round" variant="toggle" selected></md-button><br><br>
@@ -125,9 +125,9 @@ class DemoButton extends MDComponent {
                     <md-button icon="edit" label="Label" shape="square" variant="default"></md-button>
                     <md-button icon="edit" label="Label" shape="square" variant="toggle"></md-button>
                     <md-button icon="edit" label="Label" shape="square" variant="toggle" selected></md-button><br><br>
-                </md-layout-column-item>
+                </md-column-item>
 
-            </md-layout-column>
+            </md-column>
         `
     }
 }

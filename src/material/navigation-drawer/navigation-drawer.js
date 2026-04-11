@@ -4,9 +4,9 @@ import { choose } from "lit/directives/choose.js";
 import { MDList } from "../list/list.js";
 import { MDTree } from "../tree/tree.js";
 import { MDPushMenu } from "../push-menu/push-menu.js";
-import { MDLayoutBorderItem } from "../layout-border-item/layout-border-item.js";
+import { MDLayoutItem } from "../layout-item/layout-item.js";
 
-class MDNavigationDrawer extends MDLayoutBorderItem {
+class MDNavigationDrawer extends MDLayoutItem {
     static properties = {
         items: { type: Array },
         interactive: { type: Boolean },

@@ -5,11 +5,11 @@ class DemoLayoutBody extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout-column>
-                <md-layout-column-item expanded="4" medium="4" compact="4">
-                    <md-layout-body></md-layout-body>
-                </md-layout-column-item>
-            </md-layout-column>
+            <md-column>
+                <md-column-item expanded="4" medium="4" compact="4">
+                    <md-pane-body></md-pane-body>
+                </md-column-item>
+            </md-column>
         `
     }
 }

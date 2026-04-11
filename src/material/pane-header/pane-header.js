@@ -1,10 +1,10 @@
 import { MDComponent } from "../component/component.js";
 
-class MDLayoutHeader extends MDComponent {
+class MDPaneHeader extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-layout__header");
+        this.classList.add("md-pane__header");
     }
 
     updated(_changedProperties) {
@@ -12,6 +12,6 @@ class MDLayoutHeader extends MDComponent {
     }
 }
 
-customElements.define("md-layout-header", MDLayoutHeader);
+customElements.define("md-pane-header", MDPaneHeader);
 
-export { MDLayoutHeader };
+export { MDPaneHeader };
