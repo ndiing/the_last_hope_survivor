@@ -1,8 +1,8 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDList } from "../list/list.js";
-import { MDLayoutBorderItem } from "../layout-item/layout-item.js";
-import { MDPaneFooter } from "../pane-footer/pane-footer.js";
+import { MDLayoutBorderItem } from "../layout/layout-item.js";
+import { MDPaneFooter } from "../pane/pane-footer.js";
 
 class MDNavigationBar extends MDPaneFooter {
     static properties = {

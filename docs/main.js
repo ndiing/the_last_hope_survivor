@@ -951,10 +951,9 @@
             /***/
         },
 
-        /***/ "./src/material/virtual-scroll/virtual-scroll.js"() /*!*******************************************************!*\
+        /***/ "./src/material/virtual-scroll/virtual-scroll.js" /*!*******************************************************!*\
   !*** ./src/material/virtual-scroll/virtual-scroll.js ***!
-  \*******************************************************/
-        {
+  \*******************************************************/() {
             eval("{\n\n//# sourceURL=webpack://webpack-project/./src/material/virtual-scroll/virtual-scroll.js?\n}");
 
             /***/

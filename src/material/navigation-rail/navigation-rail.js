@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { MDLayoutItem } from "../layout-item/layout-item.js";
+import { MDLayoutItem } from "../layout/layout-item.js";
 
 class MDNavigationRail extends MDLayoutItem {
     static properties = {
