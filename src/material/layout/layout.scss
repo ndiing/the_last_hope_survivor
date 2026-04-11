@@ -17,7 +17,7 @@
 }
 .md-layout__body {
     flex: 1;
-    &:has(.md-layout__body){
+    &:has(.md-layout__body) {
         overflow: hidden;
     }
 }

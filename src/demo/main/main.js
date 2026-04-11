@@ -124,14 +124,7 @@ class DemoMain extends MDComponent {
                     inputFormat="nested"
                     open
                 ></md-navigation-drawer>
-                <md-layout-border-item region="center">
-                    <md-layout>
-                        <!-- <md-layout-header></md-layout-header> -->
-                        <md-layout-body 
-                        ><md-outlet></md-outlet></md-layout-body>
-                        <!-- <md-layout-footer></md-layout-footer> -->
-                    </md-layout>
-                </md-layout-border-item>
+                <md-layout-border-item region="center"><md-outlet></md-outlet></md-layout-border-item>
             </md-layout-border>
         `
     }

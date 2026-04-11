@@ -19,9 +19,6 @@ class MDForm extends MDComponent {
         super();
 
         this.method = "post";
-
-        this._childNodes = Array.from(this.childNodes);
-        this.replaceChildren();
     }
 
     _handleFormNativeReset(event) {
@@ -69,6 +66,11 @@ class MDForm extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-form");
+
+        if (!this._childNodes) {
+            this._childNodes = Array.from(this.childNodes);
+            this.replaceChildren();
+        }
     }
 
     reset() {

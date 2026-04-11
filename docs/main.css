@@ -410,10 +410,16 @@ body {
   flex: 0 0 auto;
   position: sticky;
   top: 0;
+  height: 64px;
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
 }
 
 .md-layout__body {
   flex: 1;
+}
+.md-layout__body:has(.md-layout__body) {
+  overflow: hidden;
 }
 
 .md-layout__footer {
@@ -425,30 +431,70 @@ body {
 .md-pane {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  overflow: hidden;
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
 }
 
 .md-pane__header {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 0 16px;
+  height: 64px;
+}
+
+.md-pane__tool-group {
+  display: flex;
+  gap: 0 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.md-pane__content {
+  display: flex;
+  flex-direction: column;
+}
+.md-pane__content + .md-pane__tool-group {
+  margin-left: auto;
+}
+
+.md-pane__headline {
+  font-family: var(--md-sys-typescale-title-large-font);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  font-size: var(--md-sys-typescale-title-large-size);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+}
+
+.md-pane__subtitle {
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
 }
 
 .md-pane__body {
   flex: 1;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
 .md-pane__main {
   flex: 1;
   overflow: auto;
+  padding: 0 16px;
 }
 
 .md-pane__footer {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0 8px;
+  height: 64px;
 }
 
 .md-scrim {
@@ -1982,6 +2028,7 @@ body {
 }
 
 .md-navigation-drawer {
+  --md-comp-layout-border-item-west-width: 360px;
   display: flex;
   flex-direction: column;
   background-color: var(--md-sys-color-surface);

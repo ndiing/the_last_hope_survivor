@@ -1,7 +1,6 @@
-
 @use "../mixins/mixins.scss";
 
-.md-pane{
+.md-pane {
     display: flex;
     flex-direction: column;
     // width: 100%;
@@ -14,7 +13,7 @@
     //     border: 1px solid;
     // }
 }
-.md-pane__header{
+.md-pane__header {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
@@ -22,7 +21,7 @@
     gap: 0 16px;
     height: 64px;
 }
-.md-pane__tool-group{
+.md-pane__tool-group {
     display: flex;
     // gap: 0 24px;
     gap: 0 8px;
@@ -30,32 +29,32 @@
     margin-right: -8px;
 }
 // .md-pane__tool{}
-.md-pane__content{
+.md-pane__content {
     display: flex;
     flex-direction: column;
 
-    +.md-pane__tool-group{
+    + .md-pane__tool-group {
         margin-left: auto;
     }
 }
-.md-pane__headline{
+.md-pane__headline {
     @include mixins.typescale-title-large();
 }
-.md-pane__subtitle{
+.md-pane__subtitle {
     @include mixins.typescale-label-medium();
 }
-.md-pane__body{
+.md-pane__body {
     flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
-.md-pane__main{
+.md-pane__main {
     flex: 1;
     overflow: auto;
     padding: 0 16px;
 }
-.md-pane__footer{
+.md-pane__footer {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
