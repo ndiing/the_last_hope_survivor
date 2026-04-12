@@ -10,18 +10,17 @@ const routes = [
         {path:'/color',load:() => import('./color/color.js').then(module=>module.default),},      
         {path:'/virtual-scroll',load:() => import('./virtual-scroll/virtual-scroll.js').then(module=>module.default),},
 
-        {path:'/pane',load:() => import('./pane/pane.js').then(module=>module.default),},
-        // {path:'/layout-header',load:() => import('./layout-header/layout-header.js').then(module=>module.default),},
-        // {path:'/layout-body',load:() => import('./layout-body/layout-body.js').then(module=>module.default),},
-        // {path:'/layout-footer',load:() => import('./layout-footer/layout-footer.js').then(module=>module.default),},
-
         {path:'/scrim',load:() => import('./scrim/scrim.js').then(module=>module.default)},
-        {path:'/layout-column',load:() => import('./layout-column/layout-column.js').then(module=>module.default)},
-        {path:'/layout-column-expanded',load:() => import('./layout-column-expanded/layout-column-expanded.js').then(module=>module.default)},
-        {path:'/layout-column-medium',load:() => import('./layout-column-medium/layout-column-medium.js').then(module=>module.default)},
-        {path:'/layout-column-compact',load:() => import('./layout-column-compact/layout-column-compact.js').then(module=>module.default)},
-        {path:'/layout-border',load:() => import('./layout-border/layout-border.js').then(module=>module.default)},
-        {path:'/layout-border-modal',load:() => import('./layout-border-modal/layout-border-modal.js').then(module=>module.default)},
+        
+        {path:'/pane',load:() => import('./pane/pane.js').then(module=>module.default),},
+
+        {path:'/column',load:() => import('./column/column.js').then(module=>module.default)},
+        {path:'/column-expanded',load:() => import('./column/column-expanded.js').then(module=>module.default)},
+        {path:'/column-medium',load:() => import('./column/column-medium.js').then(module=>module.default)},
+        {path:'/column-compact',load:() => import('./column/column-compact.js').then(module=>module.default)},
+        
+        {path:'/layout',load:() => import('./layout/layout.js').then(module=>module.default)},
+        {path:'/layout-modal',load:() => import('./layout/layout-modal.js').then(module=>module.default)},
         
         {path:'/icon',load:() => import('./icon/icon.js').then(module=>module.default)},
         {path:'/emoji',load:() => import('./emoji/emoji.js').then(module=>module.default)},
@@ -35,7 +34,6 @@ const routes = [
 
         {path:'/app-bar',load:() => import('./app-bar/app-bar.js').then(module=>module.default)},
 
-        // {path:'/badge',load:() => import('./badge/badge.js').then(module=>module.default)},
         {path:'/badge-on-navigation-bar',load:() => import('./badge/badge-on-navigation-bar.js').then(module=>module.default)},
         {path:'/badge-on-navigation-rail',load:() => import('./badge/badge-on-navigation-rail.js').then(module=>module.default)},
 
@@ -57,8 +55,6 @@ const routes = [
         {path:'/divider',load:() => import('./divider/divider.js').then(module=>module.default)},
 
         {path:'/list',load:() => import('./list/list.js').then(module=>module.default)},
-        // {path:'/list-behavior',load:() => import('./list/list-behavior.js').then(module=>module.default)},
-        // {path:'/list-interaction',load:() => import('./list/list-interaction.js').then(module=>module.default)},
 
         {path:'/tree',load:() => import('./tree/tree.js').then(module=>module.default),},
         {path:'/push-menu',load:() => import('./push-menu/push-menu.js').then(module=>module.default),},
@@ -67,13 +63,9 @@ const routes = [
         {path:'/progress-indicator',load:() => import('./progress-indicator/progress-indicator.js').then(module=>module.default)},
         {path:'/menu',load:() => import('./menu/menu.js').then(module=>module.default)},
 
-        // {path:'/navigation-bar',load:() => import('./navigation-bar/navigation-bar.js').then(module=>module.default)},
         {path:'/navigation-bar-vertical',load:() => import('./navigation-bar/navigation-bar-vertical.js').then(module=>module.default)},
-        // {path:'/navigation-bar-vertical-badge',load:() => import('./navigation-bar/navigation-bar-vertical-badge.js').then(module=>module.default)},
         {path:'/navigation-bar-horizontal',load:() => import('./navigation-bar/navigation-bar-horizontal.js').then(module=>module.default)},
-        // {path:'/navigation-bar-horizontal-badge',load:() => import('./navigation-bar/navigation-bar-horizontal-badge.js').then(module=>module.default)},
         
-        // {path:'/navigation-drawer',load:() => import('./navigation-drawer/navigation-drawer.js').then(module=>module.default)},
         {path:'/navigation-drawer-nested-list-modal',load:() => import('./navigation-drawer/navigation-drawer-nested-list-modal.js').then(module=>module.default)},
         {path:'/navigation-drawer-nested-list',load:() => import('./navigation-drawer/navigation-drawer-nested-list.js').then(module=>module.default)},
         {path:'/navigation-drawer-flat-list',load:() => import('./navigation-drawer/navigation-drawer-flat-list.js').then(module=>module.default)},

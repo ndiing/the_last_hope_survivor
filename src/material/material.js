@@ -5,12 +5,11 @@ import "./observer/observer.js";
 import "./ripple/ripple.js";
 import "./virtual-scroll/virtual-scroll.js";
 
+import "./scrim/scrim.js";
 import "./pane/pane-header.js";
 import "./pane/pane-body.js";
 import "./pane/pane-footer.js";
 import "./pane/pane.js";
-
-import "./scrim/scrim.js";
 
 import "./column/column-item.js";
 import "./column/column.js";
