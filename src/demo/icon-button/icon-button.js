@@ -8,35 +8,30 @@ class DemoIconButton extends MDComponent {
             <md-column style="padding:24px;">
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" variant="default"></md-icon-button>
-                    <md-icon-button icon='["menu","menu_open"]' variant="toggle"></md-icon-button>
-                    <md-icon-button icon='["menu","menu_open"]' variant="toggle" selected></md-icon-button>
+                    <md-icon-button icon="edit" variant="default"></md-icon-button>
+
+                    <md-icon-button icon="edit" variant="toggle"></md-icon-button>
+                    <md-icon-button icon="edit" variant="toggle" selected></md-icon-button>
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" variant="default"></md-icon-button>
-                    <md-icon-button icon="more_vert" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" variant="toggle" selected></md-icon-button>
+                    <md-icon-button icon="play_arrow" size="extra-small" color="tonal"></md-icon-button>
+                    <md-icon-button icon="play_arrow" size="small" color="tonal"></md-icon-button>
+                    <md-icon-button icon="play_arrow" size="medium" color="tonal"></md-icon-button>
+                    <md-icon-button icon="play_arrow" size="large" color="tonal"></md-icon-button>
+                    <md-icon-button icon="play_arrow" size="extra-large" color="tonal"></md-icon-button>
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" size="extra-small" color="tonal"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="small" color="tonal"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="medium" color="tonal"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="large" color="tonal"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-large" color="tonal"></md-icon-button>
+                    <md-icon-button icon="share" shape="round" color="outlined"></md-icon-button>
+                    <md-icon-button icon="share" shape="square" color="outlined"></md-icon-button>
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" shape="round" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" shape="square" color="outlined"></md-icon-button>
-                </md-column-item>
-
-                <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" color="filled"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="tonal"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="standard"></md-icon-button>
+                    <md-icon-button icon="videocam" color="filled"></md-icon-button>
+                    <md-icon-button icon="videocam" color="tonal"></md-icon-button>
+                    <md-icon-button icon="videocam" color="outlined"></md-icon-button>
+                    <md-icon-button icon="videocam" color="standard"></md-icon-button>
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
@@ -46,91 +41,46 @@ class DemoIconButton extends MDComponent {
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" color="filled" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="tonal" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="outlined" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="standard" shape="round"></md-icon-button>
-                </md-column-item>
-
-                <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" color="filled" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="tonal" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="outlined" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="standard" shape="square"></md-icon-button>
-                </md-column-item>
-
-                <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" color="filled" shape="round" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="filled" shape="round" variant="toggle" selected></md-icon-button><br><br>
-
-                    <md-icon-button icon="more_vert" color="tonal" shape="round" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="tonal" shape="round" variant="toggle" selected></md-icon-button><br><br>
-
-                    <md-icon-button icon="more_vert" color="outlined" shape="round" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="outlined" shape="round" variant="toggle" selected></md-icon-button><br><br>
-
-                    <md-icon-button icon="more_vert" color="standard" shape="round" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="standard" shape="round" variant="toggle" selected></md-icon-button><br><br>
+                    <md-icon-button icon="edit" color="tonal" shape="round" ></md-icon-button><br><br>
+                    <md-icon-button icon="edit" color="tonal" shape="square"  ></md-icon-button><br><br>
 
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" color="filled" shape="square" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="filled" shape="square" variant="toggle" selected></md-icon-button><br><br>
+                    <md-icon-button icon="edit" color="tonal" shape="round" variant="toggle"></md-icon-button>
+                    <md-icon-button icon="edit" color="tonal" shape="round" variant="toggle" selected></md-icon-button><br><br>
 
-                    <md-icon-button icon="more_vert" color="tonal" shape="square" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="tonal" shape="square" variant="toggle" selected></md-icon-button><br><br>
-
-                    <md-icon-button icon="more_vert" color="outlined" shape="square" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="outlined" shape="square" variant="toggle" selected></md-icon-button><br><br>
-
-                    <md-icon-button icon="more_vert" color="standard" shape="square" variant="toggle"></md-icon-button>
-                    <md-icon-button icon="more_vert" color="standard" shape="square" variant="toggle" selected></md-icon-button><br><br>
+                    <md-icon-button icon="edit" color="tonal" shape="square" variant="toggle"></md-icon-button>
+                    <md-icon-button icon="edit" color="tonal" shape="square" variant="toggle" selected></md-icon-button><br><br>
 
                 </md-column-item>
 
                 <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" size="extra-small" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-small" color="filled"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-small" color="tonal" width="narrow"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-small" color="tonal" width="wide"></md-icon-button><br><br>
+                    <md-icon-button icon="edit" size="extra-small" color="outlined"></md-icon-button>
+                    <md-icon-button icon="edit" size="extra-small" color="filled"></md-icon-button>
+                    <md-icon-button icon="edit" size="extra-small" color="tonal" width="narrow"></md-icon-button>
+                    <md-icon-button icon="edit" size="extra-small" color="tonal" width="wide"></md-icon-button><br><br>
 
-                    <md-icon-button icon="more_vert" size="small" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="small" color="filled"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="small" color="tonal" width="narrow"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="small" color="tonal" width="wide"></md-icon-button><br><br>
+                    <md-icon-button icon="edit" size="small" color="outlined"></md-icon-button>
+                    <md-icon-button icon="edit" size="small" color="filled"></md-icon-button>
+                    <md-icon-button icon="edit" size="small" color="tonal" width="narrow"></md-icon-button>
+                    <md-icon-button icon="edit" size="small" color="tonal" width="wide"></md-icon-button><br><br>
 
-                    <md-icon-button icon="more_vert" size="medium" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="medium" color="filled"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="medium" color="tonal" width="narrow"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="medium" color="tonal" width="wide"></md-icon-button><br><br>
+                    <md-icon-button icon="edit" size="medium" color="outlined"></md-icon-button>
+                    <md-icon-button icon="edit" size="medium" color="filled"></md-icon-button>
+                    <md-icon-button icon="edit" size="medium" color="tonal" width="narrow"></md-icon-button>
+                    <md-icon-button icon="edit" size="medium" color="tonal" width="wide"></md-icon-button><br><br>
 
-                    <md-icon-button icon="more_vert" size="large" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="large" color="filled"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="large" color="tonal" width="narrow"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="large" color="tonal" width="wide"></md-icon-button><br><br>
+                    <md-icon-button icon="edit" size="large" color="outlined"></md-icon-button>
+                    <md-icon-button icon="edit" size="large" color="filled"></md-icon-button>
+                    <md-icon-button icon="edit" size="large" color="tonal" width="narrow"></md-icon-button>
+                    <md-icon-button icon="edit" size="large" color="tonal" width="wide"></md-icon-button><br><br>
 
-                    <md-icon-button icon="more_vert" size="extra-large" color="outlined"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-large" color="filled"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-large" color="tonal" width="narrow"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-large" color="tonal" width="wide"></md-icon-button><br><br>
+                    <md-icon-button icon="edit" size="extra-large" color="outlined"></md-icon-button>
+                    <md-icon-button icon="edit" size="extra-large" color="filled"></md-icon-button>
+                    <md-icon-button icon="edit" size="extra-large" color="tonal" width="narrow"></md-icon-button>
+                    <md-icon-button icon="edit" size="extra-large" color="tonal" width="wide"></md-icon-button><br><br>
 
-                </md-column-item>
-
-                <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" size="extra-small" color="outlined" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="small" color="outlined" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="medium" color="outlined" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="large" color="outlined" shape="round"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-large" color="outlined" shape="round"></md-icon-button>
-                </md-column-item>
-
-                <md-column-item expanded="12" medium="8" compact="4">
-                    <md-icon-button icon="more_vert" size="extra-small" color="outlined" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="small" color="outlined" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="medium" color="outlined" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="large" color="outlined" shape="square"></md-icon-button>
-                    <md-icon-button icon="more_vert" size="extra-large" color="outlined" shape="square"></md-icon-button>
                 </md-column-item>
 
             </md-column>

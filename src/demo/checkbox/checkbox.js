@@ -8,14 +8,14 @@ class DemoCheckbox extends MDComponent {
             <md-form style="padding:24px;">
                 <md-column>
                     <md-column-item expanded="12" medium="8" compact="4">
-                        <md-checkbox name="checkbox0" value="checkbox0"></md-checkbox>
+                        <md-checkbox name="checkbox0" value="checkbox0" checked></md-checkbox>
                         <md-checkbox name="checkbox0" value="checkbox1" indeterminate></md-checkbox>
-                        <md-checkbox name="checkbox0" value="checkbox2" checked></md-checkbox>
+                        <md-checkbox name="checkbox0" value="checkbox2"></md-checkbox>
                     </md-column-item>
                     <md-column-item expanded="12" medium="8" compact="4">
-                        <md-checkbox name="checkbox1" value="checkbox0" disabled></md-checkbox>
+                        <md-checkbox name="checkbox1" value="checkbox0" disabled checked></md-checkbox>
                         <md-checkbox name="checkbox1" value="checkbox1" disabled indeterminate></md-checkbox>
-                        <md-checkbox name="checkbox1" value="checkbox2" disabled checked></md-checkbox>
+                        <md-checkbox name="checkbox1" value="checkbox2" disabled></md-checkbox>
                     </md-column-item>
                     <md-column-item expanded="12" medium="8" compact="4">
                         <md-button type="reset" label="Reset"></md-button>

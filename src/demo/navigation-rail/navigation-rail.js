@@ -15,7 +15,7 @@ class DemoNavigationRail extends MDComponent {
                         {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
                     ]}" open></md-navigation-rail>
 
-                <md-layout-item region="center" style="padding:24px;">body</md-layout-item>
+                <md-layout-item region="center" style="padding:24px;"></md-layout-item>
 
             </md-layout>
         `

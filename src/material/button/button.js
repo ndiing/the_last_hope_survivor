@@ -41,6 +41,7 @@ class MDButton extends MDComponent {
     _handleButtonClick(event) {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
+            this.emit("buttonSelected", { event });
         }
         this.emit("buttonClick", { event });
     }

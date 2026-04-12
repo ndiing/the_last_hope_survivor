@@ -7,7 +7,7 @@ class DemoNavigationBarHorizontalBadge extends MDComponent {
         return html`
             <md-layout >
                 <md-layout-item region="center">
-                    <md-pane>
+                    <md-pane fit sticky>
                         <md-pane-header>header</md-pane-header>
                         <md-pane-body>body</md-pane-body>
                         

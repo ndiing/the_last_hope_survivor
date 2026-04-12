@@ -1,15 +1,16 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoNavigationBarVerticalBadge extends MDComponent {
+class DemoBadge extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
             <md-layout >
                 <md-layout-item region="center">
                     <md-pane fit sticky>
-                        <md-pane-header>header</md-pane-header>
-                        <md-pane-body>body</md-pane-body>
+                        <md-pane-body style="padding:24px;">
+                            
+                        </md-pane-body>
                         
                         <md-navigation-bar .items="${[
                             {id:'0',leading:[{component:'icon',icon:'image'}],label:'Lorem',selected:true},
@@ -25,6 +26,6 @@ class DemoNavigationBarVerticalBadge extends MDComponent {
     }
 }
 
-customElements.define("demo-navigation-bar-vertical-badge", DemoNavigationBarVerticalBadge);
+customElements.define("demo-badge-on-navigation-bar", DemoBadge);
 
-export default document.createElement("demo-navigation-bar-vertical-badge");
+export default document.createElement("demo-badge-on-navigation-bar");

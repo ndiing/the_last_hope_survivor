@@ -1,28 +1,92 @@
+@use "../mixins/mixins.scss";
+
 .md-pane {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    // &,
+    // & *{
+    //     border: 1px solid;
+    // }
 }
 .md-pane__header {
     flex: 0 0 auto;
-    position: sticky;
-    top: 0;
-
-    // temp
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    gap: 0 4px;
     height: 64px;
-    background-color: var(--md-sys-color-surface-container);
+    background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
+}
+.md-pane__tool-group {
+    display: flex;
+}
+.md-pane__tool {
+    &.md-icon {
+        margin: 0 calc((48px - 24px) / 2);
+    }
+}
+.md-pane__content {
+    display: flex;
+    flex-direction: column;
+    + .md-pane__tool-group {
+        margin-left: auto;
+    }
+}
+.md-pane__headline {
+    @include mixins.typescale-title-large();
+}
+.md-pane__subtitle {
+    @include mixins.typescale-label-medium();
 }
 .md-pane__body {
     flex: 1;
-    &:has(.md-pane__body) {
-        overflow: hidden;
-    }
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+}
+.md-pane__main {
+    flex: 1;
+    overflow: auto;
+    padding: 0 16px;
 }
 .md-pane__footer {
     flex: 0 0 auto;
-    position: sticky;
-    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+    gap: 0 8px;
+    height: 64px;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+}
+// .md-pane__button{}
+
+.md-pane--fit {
+    width: 100%;
+    height: 100%;
+}
+
+.md-pane--sticky {
+    overflow: auto;
+
+    .md-pane__header {
+        position: sticky;
+        top: 0;
+    }
+    .md-pane__body {
+        overflow: unset;
+    }
+    .md-pane__main {
+        overflow: unset;
+    }
+    .md-pane__footer {
+        position: sticky;
+        bottom: 0;
+    }
 }

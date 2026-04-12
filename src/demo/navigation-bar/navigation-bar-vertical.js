@@ -7,9 +7,8 @@ class DemoNavigationBarVertical extends MDComponent {
         return html`
             <md-layout >
                 <md-layout-item region="center">
-                    <md-pane>
-                        <md-pane-header>header</md-pane-header>
-                        <md-pane-body>body</md-pane-body>
+                    <md-pane fit sticky>
+                        <md-pane-body></md-pane-body>
                         
                         <md-navigation-bar .items="${[
                             {id:'0',leading:[{component:'icon',icon:'image'}],label:'Lorem',selected:true},

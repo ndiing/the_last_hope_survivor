@@ -1,15 +1,15 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoLayout extends MDComponent {
+class DemoPane extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            
+            <md-pane></md-pane>
         `
     }
 }
 
-customElements.define("demo-layout", DemoLayout);
+customElements.define("demo-pane", DemoPane);
 
-export default document.createElement("demo-layout");
+export default document.createElement("demo-pane");

@@ -3,6 +3,7 @@ import { MDComponent } from "../../material/component/component.js";
 import { router } from "../demo.js";
 
 class DemoMain extends MDComponent {
+
     render() {
         /* prettier-ignore */
         return html`

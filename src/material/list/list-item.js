@@ -131,6 +131,12 @@ class MDListItem extends MDComponent {
             this._ripple.options = this.ripple;
             this._ripple.init();
         }
+
+        if (_changedProperties.has("selected")) {
+            if (this.selected) {
+                this.emit("listItemSelected", {});
+            }
+        }
     }
 }
 
