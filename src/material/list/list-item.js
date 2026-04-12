@@ -26,7 +26,7 @@ class MDListItem extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${Array.isArray(this.leading)&&this.leading.length?html`<md-tool-group class="md-list__leading" .tools="${this.leading.map(item=>({
+            ${Array.isArray(this.leading)&&this.leading.length?html`<md-toolbar class="md-list__leading" .items="${this.leading.map(item=>({
                 ...item,
                 class:{
                     'md-list__leading-item':true,
@@ -34,14 +34,14 @@ class MDListItem extends MDComponent {
                     ...item.class
                 },
                 checked:this.selected
-            }))}"></md-tool-group>`:nothing}
+            }))}"></md-toolbar>`:nothing}
             ${this.label||this.supportingText?html`
                 <div class="md-list__content">
                     ${this.label?html`<div class="md-list__label">${this.label}</div>`:nothing}
                     ${this.supportingText?html`<div class="md-list__supporting-text">${this.supportingText}</div>`:nothing}
                 </div>
             `:nothing}
-            ${Array.isArray(this.trailing)&&this.trailing.length?html`<md-tool-group class="md-list__trailing" .tools="${this.trailing.map(item=>({
+            ${Array.isArray(this.trailing)&&this.trailing.length?html`<md-toolbar class="md-list__trailing" .items="${this.trailing.map(item=>({
                 ...item,
                 class:{
                     'md-list__trailing-item':true,
@@ -49,7 +49,7 @@ class MDListItem extends MDComponent {
                     ...item.class
                 },
                 checked:this.selected
-            }))}"></md-tool-group>`:nothing}
+            }))}"></md-toolbar>`:nothing}
         `
     }
 

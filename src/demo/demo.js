@@ -2,6 +2,7 @@ import { Router } from "../material/router/router.js";
 import testMain from "./main/main.js";
 import testNotFound from "./not-found/not-found.js";
 
+
 /* prettier-ignore */
 const routes = [
     {path:'/',component:testMain,children:[
@@ -30,8 +31,7 @@ const routes = [
 
         {path:'/form',load:() => import('./form/form.js').then(module=>module.default),},
 
-        {path:'/tool-group',load:() => import('./tool-group/tool-group.js').then(module=>module.default),},      
-
+        
         {path:'/app-bar',load:() => import('./app-bar/app-bar.js').then(module=>module.default)},
 
         {path:'/badge-on-navigation-bar',load:() => import('./badge/badge-on-navigation-bar.js').then(module=>module.default)},
@@ -55,7 +55,6 @@ const routes = [
         {path:'/divider',load:() => import('./divider/divider.js').then(module=>module.default)},
 
         {path:'/list',load:() => import('./list/list.js').then(module=>module.default)},
-
         {path:'/tree',load:() => import('./tree/tree.js').then(module=>module.default),},
         {path:'/push-menu',load:() => import('./push-menu/push-menu.js').then(module=>module.default),},
 
@@ -98,14 +97,9 @@ const routes = [
 ]
 
 document.body.style.setProperty("--md-comp-font-not-ready", "hidden");
-document.fonts.ready.then(() => {
-    document.body.style.removeProperty("--md-comp-font-not-ready");
-});
+document.fonts.ready.then(() => document.body.style.removeProperty("--md-comp-font-not-ready"));
 
-const router = new Router(routes, {
-    // historyApiFallback: true,
-});
-
+const router = new Router(routes, {/* historyApiFallback: true */});
 router.listen();
 
 export { router };

@@ -7,8 +7,11 @@
 @use "./base/base.scss";
 
 @use "./scrim/scrim.scss";
+
 @use "./pane/pane.scss";
+
 @use "./column/column.scss";
+
 @use "./layout/layout.scss";
 
 @use "./icon/icon.scss";
@@ -32,9 +35,11 @@
 @use "./radio-button/radio-button.scss";
 @use "./switch/switch.scss";
 
-@use "./tool-group/tool-group.scss";
-
 @use "./badge/badge.scss";
+
+
+
+@use "./toolbar/toolbar.scss";
 
 @use "./divider/divider.scss";
 
@@ -64,7 +69,6 @@
 @use "./slider/slider.scss";
 @use "./snackbar/snackbar.scss";
 @use "./tab/tab.scss";
-@use "./toolbar/toolbar.scss";
 @use "./tooltip/tooltip.scss";
 
 @use "./test/test.scss";

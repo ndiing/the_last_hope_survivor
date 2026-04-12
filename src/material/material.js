@@ -6,6 +6,7 @@ import "./ripple/ripple.js";
 import "./virtual-scroll/virtual-scroll.js";
 
 import "./scrim/scrim.js";
+
 import "./pane/pane-header.js";
 import "./pane/pane-body.js";
 import "./pane/pane-footer.js";
@@ -39,9 +40,10 @@ import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
 
-import "./tool-group/tool-group.js";
-
 import "./badge/badge.js";
+
+
+import "./toolbar/toolbar.js";
 
 import "./divider/divider.js";
 
@@ -73,7 +75,6 @@ import "./side-sheet/side-sheet.js";
 import "./slider/slider.js";
 import "./snackbar/snackbar.js";
 import "./tab/tab.js";
-import "./toolbar/toolbar.js";
 import "./tooltip/tooltip.js";
 
 import "./test/test.js";

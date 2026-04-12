@@ -15,7 +15,11 @@
 
 .md-list__leading {
     flex: 0 0 auto;
+    height: auto;
+    padding: 0;
     gap: 0;
+    background-color: inherit;
+    color: inherit;
 }
 
 .md-list__leading-item--video {
@@ -44,6 +48,11 @@
 
 .md-list__trailing {
     flex: 0 0 auto;
+    height: auto;
+    padding: 0;
+    gap: 0;
+    background-color: inherit;
+    color: inherit;
 }
 
 .md-list__item--one-line {
