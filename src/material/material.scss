@@ -8,8 +8,6 @@
 
 @use "./scrim/scrim.scss";
 
-@use "./pane/pane.scss";
-
 @use "./column/column.scss";
 
 @use "./layout/layout.scss";
@@ -40,6 +38,8 @@
 
 
 @use "./toolbar/toolbar.scss";
+
+@use "./pane/pane.scss";
 
 @use "./divider/divider.scss";
 

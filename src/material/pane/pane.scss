@@ -20,18 +20,23 @@
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
 }
-.md-pane__tool-group {
+.md-pane__toolbar {
     display: flex;
-}
-.md-pane__tool {
-    &.md-icon {
+    height: auto;
+    gap: 0;
+    padding: 0;
+    background-color: inherit;
+    color: inherit;
+
+    .md-icon {
         margin: 0 calc((48px - 24px) / 2);
     }
 }
+// .md-pane__tool {}
 .md-pane__content {
     display: flex;
     flex-direction: column;
-    + .md-pane__tool-group {
+    + .md-pane__toolbar {
         margin-left: auto;
     }
 }

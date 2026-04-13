@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 
 class MDPane extends MDComponent {
@@ -7,6 +7,11 @@ class MDPane extends MDComponent {
         sticky: { type: Boolean },
         headerHideOnScroll: { type: String }, // down/up
         footerHideOnScroll: { type: String }, // down/up
+        leading: { type: Array },
+        headline: { type: String },
+        subtitle: { type: String },
+        trailing: { type: Array },
+        buttons: { type: Array },
     };
 
     constructor() {
@@ -21,32 +26,30 @@ class MDPane extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <!-- <div class="md-pane__header">
-                <div class="md-pane__tool-group">
-                    <md-icon class="md-pane__tool">image</md-icon>
+            ${this.leading?.length||this.trailing?.length||this.headline||this.subtitle?html`
+                <div class="md-pane__header">
+                    ${this.leading?.length?html`<md-toolbar class="md-pane__toolbar" .items="${this.leading}"></md-toolbar>`:nothing}
+                    ${this.headline||this.subtitle?html`
+                        <div class="md-pane__content">
+                            ${this.headline?html`<div class="md-pane__headline">${this.headline}</div>`:nothing}
+                            ${this.subtitle?html`<div class="md-pane__subtitle">${this.subtitle}</div>`:nothing}
+                        </div>
+                    `:nothing}
+                    ${this.trailing?.length?html`<md-toolbar class="md-pane__toolbar" .items="${this.trailing}"></md-toolbar>`:nothing}
                 </div>
-                <div class="md-pane__content">
-                    <div class="md-pane__headline">headline</div>
-                    <div class="md-pane__subtitle">subtitle</div>
-                </div>
-                <div class="md-pane__tool-group">
-                    <md-icon class="md-pane__tool">image</md-icon>
-                    <md-icon class="md-pane__tool">image</md-icon>
-                    <md-icon class="md-pane__tool">image</md-icon>
-                </div>
-            </div>
+            `:this._header?this._header:nothing}
             <div class="md-pane__main">
-                <div class="md-pane__body">
-                </div>
-                <div class="md-pane__footer">
-                    <md-button class="md-pane__button" label="button"></md-button>
-                    <md-button class="md-pane__button" label="button"></md-button>
-                </div>
-            </div> -->
-            ${this._header}
-            <div class="md-pane__main">
-                ${this._body}
-                ${this._footer}
+                ${this._body?this._body:html`<div class="md-pane__body"></div>`}
+                ${this.buttons?.length?html`
+                    <div class="md-pane__footer">
+                        ${this.buttons.map(button=>html`
+                            <md-button 
+                                class="md-pane__button" 
+                                .label="${button.label}"
+                            ></md-button>
+                        `)}
+                    </div>
+                `:this._footer?this._footer:nothing}
             </div>
         `;
     }
@@ -99,8 +102,8 @@ class MDPane extends MDComponent {
             this._childNodes = Array.from(this.childNodes);
             this.replaceChildren();
             this._header = this._childNodes.find((child) => child.classList?.contains("md-pane__header"));
-            this._body = this._childNodes.find((child) => child.classList?.contains("md-pane__body"));
             this._footer = this._childNodes.find((child) => child.classList?.contains("md-pane__footer"));
+            this._body = this._childNodes.filter((child) => child!==this._header||child!==this._footer);
         }
 
         this._handlePaneScroll = this._handlePaneScroll.bind(this);

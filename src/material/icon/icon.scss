@@ -28,6 +28,7 @@
         "opsz" 24;
 
     visibility: var(--md-comp-font-not-ready);
+    overflow: hidden;
 }
 
 .md-icon[selected],
