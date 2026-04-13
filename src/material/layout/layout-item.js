@@ -20,7 +20,7 @@ class MDLayoutItem extends MDComponent {
         this.classList.add("md-layout__item");
 
         this.scrimElement = document.createElement("md-scrim");
-        document.body.append(this.scrimElement);
+        this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
 
         this._handleScrimClose = this._handleScrimClose.bind(this);
         this.scrimElement.addEventListener("scrimClose", this._handleScrimClose);

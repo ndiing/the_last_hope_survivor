@@ -103,7 +103,7 @@ class MDPane extends MDComponent {
             this.replaceChildren();
             this._header = this._childNodes.find((child) => child.classList?.contains("md-pane__header"));
             this._footer = this._childNodes.find((child) => child.classList?.contains("md-pane__footer"));
-            this._body = this._childNodes.filter((child) => child!==this._header||child!==this._footer);
+            this._body = this._childNodes.find((child) => child.classList?.contains("md-pane__body"));
         }
 
         this._handlePaneScroll = this._handlePaneScroll.bind(this);

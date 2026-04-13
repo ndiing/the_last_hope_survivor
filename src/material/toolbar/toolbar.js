@@ -11,14 +11,11 @@ class MDToolbar extends MDComponent {
         items: { type: Array },
     };
 
-    variants=[
-        'docked',
-        'floating',
-    ]
+    variants = ["docked", "floating"];
 
     constructor() {
         super();
-        this.variant='docked'
+        this.variant = "docked";
         this.items = [];
     }
 
@@ -200,11 +197,14 @@ class MDToolbar extends MDComponent {
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        if(_changedProperties.has('variant')){
-            this.variants.forEach(variant=>{
-                if(variant===this.variant){this.classList.add(`md-toolbar--${variant}`)}
-                else {this.classList.remove(`md-toolbar--${variant}`)}
-            })
+        if (_changedProperties.has("variant")) {
+            this.variants.forEach((variant) => {
+                if (variant === this.variant) {
+                    this.classList.add(`md-toolbar--${variant}`);
+                } else {
+                    this.classList.remove(`md-toolbar--${variant}`);
+                }
+            });
         }
     }
 }

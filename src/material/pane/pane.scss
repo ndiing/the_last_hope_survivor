@@ -5,10 +5,6 @@
     flex-direction: column;
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
-    // &,
-    // & *{
-    //     border: 1px solid;
-    // }
 }
 .md-pane__header {
     flex: 0 0 auto;
@@ -51,13 +47,13 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
 }
 .md-pane__body {
     flex: 1;
     overflow: auto;
     padding: 0 16px;
+    // background-color: var(--md-sys-color-surface);
+    // color: var(--md-sys-color-on-surface);
 }
 .md-pane__footer {
     flex: 0 0 auto;
@@ -80,12 +76,15 @@
 .md-pane--sticky {
     overflow: auto;
 
+    &:has(.md-pane--sticky) {
+        overflow: unset;
+    }
     .md-pane__header {
         position: sticky;
         top: 0;
     }
     .md-pane__main {
-        overflow: unset;
+        overflow: auto;
     }
     .md-pane__body {
         overflow: unset;

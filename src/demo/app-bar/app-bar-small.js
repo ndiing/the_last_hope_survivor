@@ -1,22 +1,21 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DemoNavigationRailWithFab extends MDComponent {
+class DemoAppBar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout>
-
-                <md-navigation-rail
-                    .fab="${{icon:'edit', label:'Label'}}"
-                    .items="${[
-                        {id:'4',leading:[{component:'icon',icon:'image'}],label:'Item 1',selected:true},
-                        {id:'5',leading:[{component:'icon',icon:'image'}],label:'Item 2'},
-                        {id:'6',leading:[{component:'icon',icon:'image'}],label:'Item 3'},
-                        {id:'7',leading:[{component:'icon',icon:'image'}],label:'Item 4'},
-                    ]}" open></md-navigation-rail>
-
-                <md-layout-item region="center" style="padding:24px;">
+            <md-pane fit sticky>
+                <md-app-bar
+                    variant="small"
+                    .leading="${[{component:'icon-button',icon:'arrow_back',color:'standard'}]}"
+                    .headline="${"Headline"}"
+                    .trailing="${[
+                        {component:'icon-button',icon:'search',color:'standard'},
+                        {component:'icon-button',icon:'event',color:'standard'},
+                    ]}"
+                ></md-app-bar>
+                <md-pane-body>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis ducimus exercitationem a dignissimos, quasi iure porro doloribus quo hic? Ratione atque quibusdam mollitia! Voluptate dolorum suscipit soluta, cupiditate consequatur excepturi?<br><br></p>
                     <p>Nisi, praesentium. Sunt alias dolor ducimus quia recusandae, soluta eius porro, error illum maxime laudantium quas distinctio excepturi reiciendis impedit deleniti. Aliquid commodi modi laborum reprehenderit quos debitis consectetur nemo.<br><br></p>
                     <p>Ipsa odio repellat vero necessitatibus vel, quia doloremque harum aperiam! Voluptate laborum deleniti quam aliquid ex? Incidunt culpa dignissimos sed porro ex, rem consequuntur nemo, omnis quia expedita, dolore reiciendis.<br><br></p>
@@ -117,13 +116,12 @@ class DemoNavigationRailWithFab extends MDComponent {
                     <p>Numquam, pariatur impedit itaque cupiditate vitae sint possimus cum vero reiciendis mollitia expedita quaerat odio consectetur minus excepturi voluptas quam ratione minima illum inventore tenetur rem? Laudantium delectus distinctio similique.<br><br></p>
                     <p>Veritatis, voluptatem debitis! Similique quisquam at minima quam maxime tenetur, a fugiat reiciendis! Reiciendis ad, quam blanditiis eveniet nam dicta incidunt, nulla obcaecati ea sed dolorem harum quia, recusandae et?<br><br></p>
                     <p>Error, fugit? Nobis dignissimos reprehenderit provident quibusdam optio maxime excepturi porro. Nostrum quibusdam atque temporibus laboriosam. Saepe quis iste consectetur magnam debitis veritatis distinctio repudiandae exercitationem rem porro, ducimus vel!<br><br></p>
-                </md-layout-item>
-
-            </md-layout>
+                </md-pane-body>
+            </md-pane>
         `
     }
 }
 
-customElements.define("demo-navigation-rail-with-fab", DemoNavigationRailWithFab);
+customElements.define("demo-app-bar-small", DemoAppBar);
 
-export default document.createElement("demo-navigation-rail-with-fab");
+export default document.createElement("demo-app-bar-small");

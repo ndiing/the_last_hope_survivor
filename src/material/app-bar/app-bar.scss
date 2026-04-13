@@ -1,2 +1,94 @@
+@use "../mixins/mixins.scss";
+
 .md-app-bar {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 4px;
+    gap: 0 4px;
+    height: 64px;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+}
+.md-app-bar__toolbar {
+    display: flex;
+    height: auto;
+    gap: 0;
+    padding: 0;
+    background-color: inherit;
+    color: inherit;
+
+    .md-icon {
+        margin: calc((64px - 24px) / 2) calc((48px - 24px) / 2);
+    }
+
+    .md-icon-button {
+        margin: calc((64px - 40px) / 2) calc((48px - 40px) / 2);
+
+        .md-icon {
+            margin: 0;
+        }
+    }
+}
+// .md-app-bar__tool {}
+.md-app-bar__content {
+    display: flex;
+    flex-direction: column;
+    + .md-app-bar__toolbar {
+        margin-left: auto;
+    }
+}
+.md-app-bar__headline {
+    @include mixins.typescale-title-large();
+}
+.md-app-bar__subtitle {
+    @include mixins.typescale-label-medium();
+}
+
+.md-app-bar--small {
+    height: 64px;
+    .md-app-bar__content {
+        align-self: center;
+    }
+    .md-app-bar__headline {
+        @include mixins.typescale-title-large(); //lh28
+    }
+    .md-app-bar__subtitle {
+        @include mixins.typescale-label-medium(); //lh16
+    }
+}
+.md-app-bar--medium {
+    height: 112px;
+    // height: 136px;//136-112 = 24
+    &:has(.md-app-bar__subtitle) {
+        height: 136px;
+    }
+    .md-app-bar__content {
+        align-self: flex-end;
+        margin-left: calc(16px - 4px - 48px - 4px - 4px);
+        margin-bottom: 12px;
+    }
+    .md-app-bar__headline {
+        @include mixins.typescale-headline-medium(); //lh36
+    }
+    .md-app-bar__subtitle {
+        @include mixins.typescale-label-large(); //lh20
+    }
+}
+.md-app-bar--large {
+    height: 120px;
+    // height: 152px;//152-120 = 32
+    &:has(.md-app-bar__subtitle) {
+        height: 152px;
+    }
+    .md-app-bar__content {
+        align-self: flex-end;
+        margin-left: calc(16px - 4px - 48px - 4px - 4px);
+        margin-bottom: 12px;
+    }
+    .md-app-bar__headline {
+        @include mixins.typescale-display-small(); //lh44
+    }
+    .md-app-bar__subtitle {
+        @include mixins.typescale-title-medium(); //lh24
+    }
 }

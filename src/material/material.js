@@ -37,7 +37,6 @@ import "./switch/switch.js";
 
 import "./badge/badge.js";
 
-
 import "./toolbar/toolbar.js";
 
 import "./pane/pane-header.js";

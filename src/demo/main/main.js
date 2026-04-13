@@ -4,13 +4,13 @@ import { router } from "../demo.js";
 import { BreakpointObserver } from "../../material/observer/observer.js";
 
 class DemoMain extends MDComponent {
-    static properties={
-        open:{state:true}
-    }
+    static properties = {
+        open: { state: true },
+    };
 
-    constructor(){
-        super()
-        this.open=true
+    constructor() {
+        super();
+        this.open = true;
     }
 
     render() {
@@ -22,11 +22,7 @@ class DemoMain extends MDComponent {
                     inputFormat="nested"
                     .open="${this.open}"
                 ></md-navigation-drawer>
-                <md-layout-item region="center">
-                    <md-pane fit sticky>
-                        <md-pane-body style="padding:0;"><md-outlet></md-outlet></md-pane-body>
-                    </md-pane>
-                </md-layout-item>
+                <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
             </md-layout>
         `
     }
@@ -38,7 +34,7 @@ class DemoMain extends MDComponent {
             item.id = index;
             item.label = item.path;
             item.routerLink = item.path;
-            
+
             return item;
         });
 
@@ -59,21 +55,19 @@ class DemoMain extends MDComponent {
                 sort(item.children).forEach((item) => walk(item));
             }
         };
-        
+
         sort(this.items).forEach((item) => walk(item));
 
-        this._breakpoint=new BreakpointObserver((item) => {
-            if(item.name==='compact'){
-                this.open=false;
+        this._breakpoint = new BreakpointObserver((item) => {
+            if (item.name === "compact") {
+                this.open = false;
+            } else if (item.name === "medium") {
+                this.open = false;
+            } else if (item.name === "expanded") {
+                this.open = true;
             }
-            else if(item.name==='medium'){
-                this.open=false;
-            }
-            else if(item.name==='expanded'){
-                this.open=true
-            }
-        })
-        this._breakpoint.observe()
+        });
+        this._breakpoint.observe();
     }
 }
 

@@ -2,7 +2,6 @@ import { Router } from "../material/router/router.js";
 import testMain from "./main/main.js";
 import testNotFound from "./not-found/not-found.js";
 
-
 /* prettier-ignore */
 const routes = [
     {path:'/',component:testMain,children:[
@@ -33,6 +32,7 @@ const routes = [
 
         
         {path:'/app-bar',load:() => import('./app-bar/app-bar.js').then(module=>module.default)},
+        {path:'/app-bar-small',load:() => import('./app-bar/app-bar-small.js').then(module=>module.default)},
 
         {path:'/badge-on-navigation-bar',load:() => import('./badge/badge-on-navigation-bar.js').then(module=>module.default)},
         {path:'/badge-on-navigation-rail',load:() => import('./badge/badge-on-navigation-rail.js').then(module=>module.default)},
@@ -99,7 +99,9 @@ const routes = [
 document.body.style.setProperty("--md-comp-font-not-ready", "hidden");
 document.fonts.ready.then(() => document.body.style.removeProperty("--md-comp-font-not-ready"));
 
-const router = new Router(routes, {/* historyApiFallback: true */});
+const router = new Router(routes, {
+    /* historyApiFallback: true */
+});
 router.listen();
 
 export { router };
