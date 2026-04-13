@@ -55,12 +55,13 @@ class DemoNavigationBar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout style="position:relative;">
+            <md-layout >
                 <md-navigation-drawer
                     id="drawer"
                     .items="${[...this.flatData]}"
                     inputFormat="flat"
                     layout="list"
+                    open
                 ></md-navigation-drawer>
                 <md-layout-item region="center" style="padding:24px;">
                     <md-button label="Toggle" @click="${this._handleDrawerToggle}"></md-button>

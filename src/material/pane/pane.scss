@@ -41,7 +41,7 @@
 .md-pane__subtitle {
     @include mixins.typescale-label-medium();
 }
-.md-pane__body {
+.md-pane__main {
     flex: 1;
     overflow: hidden;
     display: flex;
@@ -49,7 +49,7 @@
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
 }
-.md-pane__main {
+.md-pane__body {
     flex: 1;
     overflow: auto;
     padding: 0 16px;
@@ -79,10 +79,10 @@
         position: sticky;
         top: 0;
     }
-    .md-pane__body {
+    .md-pane__main {
         overflow: unset;
     }
-    .md-pane__main {
+    .md-pane__body {
         overflow: unset;
     }
     .md-pane__footer {

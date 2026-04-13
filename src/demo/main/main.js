@@ -1,8 +1,17 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { router } from "../demo.js";
+import { BreakpointObserver } from "../../material/observer/observer.js";
 
 class DemoMain extends MDComponent {
+    static properties={
+        open:{state:true}
+    }
+
+    constructor(){
+        super()
+        this.open=true
+    }
 
     render() {
         /* prettier-ignore */
@@ -11,9 +20,13 @@ class DemoMain extends MDComponent {
                 <md-navigation-drawer 
                     .items="${this.items}"
                     inputFormat="nested"
-                    open
+                    .open="${this.open}"
                 ></md-navigation-drawer>
-                <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
+                <md-layout-item region="center">
+                    <md-pane fit sticky>
+                        <md-pane-body style="padding:0;"><md-outlet></md-outlet></md-pane-body>
+                    </md-pane>
+                </md-layout-item>
             </md-layout>
         `
     }
@@ -48,6 +61,19 @@ class DemoMain extends MDComponent {
         };
         
         sort(this.items).forEach((item) => walk(item));
+
+        this._breakpoint=new BreakpointObserver((item) => {
+            if(item.name==='compact'){
+                this.open=false;
+            }
+            else if(item.name==='medium'){
+                this.open=false;
+            }
+            else if(item.name==='expanded'){
+                this.open=true
+            }
+        })
+        this._breakpoint.observe()
     }
 }
 

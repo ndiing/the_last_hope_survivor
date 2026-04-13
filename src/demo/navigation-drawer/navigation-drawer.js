@@ -91,7 +91,7 @@ class DemoNavigationBar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-layout style="position:relative;">
+            <md-layout >
                 <md-navigation-drawer
                     id="drawer"
                     .items="${[...this.nestedData]}"

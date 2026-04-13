@@ -35,8 +35,8 @@ class MDPane extends MDComponent {
                     <md-icon class="md-pane__tool">image</md-icon>
                 </div>
             </div>
-            <div class="md-pane__body">
-                <div class="md-pane__main">
+            <div class="md-pane__main">
+                <div class="md-pane__body">
                 </div>
                 <div class="md-pane__footer">
                     <md-button class="md-pane__button" label="button"></md-button>
@@ -44,7 +44,7 @@ class MDPane extends MDComponent {
                 </div>
             </div> -->
             ${this._header}
-            <div class="md-pane__body">
+            <div class="md-pane__main">
                 ${this._body}
                 ${this._footer}
             </div>
