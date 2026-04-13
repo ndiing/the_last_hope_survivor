@@ -76,15 +76,13 @@
 .md-pane--sticky {
     overflow: auto;
 
-    &:has(.md-pane--sticky) {
-        overflow: unset;
-    }
+    
     .md-pane__header {
         position: sticky;
         top: 0;
     }
     .md-pane__main {
-        overflow: auto;
+        overflow: unset;
     }
     .md-pane__body {
         overflow: unset;
