@@ -5,7 +5,12 @@ class DemoAppBar extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <md-pane fit sticky>
+            <md-pane 
+                fit 
+                sticky
+                headerHideOnScroll="down"
+                footerHideOnScroll="down"
+            >
                 <md-app-bar
                     variant="small"
                     .leading="${[{component:'icon-button',icon:'arrow_back',color:'standard'}]}"
@@ -117,6 +122,7 @@ class DemoAppBar extends MDComponent {
                     <p>Veritatis, voluptatem debitis! Similique quisquam at minima quam maxime tenetur, a fugiat reiciendis! Reiciendis ad, quam blanditiis eveniet nam dicta incidunt, nulla obcaecati ea sed dolorem harum quia, recusandae et?<br><br></p>
                     <p>Error, fugit? Nobis dignissimos reprehenderit provident quibusdam optio maxime excepturi porro. Nostrum quibusdam atque temporibus laboriosam. Saepe quis iste consectetur magnam debitis veritatis distinctio repudiandae exercitationem rem porro, ducimus vel!<br><br></p>
                 </md-pane-body>
+                
             </md-pane>
         `
     }
