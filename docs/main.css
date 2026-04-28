@@ -1827,15 +1827,12 @@ body {
 .md-pane--sticky {
   overflow: auto;
 }
-.md-pane--sticky:has(.md-pane--sticky) {
-  overflow: unset;
-}
 .md-pane--sticky .md-pane__header {
   position: sticky;
   top: 0;
 }
 .md-pane--sticky .md-pane__main {
-  overflow: auto;
+  overflow: unset;
 }
 .md-pane--sticky .md-pane__body {
   overflow: unset;
